@@ -1,9 +1,11 @@
 import React, { FC } from "react"
 import { PageProps, Link } from "gatsby"
 
-type DataProps = {}
+type DataProps = {
+  location: any,
+}
 
-const NavigationMain: FC<PageProps<DataProps>> = ({ location, title, children }) => {
+const NavigationMain: FC<PageProps<DataProps>> = ({ location }) => {
   const navEntries = ['Community', 'News', 'FAQ']
 
   return (
@@ -11,9 +13,9 @@ const NavigationMain: FC<PageProps<DataProps>> = ({ location, title, children })
       className='navigation-main'
     >
       <ul className='menu'>
-        {navEntries.map((entry) => {
-          <li className='menu-entry'>{entry}</li>
-        })}
+        {navEntries.map((entry) => (
+          <li className='menu-entry' key={entry}>{entry}</li>
+        ))}
       </ul>
 
     </nav>
