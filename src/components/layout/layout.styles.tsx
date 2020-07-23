@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { rhythm, scale } from "../../utils/typography"
+import { rhythm, scale } from '../../utils/typography';
 
 export const GlobalStyles = createGlobalStyle`
   *,
