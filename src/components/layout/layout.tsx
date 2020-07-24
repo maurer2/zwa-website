@@ -3,7 +3,7 @@ import { PageProps } from 'gatsby'
 
 import { Normalize } from 'styled-normalize';
 
-import NavigationMain from '../navigation-main/navigation-main'
+import Masthead from '../masthead/masthead'
 import Theme from '../theme/theme'
 
 type DataProps = {
@@ -16,7 +16,7 @@ type DataProps = {
 
 import * as Styles from './layout.styles';
 
-const Layout: FC<PageProps<DataProps>> = ({ location, title, children }) => {
+const Layout: FC<PageProps<DataProps>> = ({ location, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isHomePage = location.pathname === rootPath
 
@@ -24,7 +24,7 @@ const Layout: FC<PageProps<DataProps>> = ({ location, title, children }) => {
     <Theme>
       <Normalize />
       <Styles.Wrapper>
-        <NavigationMain location={location} />
+        <Masthead/>
         <main>{children}</main>
       </Styles.Wrapper>
     </Theme>

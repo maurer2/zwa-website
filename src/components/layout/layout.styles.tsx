@@ -26,9 +26,6 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     background-color: #000;
   }
-  body {
-    overflow: hidden;
-  }
 `;
 
 export const Wrapper = styled.div`
