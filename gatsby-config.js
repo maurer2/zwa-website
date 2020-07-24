@@ -26,6 +26,14 @@ module.exports = {
         name: `assets`,
       },
     },
+    // json files
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `faq`,
+        path: `./src/data/faq`,
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -77,6 +85,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    `gatsby-transformer-json`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -17,6 +17,10 @@ const Home: FC<PageProps<DataProps>> = ({ data, path, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
+  const faq = data.allFile.edges
+
+  console.log(faq)
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
@@ -71,6 +75,29 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+          }
+        }
+      }
+    }
+    allFile(filter: {name: {eq: "en"}, sourceInstanceName: {eq: "faq"}}) {
+      edges {
+        node {
+          id
+          name
+          sourceInstanceName
+          childFaqJson {
+            section_main {
+              sections {
+                id
+                title
+                accordion {
+                  title
+                }
+              }
+              headline {
+                title
+              }
+            }
           }
         }
       }
