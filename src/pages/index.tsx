@@ -41,7 +41,7 @@ const Home: FC<PageProps<DataProps>> = ({ data, path, location }) => {
                 return (
                   <details>
                     <summary>{accordionTitle}</summary>
-                    <div>{unescape(textblock)}</div>
+                    <div dangerouslySetInnerHTML={{__html: textblock}} />.
                   </details>
                 )
               })}
