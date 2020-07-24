@@ -17,14 +17,39 @@ const Home: FC<PageProps<DataProps>> = ({ data, path, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
-  const faq = data.allFile.edges
+  const [faqsDE, faqEN] = data.allFile.edges
 
-  console.log(faq)
+  const pageTitle = faqEN.node.childFaqJson.section_main.headline.title
+  const sections = faqEN.node.childFaqJson.section_main.sections
+
+  console.log(sections)
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <h1>Home</h1>
+      <h1>{pageTitle}</h1>
+
+      {sections.map(({ title: sectionTitle, accordion }) => {
+        // console.log(sectionTitle, accordion)
+
+        return (
+          <>
+            <h2>{sectionTitle}</h2>
+            <div>
+              {accordion.map(({ title: accordionTitle, textblock }) => {
+
+                return (
+                  <details>
+                    <summary>{accordionTitle}</summary>
+                    <div>{unescape(textblock)}</div>
+                  </details>
+                )
+              })}
+            </div>
+          </>
+        )
+      })}
+
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
@@ -79,7 +104,8 @@ export const pageQuery = graphql`
         }
       }
     }
-    allFile(filter: {name: {eq: "en"}, sourceInstanceName: {eq: "faq"}}) {
+    # allFile(filter: {name: {eq: "en"}, sourceInstanceName: {eq: "faq"}}) {
+    allFile(filter: {sourceInstanceName: {eq: "faq"}}, sort: {fields: name}) {
       edges {
         node {
           id
@@ -92,6 +118,7 @@ export const pageQuery = graphql`
                 title
                 accordion {
                   title
+                  textblock
                 }
               }
               headline {
