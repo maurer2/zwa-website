@@ -8,4 +8,4 @@ export const Masthead = styled.header`
   > figure {
     margin-right: auto;
   }
-`
+`;

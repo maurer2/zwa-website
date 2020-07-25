@@ -1,7 +1,5 @@
-const colors = {
-  test: 'fuchsia',
-};
+const colors = { test: 'fuchsia' };
 
 export {
   colors,
-}
+};

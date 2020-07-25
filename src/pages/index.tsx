@@ -1,9 +1,9 @@
-import React, { FC } from "react"
-import { PageProps, Link, graphql } from "gatsby"
+import React, { FC } from 'react';
+import { PageProps, Link, graphql } from 'gatsby';
 
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import Layout from '../components/layout/layout';
+import SEO from '../components/seo';
+import { rhythm } from '../utils/typography';
 
 type DataProps = {
   site: {
@@ -14,53 +14,48 @@ type DataProps = {
 }
 
 const Home: FC<PageProps<DataProps>> = ({ data, path, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const siteTitle = data.site.siteMetadata.title;
+  const posts = data.allMarkdownRemark.edges;
 
-  const [faqsDE, faqEN] = data.allFile.edges
+  const [faqsDE, faqEN] = data.allFile.edges;
 
-  const pageTitle = faqEN.node.childFaqJson.section_main.headline.title
-  const sections = faqEN.node.childFaqJson.section_main.sections
+  const pageTitle = faqEN.node.childFaqJson.section_main.headline.title;
+  const { sections } = faqEN.node.childFaqJson.section_main;
 
-  console.log(sections)
+  console.log(sections);
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <h1>{pageTitle}</h1>
 
-      {sections.map(({ title: sectionTitle, accordion }) => {
-        // console.log(sectionTitle, accordion)
+      {sections.map(({ title: sectionTitle, accordion }) =>
+      // console.log(sectionTitle, accordion)
 
-        return (
+        (
           <>
             <h2>{sectionTitle}</h2>
             <div>
-              {accordion.map(({ title: accordionTitle, textblock }) => {
-
-                return (
-                  <details>
-                    <summary>{accordionTitle}</summary>
-                    <div dangerouslySetInnerHTML={{__html: textblock}} />.
-                  </details>
-                )
-              })}
+              {accordion.map(({ title: accordionTitle, textblock }) => (
+                <details>
+                  <summary>{accordionTitle}</summary>
+                  <div dangerouslySetInnerHTML={{ __html: textblock }} />
+                  .
+                </details>
+              ))}
             </div>
           </>
-        )
-      })}
+        ))}
 
       {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
+        const title = node.frontmatter.title || node.fields.slug;
         return (
           <article key={node.fields.slug}>
             <header>
               <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
+                style={{ marginBottom: rhythm(1 / 4) }}
               >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
@@ -68,19 +63,17 @@ const Home: FC<PageProps<DataProps>> = ({ data, path, location }) => {
             </header>
             <section>
               <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
+                dangerouslySetInnerHTML={{ __html: node.frontmatter.description || node.excerpt }}
               />
             </section>
           </article>
-        )
+        );
       })}
     </Layout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
 
 export const pageQuery = graphql`
   query {
@@ -130,4 +123,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

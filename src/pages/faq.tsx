@@ -1,8 +1,8 @@
-import React, { FC } from "react"
-import { PageProps, Link, graphql } from "gatsby"
+import React, { FC } from 'react';
+import { PageProps, Link, graphql } from 'gatsby';
 
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout/layout';
+import SEO from '../components/seo';
 
 type DataProps = {
   site: {
@@ -13,8 +13,8 @@ type DataProps = {
 }
 
 const FAQ: FC<PageProps<DataProps>> = ({ data, path, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const siteTitle = data.site.siteMetadata.title;
+  const posts = data.allMarkdownRemark.edges;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -22,10 +22,10 @@ const FAQ: FC<PageProps<DataProps>> = ({ data, path, location }) => {
       <h1>FAQ</h1>
 
     </Layout>
-  )
-}
+  );
+};
 
-export default FAQ
+export default FAQ;
 
 export const pageQuery = graphql`
   query {
@@ -50,4 +50,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
