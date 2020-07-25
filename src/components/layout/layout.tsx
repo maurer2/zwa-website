@@ -6,16 +6,9 @@ import Masthead from '../masthead/masthead';
 import Theme from '../theme/theme';
 
 import * as Styles from './layout.styles';
+import * as Types from './layout.types';
 
-type DataProps = {
-  site: {
-    location: string,
-    title: any,
-    children: any,
-  }
-}
-
-const Layout: FC<PageProps<DataProps>> = ({ location, children }) => {
+const Layout: FC<PageProps & Types.LayoutProps> = ({ location, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isHomePage = location.pathname === rootPath;
 
