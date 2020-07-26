@@ -1,7 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-import { rhythm, scale } from '../../utils/typography';
-
 export const GlobalStyles = createGlobalStyle`
   *,
   *:before,
@@ -30,8 +28,13 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 export const Wrapper = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
-  max-width: ${rhythm(24)};
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 150px 1fr 250px;
+
+  grid-template-areas:
+    "header"
+    "content"
+    "footer"
+    "overlay";
 `;

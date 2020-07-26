@@ -1,3 +1,3 @@
 export type MastheadProps = {
-  theme: any, // SC
+  theme?: any, // SC
 }
