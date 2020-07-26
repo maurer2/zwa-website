@@ -1,4 +1,5 @@
 module.exports = {
+  // shared across pages
   siteMetadata: {
     title: `Gatsby Starter Blog2`,
     author: {
@@ -10,6 +11,36 @@ module.exports = {
     social: {
       twitter: `kylemathews`,
     },
+    mainNavEntries:[
+      {
+        link:'/',
+        names: {
+          en: 'Home',
+          de: 'Home',
+        },
+      },
+      {
+        link:'/community',
+        names: {
+          en: 'Community',
+          de: 'Community',
+        },
+      },
+      {
+        link:'/news',
+        names: {
+          en: 'News',
+          de: 'Aktuelles',
+        },
+      },
+      {
+        link:'/faq',
+        names: {
+          en: 'FAQ',
+          de: 'FAQ',
+        },
+      },
+    ],
   },
   plugins: [
     {

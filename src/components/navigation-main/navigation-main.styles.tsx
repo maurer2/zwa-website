@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 export const NavigationContainer = styled.nav`
   color: ${(props) => props.theme.colors.test};
@@ -7,5 +8,20 @@ export const NavigationContainer = styled.nav`
 export const NavigationList = styled.ul`
   display: flex;
   list-style: none;
-  justify-content: space-between;
+`;
+
+export const NavigationEntry = styled.li`
+  margin: 0;
+  padding: 0;
+`;
+
+export const NavigationLink = styled(Link)`
+  padding: 1rem;
+  text-decoration: none;
+  box-shadow: none;
+  color: white;
+
+  &.active {
+    color: red;
+  }
 `;

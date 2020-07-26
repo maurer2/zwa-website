@@ -30,21 +30,20 @@ const Home: FC<PageProps<DataProps>> = ({ data, path, location }) => {
       <h1>{pageTitle}</h1>
 
       {sections.map(({ title: sectionTitle, accordion }) =>
-      // console.log(sectionTitle, accordion)
-
+        // console.log(sectionTitle, accordion)
         (
-          <>
+          <React.Fragment key={sectionTitle}>
             <h2>{sectionTitle}</h2>
             <div>
               {accordion.map(({ title: accordionTitle, textblock }) => (
-                <details>
+                <details key={accordionTitle}>
                   <summary>{accordionTitle}</summary>
                   <div dangerouslySetInnerHTML={{ __html: textblock }} />
                   .
                 </details>
               ))}
             </div>
-          </>
+          </React.Fragment>
         ))}
 
       {posts.map(({ node }) => {
