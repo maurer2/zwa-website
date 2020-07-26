@@ -115,4 +115,9 @@ module.exports = {
       version: 'detect',
     },
   },
+  ignorePatterns: [
+    'gatsby-browser.js',
+    'gatsby-config.js',
+    'gatsby-node.js',
+  ],
 };
