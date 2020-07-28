@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
-import { PageProps } from 'gatsby';
+import { PageProps, Link } from 'gatsby';
 
 import NavigationMain from '../navigation-main/navigation-main';
 
@@ -12,9 +12,9 @@ const Masthead: FC<PageProps & Types.MastheadProps> = ({ location }) => {
   useEffect(() => {
     const mq: MediaQueryList = window.matchMedia('(max-width: 767px)');
 
-    const mqCB = function (event: MediaQueryListEvent) {
+    function mqCB(event: MediaQueryListEvent) {
       setIsMobile(event.matches);
-    };
+    }
 
     mq.addListener(mqCB);
 
@@ -28,7 +28,9 @@ const Masthead: FC<PageProps & Types.MastheadProps> = ({ location }) => {
 
   return (
     <Styles.Masthead>
-      <figure>Logo</figure>
+      <Link to="/">
+        <figure>Logo</figure>
+      </Link>
       {isMobile
         ? <button type="button">Menu</button>
         : (

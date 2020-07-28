@@ -1,7 +1,5 @@
 import React, { FC } from 'react';
-import {
-  PageProps, Link, StaticQuery, graphql,
-} from 'gatsby';
+import { PageProps, StaticQuery, graphql } from 'gatsby';
 
 import * as Styles from './navigation-main.styles';
 import * as Types from './navigation-main.types';
@@ -25,7 +23,8 @@ const NavigationMain: FC<PageProps & Types.NavigationMainProps> = () => (
     `}
     render={(data) => {
       const currentLanguage = 'en';
-      const menuEntries = data.site.siteMetadata.mainNavEntries;
+      // menu entries without home
+      const [, ...menuEntries] = data.site.siteMetadata.mainNavEntries;
 
       return (
         <Styles.NavigationContainer>
