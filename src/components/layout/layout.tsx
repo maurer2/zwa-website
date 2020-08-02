@@ -16,18 +16,16 @@ const Layout: FC<PageProps & Types.LayoutProps> = ({ location, children }) => {
   // const isHomePage = location.pathname === rootPath;
 
   return (
-    <ContextProvider>
-      <Theme>
-        <Normalize />
-        <Styles.Wrapper>
-          <Masthead />
-          <Content>
-            {children}
-          </Content>
-          <Footer />
-        </Styles.Wrapper>
-      </Theme>
-    </ContextProvider>
+    <Theme>
+      <Normalize />
+      <Styles.Wrapper>
+        <Masthead />
+        <Content>
+          {children}
+        </Content>
+        <Footer />
+      </Styles.Wrapper>
+    </Theme>
   );
 };
 

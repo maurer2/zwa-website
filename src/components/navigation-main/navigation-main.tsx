@@ -9,18 +9,6 @@ import * as Types from './navigation-main.types';
 const NavigationMain: FC<PageProps & Types.NavigationMainProps> = () => {
   const globalContext = useContext(Context);
 
-  console.log('state', globalContext);
-
-  function updateLanguage() {
-    if (globalContext.language === 'en') {
-      globalContext.setLanguage('de');
-
-      return;
-    }
-
-    globalContext.setLanguage('en');
-  }
-
   return (
     <StaticQuery
       query={graphql`
