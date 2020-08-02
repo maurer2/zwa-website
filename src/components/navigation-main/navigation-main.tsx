@@ -45,12 +45,6 @@ const NavigationMain: FC<PageProps & Types.NavigationMainProps> = () => {
 
         return (
           <Styles.NavigationContainer>
-            <button onClick={updateLanguage}>
-              {globalContext.language}
-            </button>
-
-            <hr />
-
             <Styles.NavigationList>
               {menuEntries.map(({ link, names }) => (
                 <Styles.NavigationEntry key={link}>
