@@ -7,9 +7,19 @@ import * as Styles from './navigation-main.styles';
 import * as Types from './navigation-main.types';
 
 const NavigationMain: FC<PageProps & Types.NavigationMainProps> = () => {
-  const state = useContext(Context);
+  const globalContext = useContext(Context);
 
-  console.log('state', state);
+  console.log('state', globalContext);
+
+  function updateLanguage() {
+    if (globalContext.language === 'en') {
+      globalContext.setLanguage('de');
+
+      return;
+    }
+
+    globalContext.setLanguage('en');
+  }
 
   return (
     <StaticQuery
@@ -35,6 +45,12 @@ const NavigationMain: FC<PageProps & Types.NavigationMainProps> = () => {
 
         return (
           <Styles.NavigationContainer>
+            <button onClick={updateLanguage}>
+              {globalContext.language}
+            </button>
+
+            <hr />
+
             <Styles.NavigationList>
               {menuEntries.map(({ link, names }) => (
                 <Styles.NavigationEntry key={link}>

@@ -1,15 +1,31 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, createContext } from 'react';
 
-const Context = React.createContext('en');
+export type ContextType = {
+  language: string,
+  setLanguage: (newLanguage: string) => void;
+}
+
+// default
+const Context = createContext<ContextType>({
+  language: 'en',
+  setLanguage() {
+    //
+  },
+});
 
 const ContextProvider: FC = ({ children }): JSX.Element => {
   const [currentLanguage, setCurrentLanguage] = useState<string>('en');
 
-  function updateLanguage(language: string) {
+  function updateLanguage(language: string): void {
     setCurrentLanguage(language);
   }
 
-  return <Context.Provider value={currentLanguage}>{children}</Context.Provider>;
+  const currentContext: ContextType = {
+    language: currentLanguage,
+    setLanguage: updateLanguage,
+  };
+
+  return <Context.Provider value={currentContext}>{children}</Context.Provider>;
 };
 
 export {
