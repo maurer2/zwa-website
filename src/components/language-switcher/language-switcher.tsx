@@ -1,6 +1,4 @@
-import React, {
-  FC, useEffect, useState, useContext,
-} from 'react';
+import React, { FC, useContext } from 'react';
 // import { Link } from 'gatsby';
 
 import { Context } from '../../context/context';
@@ -9,11 +7,10 @@ import * as Styles from './language-switcher.styles';
 import * as Types from './language-switcher.types';
 
 const LanguageSwitcher: FC<Types.LanguageSwitcherProps> = () => {
-  const globalContext = useContext(Context);
-  const { language } = useContext(Context);
+  const { language, setLanguage } = useContext(Context);
 
   function updateLanguage(newLanguage: string): void {
-    globalContext.setLanguage(newLanguage);
+    setLanguage(newLanguage);
   }
 
   return (

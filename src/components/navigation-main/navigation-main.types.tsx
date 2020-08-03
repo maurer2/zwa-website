@@ -1,8 +1,3 @@
 export type NavigationMainProps = {
-  theme: any, // SC
-  site: {
-    location: string,
-    title: any,
-    children: any,
-  }
+  theme?: any, // SC
 }

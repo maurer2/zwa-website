@@ -1,13 +1,13 @@
 import React, { FC, useContext } from 'react';
-import { PageProps, StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 
 import { Context } from '../../context/context';
 
 import * as Styles from './navigation-main.styles';
 import * as Types from './navigation-main.types';
 
-const NavigationMain: FC<PageProps & Types.NavigationMainProps> = () => {
-  const globalContext = useContext(Context);
+const NavigationMain: FC<Types.NavigationMainProps> = () => {
+  const { language } = useContext(Context);
 
   return (
     <StaticQuery
@@ -27,17 +27,16 @@ const NavigationMain: FC<PageProps & Types.NavigationMainProps> = () => {
         }
       `}
       render={(data) => {
-        const currentLanguage = 'en';
         // menu entries without home
         const [, ...menuEntries] = data.site.siteMetadata.mainNavEntries;
 
         return (
           <Styles.NavigationContainer>
             <Styles.NavigationList>
-              {menuEntries.map(({ link, names }) => (
+              {menuEntries.map(({ link, names }: { link: string, names: any}) => (
                 <Styles.NavigationEntry key={link}>
                   <Styles.NavigationLink to={link} activeClassName="active">
-                    {names[currentLanguage]}
+                    {names[language]}
                   </Styles.NavigationLink>
                 </Styles.NavigationEntry>
               ))}
