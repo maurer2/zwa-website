@@ -5,6 +5,7 @@ import { PageProps, Link } from 'gatsby';
 
 import { Context } from '../../context/context';
 import NavigationMain from '../navigation-main/navigation-main';
+import LanguageSwitcher from '../language-switcher/language-switcher';
 
 import * as Styles from './masthead.styles';
 import * as Types from './masthead.types';
@@ -30,31 +31,6 @@ const Masthead: FC<PageProps & Types.MastheadProps> = ({ location }) => {
     };
   }, []);
 
-  const LanguageSwitcher = () => {
-    function updateLanguage(newLanguage: string) {
-      globalContext.setLanguage(newLanguage);
-    }
-
-    return (
-      <div className="button-group">
-        <button
-          type="button"
-          onClick={() => updateLanguage('en')}
-          disabled={globalContext.language === 'en'}
-        >
-          EN
-        </button>
-        <button
-          type="button"
-          onClick={() => updateLanguage('de')}
-          disabled={globalContext.language === 'de'}
-        >
-          DE
-        </button>
-      </div>
-    );
-  };
-
   return (
     <Styles.Masthead>
       <Link to="/">
@@ -66,7 +42,7 @@ const Masthead: FC<PageProps & Types.MastheadProps> = ({ location }) => {
           <>
             <span>GH</span>
             <LanguageSwitcher />
-            <NavigationMain location={location} />
+            <NavigationMain />
           </>
         )}
 
