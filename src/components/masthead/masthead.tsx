@@ -1,17 +1,14 @@
-import React, {
-  FC, useEffect, useState, useContext,
-} from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { PageProps, Link } from 'gatsby';
 
-import { Context } from '../../context/context';
 import NavigationMain from '../navigation-main/navigation-main';
 import LanguageSwitcher from '../language-switcher/language-switcher';
+import Logo from '../logo/logo';
 
 import * as Styles from './masthead.styles';
 import * as Types from './masthead.types';
 
 const Masthead: FC<PageProps & Types.MastheadProps> = ({ location }) => {
-  const globalContext = useContext(Context);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -33,16 +30,14 @@ const Masthead: FC<PageProps & Types.MastheadProps> = ({ location }) => {
 
   return (
     <Styles.Masthead>
-      <Link to="/">
-        <figure>Logo</figure>
-      </Link>
+      <Logo />
       {isMobile
         ? <button type="button">Menu</button>
         : (
           <>
+            <NavigationMain />
             <span>GH</span>
             <LanguageSwitcher />
-            <NavigationMain />
           </>
         )}
 

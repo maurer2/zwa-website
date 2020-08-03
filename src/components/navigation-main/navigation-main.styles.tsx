@@ -7,6 +7,7 @@ export const NavigationContainer = styled.nav`
 
 export const NavigationList = styled.ul`
   display: flex;
+  margin: 0;
   list-style: none;
 `;
 

@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { PageProps } from 'gatsby';
 import { Normalize } from 'styled-normalize';
 
-import { ContextProvider } from '../../context/context';
 import Theme from '../theme/theme';
 import Masthead from '../masthead/masthead';
 import Content from '../content/content';
