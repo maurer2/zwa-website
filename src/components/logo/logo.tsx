@@ -31,7 +31,12 @@ const Logo: FC<Types.LogoProps> = () => {
 
         return (
           <Styles.Logo isLarge>
-            <Link to={homeLink.link}>{homeLink.names[language]}</Link>
+            <Styles.LogoLink
+              to={homeLink.link}
+              activeClassName="active"
+            >
+              {homeLink.names[language]}
+            </Styles.LogoLink>
           </Styles.Logo>
         );
       }}
