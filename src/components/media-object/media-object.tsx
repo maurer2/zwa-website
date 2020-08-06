@@ -1,7 +1,4 @@
-import React, { FC, useContext, PropsWithChildren } from 'react';
-// import { Link } from 'gatsby';
-
-import { Context } from '../../context/context';
+import React, { FC, PropsWithChildren } from 'react';
 
 import * as Styles from './media-object.styles';
 import * as Types from './media-object.types';

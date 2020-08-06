@@ -30,7 +30,7 @@ const Masthead: FC<PageProps & Types.MastheadProps> = ({ location }) => {
 
   return (
     <Styles.Masthead>
-      <Logo />
+      <Logo isLarge />
       {isMobile
         ? <button type="button">Menu</button>
         : (

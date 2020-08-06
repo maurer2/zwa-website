@@ -12,7 +12,7 @@ const NavigationMain: FC<Types.NavigationMainProps> = () => {
   return (
     <StaticQuery
       query={graphql`
-        query SiteTitleQuery {
+        query SiteMainNavQuery {
           site {
             siteMetadata {
               mainNavEntries {

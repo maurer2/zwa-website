@@ -41,6 +41,31 @@ module.exports = {
         },
       },
     ],
+    footerNavEntries:[
+      {
+        id: 'learn-more',
+        titles: {
+          en: 'Learn more',
+          de: 'Learn möre',
+        },
+        links: [
+          {
+            link:'/',
+            names: {
+              en: 'docs',
+              de: 'docs',
+            },
+          },
+          {
+            link:'/faq',
+            names: {
+              en: 'FAQ',
+              de: 'FAQ',
+            },
+          },
+        ]
+      },
+    ],
   },
   plugins: [
     {
