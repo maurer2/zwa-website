@@ -17,6 +17,7 @@ const Layout: FC<PageProps & Types.LayoutProps> = ({ location, children }) => {
   return (
     <Theme>
       <Normalize />
+      <Styles.GlobalStyles />
       <Styles.Wrapper>
         <Masthead />
         <Content>
