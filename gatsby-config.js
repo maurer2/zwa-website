@@ -52,8 +52,8 @@ module.exports = {
           {
             link:'/',
             names: {
-              en: 'docs',
-              de: 'docs',
+              en: 'Docs',
+              de: 'Docs',
             },
           },
           {
@@ -61,6 +61,77 @@ module.exports = {
             names: {
               en: 'FAQ',
               de: 'FAQ',
+            },
+          },
+        ]
+      },
+      {
+        id: 'about',
+        titles: {
+          en: 'About',
+          de: 'Äbout',
+        },
+        links: [
+          {
+            link:'/privacy',
+            names: {
+              en: 'Privacy statement',
+              de: 'Datenschutz',
+            },
+          },
+          {
+            link:'/imprint',
+            names: {
+              en: 'Legal notice',
+              de: 'Impressum',
+            },
+          },
+        ]
+      },
+      {
+        id: 'get-involved',
+        titles: {
+          en: 'Get involved',
+          de: 'Get involved',
+        },
+        links: [
+          {
+            link:'/community',
+            names: {
+              en: 'Community',
+              de: 'Community',
+            },
+          },
+        ]
+      },
+      {
+        id: 'hotline-app',
+        titles: {
+          en: 'Hotline App',
+          de: 'Hotline App',
+        },
+        links: [
+          {
+            link:'+49 800 7540001',
+            names: {
+              en: 'tel:+498007540001',
+              de: 'tel:+498007540001',
+            },
+          },
+        ]
+      },
+      {
+        id: 'hotline-tan',
+        titles: {
+          en: 'Hotline TAN',
+          de: 'Hotline TAN',
+        },
+        links: [
+          {
+            link:'+49 800 7540002',
+            names: {
+              en: 'tel:+498007540002',
+              de: 'tel:+498007540002',
             },
           },
         ]

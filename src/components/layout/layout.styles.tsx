@@ -36,7 +36,10 @@ export const GlobalStyles = createGlobalStyle`
 export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 150px 1fr 250px;
+  grid-template-rows:
+    150px
+    1fr
+    minmax(250px, auto);
   // height: 100%;
   min-height: 100vh;
 

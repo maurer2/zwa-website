@@ -1,3 +1,3 @@
-export type NavigationFooter = {
+export type NavigationFooterProps = {
   theme?: any, // SC
 }

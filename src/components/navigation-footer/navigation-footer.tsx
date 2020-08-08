@@ -1,5 +1,5 @@
 import React, { FC, useContext } from 'react';
-import { StaticQuery, graphql, Link } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 
 import { Context } from '../../context/context';
 
@@ -37,29 +37,28 @@ const NavigationFooter: FC<Types.NavigationFooterProps> = () => {
         const menuEntries = data.site.siteMetadata.footerNavEntries;
 
         return (
-          <Styles.NavigationContainer>
-            <Styles.NavigationList>
-              {menuEntries.map((entry) => {
-                const { id, titles, links } = entry;
-                console.log(entry.links);
+          <Styles.NavigationList>
+            {menuEntries.map((entry) => {
+              const { id, titles, links } = entry;
 
-                return (
-                  <div key={id} data-id={id}>
-                    <h6>{titles[language]}</h6>
-                    <ul>
-                      {links.map(({ link, names }) => (
-                        <li key={link}>
-                          <Link to={link} activeClassName="active">
-                            {names[language]}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-              })}
-            </Styles.NavigationList>
-          </Styles.NavigationContainer>
+              return (
+                <Styles.NavigationEntry key={id} data-id={id}>
+                  <Styles.NavigationTitle>
+                    {titles[language]}
+                  </Styles.NavigationTitle>
+                  <Styles.SubNavigationList>
+                    {links.map(({ link, names }) => (
+                      <Styles.SubNavigationEntry key={link}>
+                        <Styles.SubNavigationLink to={link} activeClassName="active">
+                          {names[language]}
+                        </Styles.SubNavigationLink>
+                      </Styles.SubNavigationEntry>
+                    ))}
+                  </Styles.SubNavigationList>
+                </Styles.NavigationEntry>
+              );
+            })}
+          </Styles.NavigationList>
         );
       }}
     />
