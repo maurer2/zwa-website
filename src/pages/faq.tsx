@@ -3,7 +3,6 @@ import { PageProps, Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
-import { rhythm } from '../utils/typography';
 
 type DataProps = {
   site: {
