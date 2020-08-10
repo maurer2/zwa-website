@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
+// color: ${(props) => props.theme.colors.test};
+
 export const NavigationList = styled.ul`
   display: grid;
   margin-left: auto;
@@ -8,7 +10,6 @@ export const NavigationList = styled.ul`
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
   list-style: none;
-  // color: ${(props) => props.theme.colors.test};
   color: white;
   flex-basis: 75%;
 
@@ -41,7 +42,7 @@ export const SubNavigationEntry = styled.li`
 `;
 
 export const SubNavigationLink = styled(Link)`
-  display: block;
+  display: inline-block;
   padding: 0.25rem 0;
   text-decoration: none;
   box-shadow: none;

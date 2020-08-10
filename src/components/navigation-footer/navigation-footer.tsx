@@ -12,7 +12,7 @@ const NavigationFooter: FC<Types.NavigationFooterProps> = () => {
   return (
     <StaticQuery
       query={graphql`
-        query SiteFooterNavQuery {
+        query SiteFooterQuery {
           site {
             siteMetadata {
               footerNavEntries {
@@ -31,10 +31,23 @@ const NavigationFooter: FC<Types.NavigationFooterProps> = () => {
               }
             }
           }
+          allFile(filter: {extension: {eq: "svg"}, name: {eq: "logo"}}) {
+            edges {
+              node {
+                id
+                relativePath
+                publicURL
+                name
+                root
+                extension
+              }
+            }
+          }
         }
       `}
       render={(data) => {
         const menuEntries = data.site.siteMetadata.footerNavEntries;
+        const logo = data.allFile.edges[0].node;
 
         return (
           <Styles.NavigationList>

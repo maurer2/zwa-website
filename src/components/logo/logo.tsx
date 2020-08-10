@@ -24,10 +24,23 @@ const Logo: FC<Types.LogoProps> = () => {
               }
             }
           }
+          allFile(filter: {extension: {eq: "svg"}, name: {eq: "logo"}}) {
+            edges {
+              node {
+                id
+                relativePath
+                publicURL
+                name
+                root
+                extension
+              }
+            }
+          }
         }
       `}
       render={(data) => {
         const [homeLink] = data.site.siteMetadata.mainNavEntries;
+        const image = data.allFile.edges[0].node;
 
         return (
           <Styles.Logo isLarge>
@@ -35,7 +48,7 @@ const Logo: FC<Types.LogoProps> = () => {
               to={homeLink.link}
               activeClassName="active"
             >
-              {homeLink.names[language]}
+              <Styles.LogoImage src={image.publicURL} alt={image.name} />
             </Styles.LogoLink>
           </Styles.Logo>
         );

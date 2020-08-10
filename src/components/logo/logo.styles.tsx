@@ -14,7 +14,12 @@ export const Logo = styled.figure<LogoStyleProps>`
   `}
 `;
 
+export const LogoImage = styled.img`
+  display: block;
+`;
+
 export const LogoLink = styled(Link)`
+  display: block;
   padding: 1rem;
   text-decoration: none;
   box-shadow: none;

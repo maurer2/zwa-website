@@ -146,6 +146,7 @@ module.exports = {
         name: `blog`,
       },
     },
+    // images
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -158,7 +159,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `faq`,
-        path: `./src/data/faq`,
+        path: `${__dirname}/src/data/faq`,
       },
     },
     {
