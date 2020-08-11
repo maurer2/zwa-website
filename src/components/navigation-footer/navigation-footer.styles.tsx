@@ -5,22 +5,14 @@ import { Link } from 'gatsby';
 
 export const NavigationList = styled.ul`
   display: contents;
-  // padding: 0;
-  // grid-template-columns: repeat(2, 1fr);
-  // grid-template-rows: repeat(3, 1fr);
   list-style: none;
   color: white;
-  // flex-basis: 75%;
-
-  @media (min-width: 768px) {
-    // grid-template-columns: repeat(3, 1fr);
-    // grid-template-rows: 1fr 1fr;
-  }
 `;
 
 export const NavigationEntry = styled.li`
   margin: 1rem;
   padding: 0;
+  min-width: 0; // prevent grid blowout
 `;
 
 export const NavigationTitle = styled.h4`

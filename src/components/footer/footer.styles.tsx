@@ -34,3 +34,19 @@ export const LogoWrapper = styled.div`
     grid-row: span 2;
   }
 `;
+
+export const CopyrightText = styled.small`
+  grid-column: 1/-1;
+  margin: 1rem;
+  text-align: center;
+  color: white;
+
+  > a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  @media (min-width: 576px) {
+    text-align: left;
+  }
+`;

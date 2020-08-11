@@ -12,7 +12,7 @@ const NavigationFooter: FC<Types.NavigationFooterProps> = () => {
   return (
     <StaticQuery
       query={graphql`
-        query SiteFooterQuery {
+        query SiteFooterNavigationQuery {
           site {
             siteMetadata {
               footerNavEntries {

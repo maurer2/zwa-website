@@ -11,6 +11,9 @@ module.exports = {
     social: {
       twitter: `kylemathews`,
     },
+    copyright: {
+      text: '© {year} - The authors of the Corona-Warn-App open-source project'
+    },
     mainNavEntries:[
       {
         link:'/',
