@@ -4,25 +4,22 @@ import { Link } from 'gatsby';
 // color: ${(props) => props.theme.colors.test};
 
 export const NavigationList = styled.ul`
-  display: grid;
-  margin-left: auto;
-  padding: 0;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  display: contents;
+  // padding: 0;
+  // grid-template-columns: repeat(2, 1fr);
+  // grid-template-rows: repeat(3, 1fr);
   list-style: none;
   color: white;
-  flex-basis: 75%;
+  // flex-basis: 75%;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr;
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: 1fr 1fr;
   }
 `;
 
 export const NavigationEntry = styled.li`
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem;
   padding: 0;
 `;
 
