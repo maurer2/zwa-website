@@ -8,7 +8,9 @@ import * as Types from './footer.types';
 
 const Footer: FC<Types.FooterProps> = () => (
   <Styles.Footer>
-    <Logo isLarge={false} />
+    <Styles.LogoWrapper>
+      <Logo isLarge={false} />
+    </Styles.LogoWrapper>
     <NavigationFooter />
   </Styles.Footer>
 );

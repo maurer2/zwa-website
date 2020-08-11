@@ -18,3 +18,19 @@ export const Footer = styled.footer`
     grid-template-columns: repeat(5, 1fr);
   }
 `;
+
+export const LogoWrapper = styled.div`
+  grid-column: span 2;
+  grid-row: 1;
+  align-self: center;
+
+  @media (min-width: 576px) {
+    grid-column: span 1;
+    grid-row: span 3;
+  }
+
+  @media (min-width: 768px) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+`;

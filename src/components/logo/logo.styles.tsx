@@ -8,19 +8,6 @@ interface LogoStyleProps {
 export const Logo = styled.figure<LogoStyleProps>`
   display: block;
   margin: 0;
-  grid-column: span 2;
-  grid-row: 1;
-  align-self: start;
-
-  @media (min-width: 576px) {
-    grid-column: span 1;
-    grid-row: span 3;
-  }
-
-  @media (min-width: 768px) {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
 
   ${(props) => props.isLarge && css`
     color: red;
