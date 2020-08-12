@@ -140,6 +140,13 @@ module.exports = {
         ]
       },
     ],
+    githubLink: {
+      link: 'https://github.com/corona-warn-app',
+      names: {
+        en: 'Github',
+        de: 'Github',
+      },
+    },
   },
   plugins: [
     {

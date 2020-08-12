@@ -45,7 +45,6 @@ const NavigationFooter: FC<Types.NavigationFooterProps> = () => {
   `);
 
   const menuEntries = data.site.siteMetadata.footerNavEntries;
-  const logo = data.allFile.edges[0].node;
 
   return (
     <Styles.NavigationList>

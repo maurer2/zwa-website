@@ -35,7 +35,6 @@ export const GlobalStyles = createGlobalStyle`
 
 export const Wrapper = styled.div`
   display: grid;
-  // grid-template-columns: repeat(12, 1fr);
   grid-template-columns: 1fr;
   grid-template-rows:
     150px
@@ -43,10 +42,4 @@ export const Wrapper = styled.div`
     minmax(250px, auto);
   // height: 100%;
   min-height: 100vh;
-
-  // grid-template-areas:
-  //  "header"
-  //  "content"
-  //  "footer"
-  //  "overlay";
 `;
