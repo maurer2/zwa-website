@@ -1,18 +1,14 @@
 import styled from 'styled-components';
-// import { Link } from 'gatsby';
 
 export const Masthead = styled.header`
-  display: flex;
+  display: grid;
   grid-column: 1/-1;
-  justify-content: space-between;
+  grid-template-columns: 1fr repeat(5, min-content);
   align-items: center;
-  background-image: linear-gradient(to right, #80cdec 29%,#c00f2d 126%, #c00f2d 126%);
-
-  > figure {
-    margin-right: auto;
-  }
+  background-image: linear-gradient(to right, #80cdec 29%, #c00f2d 126%, #c00f2d 126%);
 `;
 
 export const GithubLink = styled.a`
   display: block;
+  padding: 1rem;
 `;

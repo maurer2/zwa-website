@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react';
+import React, { FC, useContext, Fragment } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { Context } from '../../context/context';
@@ -28,15 +28,13 @@ const NavigationMain: FC<Types.NavigationMainProps> = () => {
 
   return (
     <Styles.NavigationContainer>
-      <Styles.NavigationList>
-        {menuEntries.map(({ link, names }: { link: string, names: any}) => (
-          <Styles.NavigationEntry key={link}>
-            <Styles.NavigationLink to={link} activeClassName="active">
-              {names[language]}
-            </Styles.NavigationLink>
-          </Styles.NavigationEntry>
-        ))}
-      </Styles.NavigationList>
+      {menuEntries.map(({ link, names }: { link: string, names: any}) => (
+        <Fragment key={link}>
+          <Styles.NavigationLink to={link} activeClassName="active">
+            {names[language]}
+          </Styles.NavigationLink>
+        </Fragment>
+      ))}
     </Styles.NavigationContainer>
   );
 };

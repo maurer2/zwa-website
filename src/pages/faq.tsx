@@ -50,9 +50,7 @@ const Home: FC<PageProps<DataProps>> = ({ data, path, location }) => {
         return (
           <article key={node.fields.slug}>
             <header>
-              <h3
-                style={{ marginBottom: rhythm(1 / 4) }}
-              >
+              <h3>
                 <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                   {title}
                 </Link>

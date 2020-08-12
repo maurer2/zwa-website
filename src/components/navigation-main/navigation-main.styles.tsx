@@ -2,18 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 export const NavigationContainer = styled.nav`
+  display: contents;
   color: ${(props) => props.theme.colors.test};
-`;
-
-export const NavigationList = styled.ul`
-  display: flex;
-  margin: 0;
-  list-style: none;
-`;
-
-export const NavigationEntry = styled.li`
-  margin: 0;
-  padding: 0;
 `;
 
 export const NavigationLink = styled(Link)`
