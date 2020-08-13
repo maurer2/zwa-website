@@ -1,13 +1,10 @@
-import React, { FC, useContext } from 'react';
+import React, { FC } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-
-import { Context } from '../../context/context';
 
 import * as Styles from './logo.styles';
 import * as Types from './logo.types';
 
 const Logo: FC<Types.LogoProps> = () => {
-  const { language } = useContext(Context);
   const data = useStaticQuery(graphql`
     query LogoQuery {
       site {
@@ -40,7 +37,7 @@ const Logo: FC<Types.LogoProps> = () => {
   const image = data.allFile.edges[0].node;
 
   return (
-    <Styles.Logo isLarge>
+    <Styles.Logo>
       <Styles.LogoLink
         to={homeLink.link}
         activeClassName="active"

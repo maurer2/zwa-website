@@ -1,17 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-interface LogoStyleProps {
-  isLarge: boolean;
-}
-
-export const Logo = styled.figure<LogoStyleProps>`
-  display: block;
+export const Logo = styled.div`
   margin: 0;
-
-  ${(props) => props.isLarge && css`
-    color: red;
-  `}
 `;
 
 export const LogoImage = styled.img`

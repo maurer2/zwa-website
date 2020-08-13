@@ -28,7 +28,7 @@ const Footer: FC<Types.FooterProps> = () => {
   return (
     <Styles.Footer>
       <Styles.LogoWrapper>
-        <Logo isLarge={false} />
+        <Logo />
       </Styles.LogoWrapper>
       <NavigationFooter />
       <Styles.CopyrightText>
