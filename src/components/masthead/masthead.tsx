@@ -8,6 +8,7 @@ import * as Types from './masthead.types';
 
 const Masthead: FC<Types.MastheadProps> = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [mobileMenuIsVisible, setMobileMenuIsVisible] = useState(false);
 
   useEffect(() => {
     const mq: MediaQueryList = window.matchMedia('(max-width: 767px)');
@@ -26,11 +27,21 @@ const Masthead: FC<Types.MastheadProps> = () => {
     };
   }, []);
 
+  function toggleMobileMenu() {
+    setMobileMenuIsVisible((prevMobileMenuIsVisible) => !prevMobileMenuIsVisible);
+  }
+
   return (
     <Styles.Masthead>
       <Logo isLarge />
-      <Menu isMobile={isMobile} />
-      {isMobile && <button type="button">Menu</button>}
+      <Menu
+        isMobile={isMobile}
+        mobileMenuIsVisible={mobileMenuIsVisible}
+        toggleMobileMenuCB={toggleMobileMenu}
+      />
+      {isMobile && (
+        <Styles.MenuToggle onClick={toggleMobileMenu} type="button">Menu</Styles.MenuToggle>
+      )}
     </Styles.Masthead>
   );
 };

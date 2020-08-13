@@ -1,16 +1,13 @@
-import React, { FC, useContext } from 'react';
+import React, { FC } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { Context } from '../../context/context';
 import NavigationMain from '../navigation-main/navigation-main';
 import LanguageSwitcher from '../language-switcher/language-switcher';
 
 import * as Styles from './menu.styles';
 import * as Types from './menu.types';
 
-const Menu: FC<Types.MenuProps> = ({ isMobile }) => {
-  const { language } = useContext(Context);
-
+const Menu: FC<Types.MenuProps> = ({ isMobile, mobileMenuIsVisible, toggleMobileMenuCB }) => {
   const data = useStaticQuery(graphql`
     query GithubQuery {
       site {
@@ -43,15 +40,21 @@ const Menu: FC<Types.MenuProps> = ({ isMobile }) => {
   const image = data.allFile.edges[0].node;
 
   return (
-    <Styles.Menu isMobileMenu>
+    <Styles.Menu
+      isMobile={isMobile}
+      mobileMenuIsVisible={mobileMenuIsVisible}
+    >
       {isMobile ? (
-        <>
+        <Styles.MenuMobileWrapper>
+          <Styles.MenuMobileCloseButton onClick={toggleMobileMenuCB} type="button">
+            Close
+          </Styles.MenuMobileCloseButton>
           <NavigationMain />
           <Styles.GithubLink href={githubLink.link}>
             <img src={image.publicURL} alt={image.name} />
           </Styles.GithubLink>
           <LanguageSwitcher />
-        </>
+        </Styles.MenuMobileWrapper>
       ) : (
         <>
           <NavigationMain />

@@ -17,7 +17,8 @@ export const GithubLink = styled.a`
   padding: 1rem;
 `;
 
-export const MenuButton = styled.button`
+export const MenuToggle = styled.button`
   display: block;
   padding: 1rem;
+  cursor: pointer;
 `;

@@ -21,5 +21,6 @@ module.exports = {
     'selector-type-no-unknown': [true, {
       ignoreTypes: ['/^\\$\\w+/'],
     }],
+    'declaration-empty-line-before': 'never',
   },
 };
