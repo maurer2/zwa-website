@@ -165,6 +165,15 @@ module.exports = {
       },
     },
     // json files
+    // index
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `index`,
+        path: `${__dirname}/src/data/index`,
+      },
+    },
+    // faq
     {
       resolve: `gatsby-source-filesystem`,
       options: {

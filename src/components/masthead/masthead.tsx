@@ -33,7 +33,7 @@ const Masthead: FC<Types.MastheadProps> = () => {
 
   return (
     <Styles.Masthead>
-      <Logo isLarge />
+      <Logo />
       <Menu
         isMobile={isMobile}
         mobileMenuIsVisible={mobileMenuIsVisible}
