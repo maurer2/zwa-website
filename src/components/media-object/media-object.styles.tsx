@@ -6,6 +6,8 @@ interface MediaObjectStyleProps {
 
 export const MediaObject = styled.div<MediaObjectStyleProps>`
   display: flex;
+  margin-left: -1rem;
+  margin-right: -1rem;
 
   ${(props) => props.hasContentFirst && css`
     flex-direction: row-reverse;
@@ -13,11 +15,11 @@ export const MediaObject = styled.div<MediaObjectStyleProps>`
 `;
 
 export const Media = styled.div`
-  background: red;
-  flex: 1 1 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  flex: 0 1 0;
 `;
 
 export const Content = styled.div`
-  background: green;
   flex: 1 1 0;
 `;

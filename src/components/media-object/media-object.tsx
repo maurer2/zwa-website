@@ -4,21 +4,18 @@ import * as Styles from './media-object.styles';
 import * as Types from './media-object.types';
 
 const MediaObject: FC<PropsWithChildren<Types.MediaObjectProps>> = ({
-  children,
+  media,
+  content,
   hasContentFirst,
-}) => {
-  const hasContentFirst2 = false;
-
-  return (
-    <Styles.MediaObject hasContentFirst={hasContentFirst}>
-      <Styles.Media>
-        Media
-      </Styles.Media>
-      <Styles.Content>
-        Content
-      </Styles.Content>
-    </Styles.MediaObject>
-  );
-};
+}) => (
+  <Styles.MediaObject hasContentFirst={hasContentFirst}>
+    <Styles.Media>
+      {media}
+    </Styles.Media>
+    <Styles.Content>
+      {content}
+    </Styles.Content>
+  </Styles.MediaObject>
+);
 
 export default MediaObject;

@@ -12012,6 +12012,11 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-lorem-ipsum@^1.4.5:
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/react-lorem-ipsum/-/react-lorem-ipsum-1.4.5.tgz#bc9f8a8691d1dec568de1a81d5574242ff9fee6e"
+  integrity sha512-cFQ86WCrHl7vqzTKSJcMlmH47m15xOH7NbbS+EZ0ARztPjmxm5jVoENGtCLXkG3PU+mQhNoibVXQx8NXUPHf2g==
+
 react-reconciler@^0.24.0:
   version "0.24.0"
   resolved "https://registry.yarnpkg.com/react-reconciler/-/react-reconciler-0.24.0.tgz#5a396b2c2f5efe8554134a5935f49f546723f2dd"
