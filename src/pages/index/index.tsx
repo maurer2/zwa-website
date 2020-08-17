@@ -19,7 +19,7 @@ const Home: FC<PageProps<Types.IndexPageProps>> = ({ data, path, location }) => 
       const visibilityPositionY = 300;
       const scrollPositionY = window.scrollY;
 
-      setOverlayIsVisible(visibilityPositionY > scrollPositionY);
+      setOverlayIsVisible(scrollPositionY > visibilityPositionY);
     }
 
     // init
@@ -42,6 +42,18 @@ const Home: FC<PageProps<Types.IndexPageProps>> = ({ data, path, location }) => 
         media={<Avatar gender="male" width="250" height="250" alt="Cat" />}
         content={<LoremIpsum p={4} />}
         hasContentFirst={false}
+      />
+
+      <MediaObject
+        media={<Avatar gender="male" width="250" height="250" alt="Cat" />}
+        content={<LoremIpsum p={4} />}
+        hasContentFirst
+      />
+
+      <MediaObject
+        media={<Avatar gender="male" width="250" height="250" alt="Cat" />}
+        content={<LoremIpsum p={4} />}
+        hasContentFirst
       />
 
       <MediaObject
