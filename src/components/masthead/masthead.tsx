@@ -1,31 +1,19 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, {
+  FC, useEffect, useState, useContext,
+} from 'react';
 
 import Logo from '../logo/logo';
 import Menu from '../menu/menu';
+import { Context } from '../../context/context';
 
 import * as Styles from './masthead.styles';
 import * as Types from './masthead.types';
 
 const Masthead: FC<Types.MastheadProps> = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const { isXS, isSM } = useContext(Context);
   const [mobileMenuIsVisible, setMobileMenuIsVisible] = useState(false);
 
-  useEffect(() => {
-    const mq: MediaQueryList = window.matchMedia('(max-width: 767px)');
-
-    function mqCB(event: MediaQueryListEvent) {
-      setIsMobile(event.matches);
-    }
-
-    mq.addListener(mqCB);
-
-    // call manually once on page load
-    setIsMobile(mq.matches);
-
-    return () => {
-      mq.removeListener(mqCB);
-    };
-  }, []);
+  const isMobile = isXS || isSM;
 
   function toggleMobileMenu() {
     setMobileMenuIsVisible((prevMobileMenuIsVisible) => !prevMobileMenuIsVisible);

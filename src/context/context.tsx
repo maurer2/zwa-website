@@ -16,7 +16,7 @@ export type ContextType = {
 // default
 const Context = createContext<ContextType>({
   language: 'en',
-  setLanguage() {
+  setLanguage: () => {
     //
   },
   isXS: true,
