@@ -1,24 +1,60 @@
-import React, { FC } from 'react';
-import { PageProps, Link, graphql } from 'gatsby';
+/* eslint-disable camelcase */
+import React, { FC, Fragment } from 'react';
+import { graphql } from 'gatsby';
+import { RichText } from 'prismic-reactjs';
 
 const Home: FC = ({ data }) => {
-  console.log(data);
+  const { prismicFaqPage } = data;
+
+  const {
+    description, entries, title, title_group_1,
+  } = prismicFaqPage.data;
 
   return (
-    <h1>Test</h1>
+    <div className="wrapper">
+      <RichText
+        render={title.raw}
+      />
+      <RichText
+        render={description.raw}
+      />
+      <RichText
+        render={title_group_1.raw}
+      />
+      <dl>
+        {entries.map((entry: any) => (
+          <Fragment key={entry.question.text}>
+            <dt>
+              <RichText
+                render={entry.question.raw}
+              />
+            </dt>
+            <dd>
+              <RichText
+                render={entry.answer.raw}
+              />
+            </dd>
+          </Fragment>
+        ))}
+      </dl>
+    </div>
   );
 };
 
 export default Home;
 
 export const pageQuery = graphql`
-  query faqPage {
+  query prismicFaqPage {
     prismicFaqPage {
       data {
         title {
-          html
           raw
-          text
+        }
+        description {
+          raw
+        }
+        title_group_1 {
+          raw
         }
         entries {
           answer {
@@ -31,16 +67,6 @@ export const pageQuery = graphql`
             raw
             text
           }
-        }
-        description {
-          html
-          raw
-          text
-        }
-        title_group_1 {
-          html
-          raw
-          text
         }
       }
     }
