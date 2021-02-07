@@ -242,7 +242,8 @@ module.exports = {
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
         schemas: {
           'index-page': require("./src/schemas/index_page.json"),
-          test: require("./src/schemas/test.json"),
+          'test': require("./src/schemas/test.json"),
+          'faq-page': require("./src/schemas/faq_page.json"),
         }
       },
     },
