@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   // shared across pages
   siteMetadata: {
@@ -230,5 +234,17 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: `zwa-website`,
+        accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        schemas: {
+          'index-page': require("./src/schemas/index_page.json"),
+          test: require("./src/schemas/test.json"),
+        }
+      },
+    },
   ],
 }

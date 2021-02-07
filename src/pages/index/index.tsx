@@ -14,6 +14,8 @@ const Home: FC<PageProps<Types.IndexPageProps>> = ({ data, path, location }) => 
   const [overlayIsVisible, setOverlayIsVisible] = useState(false);
   const pageTitle = 'Home';
 
+  console.log(data);
+
   useEffect(() => {
     function handleScroll() {
       const visibilityPositionY = 300;
@@ -68,5 +70,59 @@ const Home: FC<PageProps<Types.IndexPageProps>> = ({ data, path, location }) => 
     </Layout>
   );
 };
+
+export const pageQuery = graphql`
+  query pageQuery {
+    allPrismicIndexPage {
+      nodes {
+        data {
+          description {
+            html
+            raw
+            text
+          }
+          title {
+            html
+            raw
+            text
+          }
+        }
+      }
+      edges {
+        node {
+          data {
+            description {
+              html
+              raw
+              text
+            }
+            title {
+              html
+              raw
+              text
+            }
+          }
+        }
+      }
+    }
+    allPrismicTest {
+      nodes {
+        data {
+          image {
+            alt
+            copyright
+            url
+            thumbnails
+          }
+          text {
+            html
+            raw
+            text
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default Home;
