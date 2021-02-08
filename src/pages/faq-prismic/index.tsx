@@ -1,47 +1,59 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable camelcase */
 import React, { FC, Fragment } from 'react';
 import { graphql } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
 
-const FaqPrismic: FC = ({ data }) => {
+import * as Types from './faq-prismic.types';
+import * as Styles from './faq-prismic.styles';
+
+const FaqPage = ({ data }: Types.FaqPageProps): JSX.Element => {
   const { prismicFaqPage } = data;
 
   const {
     description, entries, title, title_group_1,
-  } = prismicFaqPage.data;
+  } = prismicFaqPage!.data!;
 
   return (
     <div className="wrapper">
-      <RichText
-        render={title.raw}
-      />
-      <RichText
-        render={description.raw}
-      />
-      <RichText
-        render={title_group_1.raw}
-      />
-      <dl>
-        {entries.map((entry: any) => (
-          <Fragment key={entry.question.text}>
-            <dt>
-              <RichText
-                render={entry.question.raw}
-              />
-            </dt>
-            <dd>
-              <RichText
-                render={entry.answer.raw}
-              />
-            </dd>
-          </Fragment>
-        ))}
-      </dl>
+      {!!title && (
+        <RichText
+          render={title.raw}
+        />
+      )}
+      {!!description && (
+        <RichText
+          render={description.raw}
+        />
+      )}
+      {!!title_group_1 && (
+        <RichText
+          render={title_group_1.raw}
+        />
+      )}
+      {!!entries && (
+        <dl>
+          {entries.map((entry: any) => (
+            <Fragment key={entry.question.text}>
+              <dt>
+                <RichText
+                  render={entry.question.raw}
+                />
+              </dt>
+              <dd>
+                <RichText
+                  render={entry.answer.raw}
+                />
+              </dd>
+            </Fragment>
+          ))}
+        </dl>
+      )}
     </div>
   );
 };
 
-export default FaqPrismic;
+export default FaqPage;
 
 export const pageQuery = graphql`
   query prismicFaqPage {
