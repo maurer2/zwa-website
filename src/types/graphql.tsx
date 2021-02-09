@@ -4,7 +4,8 @@ export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K]
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-export type RequireFields<T, K extends keyof T> = { [X in Exclude<keyof T, K>]?: T[X] } & { [P in K]-?: NonNullable<T[P]> };
+export type RequireFields<T, K extends keyof T> = { [X in Exclude<keyof T, K>]?: T[X] } &
+  { [P in K]-?: NonNullable<T[P]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -18,16 +19,6 @@ export type Scalars = {
   JSON: any;
   PrismicImageThumbnailsType: any;
 };
-
-
-
-
-
-
-
-
-
-
 
 export type Query = {
   __typename?: 'Query';
@@ -58,7 +49,6 @@ export type Query = {
   sitePlugin?: Maybe<SitePlugin>;
   allSitePlugin: SitePluginConnection;
 };
-
 
 export type QueryFileArgs = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>;
@@ -104,14 +94,12 @@ export type QueryFileArgs = {
   childFaqJson?: Maybe<FaqJsonFilterInput>;
 };
 
-
 export type QueryAllFileArgs = {
   filter?: Maybe<FileFilterInput>;
   sort?: Maybe<FileSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryDirectoryArgs = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>;
@@ -153,14 +141,12 @@ export type QueryDirectoryArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
-
 export type QueryAllDirectoryArgs = {
   filter?: Maybe<DirectoryFilterInput>;
   sort?: Maybe<DirectorySortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QuerySitePageArgs = {
   path?: Maybe<StringQueryOperatorInput>;
@@ -179,14 +165,12 @@ export type QuerySitePageArgs = {
   componentPath?: Maybe<StringQueryOperatorInput>;
 };
 
-
 export type QueryAllSitePageArgs = {
   filter?: Maybe<SitePageFilterInput>;
   sort?: Maybe<SitePageSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
@@ -201,14 +185,12 @@ export type QuerySiteArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
-
 export type QueryAllSiteArgs = {
   filter?: Maybe<SiteFilterInput>;
   sort?: Maybe<SiteSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryMarkdownRemarkArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -229,14 +211,12 @@ export type QueryMarkdownRemarkArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
-
 export type QueryAllMarkdownRemarkArgs = {
   filter?: Maybe<MarkdownRemarkFilterInput>;
   sort?: Maybe<MarkdownRemarkSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryImageSharpArgs = {
   fixed?: Maybe<ImageSharpFixedFilterInput>;
@@ -251,14 +231,12 @@ export type QueryImageSharpArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
-
 export type QueryAllImageSharpArgs = {
   filter?: Maybe<ImageSharpFilterInput>;
   sort?: Maybe<ImageSharpSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryPrismicIndexPageArgs = {
   data?: Maybe<PrismicIndexPageDataTypeFilterInput>;
@@ -281,14 +259,12 @@ export type QueryPrismicIndexPageArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
-
 export type QueryAllPrismicIndexPageArgs = {
   filter?: Maybe<PrismicIndexPageFilterInput>;
   sort?: Maybe<PrismicIndexPageSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryPrismicTestArgs = {
   data?: Maybe<PrismicTestDataTypeFilterInput>;
@@ -310,14 +286,12 @@ export type QueryPrismicTestArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
-
 export type QueryAllPrismicTestArgs = {
   filter?: Maybe<PrismicTestFilterInput>;
   sort?: Maybe<PrismicTestSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryPrismicFaqPageArgs = {
   data?: Maybe<PrismicFaqPageDataTypeFilterInput>;
@@ -339,14 +313,12 @@ export type QueryPrismicFaqPageArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
-
 export type QueryAllPrismicFaqPageArgs = {
   filter?: Maybe<PrismicFaqPageFilterInput>;
   sort?: Maybe<PrismicFaqPageSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryPrismicFaqEntryArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -367,14 +339,12 @@ export type QueryPrismicFaqEntryArgs = {
   _previewable?: Maybe<StringQueryOperatorInput>;
 };
 
-
 export type QueryAllPrismicFaqEntryArgs = {
   filter?: Maybe<PrismicFaqEntryFilterInput>;
   sort?: Maybe<PrismicFaqEntrySortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryFaqJsonArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -384,14 +354,12 @@ export type QueryFaqJsonArgs = {
   section_main?: Maybe<FaqJsonSection_MainFilterInput>;
 };
 
-
 export type QueryAllFaqJsonArgs = {
   filter?: Maybe<FaqJsonFilterInput>;
   sort?: Maybe<FaqJsonSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QuerySiteBuildMetadataArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -401,14 +369,12 @@ export type QuerySiteBuildMetadataArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
 };
 
-
 export type QueryAllSiteBuildMetadataArgs = {
   filter?: Maybe<SiteBuildMetadataFilterInput>;
   sort?: Maybe<SiteBuildMetadataSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QuerySitePluginArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -425,7 +391,6 @@ export type QuerySitePluginArgs = {
   pluginFilepath?: Maybe<StringQueryOperatorInput>;
   packageJson?: Maybe<SitePluginPackageJsonFilterInput>;
 };
-
 
 export type QueryAllSitePluginArgs = {
   filter?: Maybe<SitePluginFilterInput>;
@@ -464,7 +429,6 @@ export type DateQueryOperatorInput = {
   in?: Maybe<Array<Maybe<Scalars['Date']>>>;
   nin?: Maybe<Array<Maybe<Scalars['Date']>>>;
 };
-
 
 export type FloatQueryOperatorInput = {
   eq?: Maybe<Scalars['Float']>;
@@ -628,7 +592,6 @@ export type JsonQueryOperatorInput = {
   glob?: Maybe<Scalars['JSON']>;
 };
 
-
 export type MarkdownHeadingFilterListInput = {
   elemMatch?: Maybe<MarkdownHeadingFilterInput>;
 };
@@ -740,14 +703,12 @@ export type File = Node & {
   childFaqJson?: Maybe<FaqJson>;
 };
 
-
 export type FileModifiedTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type FileAccessTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -756,14 +717,12 @@ export type FileAccessTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
-
 export type FileChangeTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type FileBirthTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -772,7 +731,6 @@ export type FileBirthTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
-
 export type FileAtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
@@ -780,14 +738,12 @@ export type FileAtimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
-
 export type FileMtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type FileCtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -832,7 +788,6 @@ export type ImageSharp = Node & {
   internal: Internal;
 };
 
-
 export type ImageSharpFixedArgs = {
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
@@ -855,7 +810,6 @@ export type ImageSharpFixedArgs = {
   trim?: Maybe<Scalars['Float']>;
 };
 
-
 export type ImageSharpResolutionsArgs = {
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
@@ -877,7 +831,6 @@ export type ImageSharpResolutionsArgs = {
   rotate?: Maybe<Scalars['Int']>;
   trim?: Maybe<Scalars['Float']>;
 };
-
 
 export type ImageSharpFluidArgs = {
   maxWidth?: Maybe<Scalars['Int']>;
@@ -903,7 +856,6 @@ export type ImageSharpFluidArgs = {
   srcSetBreakpoints?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
-
 export type ImageSharpSizesArgs = {
   maxWidth?: Maybe<Scalars['Int']>;
   maxHeight?: Maybe<Scalars['Int']>;
@@ -927,7 +879,6 @@ export type ImageSharpSizesArgs = {
   sizes?: Maybe<Scalars['String']>;
   srcSetBreakpoints?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
-
 
 export type ImageSharpResizeArgs = {
   width?: Maybe<Scalars['Int']>;
@@ -975,14 +926,14 @@ export enum PotraceTurnPolicy {
   TurnpolicyLeft = 'TURNPOLICY_LEFT',
   TurnpolicyRight = 'TURNPOLICY_RIGHT',
   TurnpolicyMinority = 'TURNPOLICY_MINORITY',
-  TurnpolicyMajority = 'TURNPOLICY_MAJORITY'
+  TurnpolicyMajority = 'TURNPOLICY_MAJORITY',
 }
 
 export enum ImageFormat {
   NoChange = 'NO_CHANGE',
   Jpg = 'JPG',
   Png = 'PNG',
-  Webp = 'WEBP'
+  Webp = 'WEBP',
 }
 
 export enum ImageCropFocus {
@@ -996,7 +947,7 @@ export enum ImageCropFocus {
   West = 'WEST',
   Northwest = 'NORTHWEST',
   Entropy = 'ENTROPY',
-  Attention = 'ATTENTION'
+  Attention = 'ATTENTION',
 }
 
 export enum ImageFit {
@@ -1004,7 +955,7 @@ export enum ImageFit {
   Contain = 'CONTAIN',
   Fill = 'FILL',
   Inside = 'INSIDE',
-  Outside = 'OUTSIDE'
+  Outside = 'OUTSIDE',
 }
 
 export type ImageSharpFixed = {
@@ -1104,24 +1055,20 @@ export type MarkdownRemark = Node & {
   internal: Internal;
 };
 
-
 export type MarkdownRemarkExcerptArgs = {
   pruneLength?: Maybe<Scalars['Int']>;
   truncate?: Maybe<Scalars['Boolean']>;
   format?: Maybe<MarkdownExcerptFormats>;
 };
 
-
 export type MarkdownRemarkExcerptAstArgs = {
   pruneLength?: Maybe<Scalars['Int']>;
   truncate?: Maybe<Scalars['Boolean']>;
 };
 
-
 export type MarkdownRemarkHeadingsArgs = {
   depth?: Maybe<MarkdownHeadingLevels>;
 };
-
 
 export type MarkdownRemarkTableOfContentsArgs = {
   absolute?: Maybe<Scalars['Boolean']>;
@@ -1137,7 +1084,6 @@ export type MarkdownRemarkFrontmatter = {
   description?: Maybe<Scalars['String']>;
 };
 
-
 export type MarkdownRemarkFrontmatterDateArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
@@ -1148,7 +1094,7 @@ export type MarkdownRemarkFrontmatterDateArgs = {
 export enum MarkdownExcerptFormats {
   Plain = 'PLAIN',
   Html = 'HTML',
-  Markdown = 'MARKDOWN'
+  Markdown = 'MARKDOWN',
 }
 
 export type MarkdownRemarkFields = {
@@ -1162,7 +1108,7 @@ export enum MarkdownHeadingLevels {
   H3 = 'h3',
   H4 = 'h4',
   H5 = 'h5',
-  H6 = 'h6'
+  H6 = 'h6',
 }
 
 export type MarkdownHeading = {
@@ -1589,12 +1535,12 @@ export enum FileFieldsEnum {
   ChildFaqJsonSectionMainSectionsTitle = 'childFaqJson___section_main___sections___title',
   ChildFaqJsonSectionMainSectionsActive = 'childFaqJson___section_main___sections___active',
   ChildFaqJsonSectionMainSectionsId = 'childFaqJson___section_main___sections___id',
-  ChildFaqJsonSectionMainSectionsAccordion = 'childFaqJson___section_main___sections___accordion'
+  ChildFaqJsonSectionMainSectionsAccordion = 'childFaqJson___section_main___sections___accordion',
 }
 
 export enum SortOrderEnum {
   Asc = 'ASC',
-  Desc = 'DESC'
+  Desc = 'DESC',
 }
 
 export type FileConnection = {
@@ -1607,11 +1553,9 @@ export type FileConnection = {
   group: Array<FileGroupConnection>;
 };
 
-
 export type FileConnectionDistinctArgs = {
   field: FileFieldsEnum;
 };
-
 
 export type FileConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -1690,14 +1634,12 @@ export type Directory = Node & {
   internal: Internal;
 };
 
-
 export type DirectoryModifiedTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type DirectoryAccessTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -1706,14 +1648,12 @@ export type DirectoryAccessTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
-
 export type DirectoryChangeTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type DirectoryBirthTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -1722,7 +1662,6 @@ export type DirectoryBirthTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
-
 export type DirectoryAtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
@@ -1730,14 +1669,12 @@ export type DirectoryAtimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
-
 export type DirectoryMtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type DirectoryCtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -1910,7 +1847,7 @@ export enum DirectoryFieldsEnum {
   InternalIgnoreType = 'internal___ignoreType',
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
-  InternalType = 'internal___type'
+  InternalType = 'internal___type',
 }
 
 export type DirectoryConnection = {
@@ -1923,11 +1860,9 @@ export type DirectoryConnection = {
   group: Array<DirectoryGroupConnection>;
 };
 
-
 export type DirectoryConnectionDistinctArgs = {
   field: DirectoryFieldsEnum;
 };
-
 
 export type DirectoryConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -2005,7 +1940,18 @@ export type SitePluginPluginOptionsFilterInput = {
   path?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   maxWidth?: Maybe<IntQueryOperatorInput>;
+  pathPrefix?: Maybe<StringQueryOperatorInput>;
   wrapperStyle?: Maybe<StringQueryOperatorInput>;
+  backgroundColor?: Maybe<StringQueryOperatorInput>;
+  linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
+  showCaptions?: Maybe<BooleanQueryOperatorInput>;
+  markdownCaptions?: Maybe<BooleanQueryOperatorInput>;
+  withWebp?: Maybe<BooleanQueryOperatorInput>;
+  tracedSVG?: Maybe<BooleanQueryOperatorInput>;
+  loading?: Maybe<StringQueryOperatorInput>;
+  disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
+  disableBgImage?: Maybe<BooleanQueryOperatorInput>;
+  ignoreFileExtensions?: Maybe<StringQueryOperatorInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;
   background_color?: Maybe<StringQueryOperatorInput>;
@@ -2040,7 +1986,18 @@ export type SitePluginPluginOptionsPluginsFilterInput = {
 
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   maxWidth?: Maybe<IntQueryOperatorInput>;
+  pathPrefix?: Maybe<StringQueryOperatorInput>;
   wrapperStyle?: Maybe<StringQueryOperatorInput>;
+  backgroundColor?: Maybe<StringQueryOperatorInput>;
+  linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
+  showCaptions?: Maybe<BooleanQueryOperatorInput>;
+  markdownCaptions?: Maybe<BooleanQueryOperatorInput>;
+  withWebp?: Maybe<BooleanQueryOperatorInput>;
+  tracedSVG?: Maybe<BooleanQueryOperatorInput>;
+  loading?: Maybe<StringQueryOperatorInput>;
+  disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
+  disableBgImage?: Maybe<BooleanQueryOperatorInput>;
+  ignoreFileExtensions?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsSchemasFilterInput = {
@@ -2179,13 +2136,17 @@ export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFilterInput =
 };
 
 export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsFilterInput = {
-  question?: Maybe<SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionFilterInput>;
+  question?: Maybe<
+    SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionFilterInput
+  >;
   answer?: Maybe<SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswerFilterInput>;
 };
 
 export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionFilterInput = {
   type?: Maybe<StringQueryOperatorInput>;
-  config?: Maybe<SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionConfigFilterInput>;
+  config?: Maybe<
+    SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionConfigFilterInput
+  >;
 };
 
 export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionConfigFilterInput = {
@@ -2195,7 +2156,9 @@ export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestio
 
 export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswerFilterInput = {
   type?: Maybe<StringQueryOperatorInput>;
-  config?: Maybe<SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswerConfigFilterInput>;
+  config?: Maybe<
+    SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswerConfigFilterInput
+  >;
 };
 
 export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswerConfigFilterInput = {
@@ -2323,7 +2286,18 @@ export type SitePluginPluginOptions = {
   path?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   maxWidth?: Maybe<Scalars['Int']>;
+  pathPrefix?: Maybe<Scalars['String']>;
   wrapperStyle?: Maybe<Scalars['String']>;
+  backgroundColor?: Maybe<Scalars['String']>;
+  linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
+  showCaptions?: Maybe<Scalars['Boolean']>;
+  markdownCaptions?: Maybe<Scalars['Boolean']>;
+  withWebp?: Maybe<Scalars['Boolean']>;
+  tracedSVG?: Maybe<Scalars['Boolean']>;
+  loading?: Maybe<Scalars['String']>;
+  disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
+  disableBgImage?: Maybe<Scalars['Boolean']>;
+  ignoreFileExtensions?: Maybe<Array<Maybe<Scalars['String']>>>;
   short_name?: Maybe<Scalars['String']>;
   start_url?: Maybe<Scalars['String']>;
   background_color?: Maybe<Scalars['String']>;
@@ -2356,7 +2330,18 @@ export type SitePluginPluginOptionsPlugins = {
 export type SitePluginPluginOptionsPluginsPluginOptions = {
   __typename?: 'SitePluginPluginOptionsPluginsPluginOptions';
   maxWidth?: Maybe<Scalars['Int']>;
+  pathPrefix?: Maybe<Scalars['String']>;
   wrapperStyle?: Maybe<Scalars['String']>;
+  backgroundColor?: Maybe<Scalars['String']>;
+  linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
+  showCaptions?: Maybe<Scalars['Boolean']>;
+  markdownCaptions?: Maybe<Scalars['Boolean']>;
+  withWebp?: Maybe<Scalars['Boolean']>;
+  tracedSVG?: Maybe<Scalars['Boolean']>;
+  loading?: Maybe<Scalars['String']>;
+  disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
+  disableBgImage?: Maybe<Scalars['Boolean']>;
+  ignoreFileExtensions?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 export type SitePluginPluginOptionsSchemas = {
@@ -2754,7 +2739,18 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
   PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
   PluginCreatorPluginOptionsMaxWidth = 'pluginCreator___pluginOptions___maxWidth',
+  PluginCreatorPluginOptionsPathPrefix = 'pluginCreator___pluginOptions___pathPrefix',
   PluginCreatorPluginOptionsWrapperStyle = 'pluginCreator___pluginOptions___wrapperStyle',
+  PluginCreatorPluginOptionsBackgroundColor = 'pluginCreator___pluginOptions___backgroundColor',
+  PluginCreatorPluginOptionsLinkImagesToOriginal = 'pluginCreator___pluginOptions___linkImagesToOriginal',
+  PluginCreatorPluginOptionsShowCaptions = 'pluginCreator___pluginOptions___showCaptions',
+  PluginCreatorPluginOptionsMarkdownCaptions = 'pluginCreator___pluginOptions___markdownCaptions',
+  PluginCreatorPluginOptionsWithWebp = 'pluginCreator___pluginOptions___withWebp',
+  PluginCreatorPluginOptionsTracedSvg = 'pluginCreator___pluginOptions___tracedSVG',
+  PluginCreatorPluginOptionsLoading = 'pluginCreator___pluginOptions___loading',
+  PluginCreatorPluginOptionsDisableBgImageOnAlpha = 'pluginCreator___pluginOptions___disableBgImageOnAlpha',
+  PluginCreatorPluginOptionsDisableBgImage = 'pluginCreator___pluginOptions___disableBgImage',
+  PluginCreatorPluginOptionsIgnoreFileExtensions = 'pluginCreator___pluginOptions___ignoreFileExtensions',
   PluginCreatorPluginOptionsShortName = 'pluginCreator___pluginOptions___short_name',
   PluginCreatorPluginOptionsStartUrl = 'pluginCreator___pluginOptions___start_url',
   PluginCreatorPluginOptionsBackgroundColor = 'pluginCreator___pluginOptions___background_color',
@@ -2791,7 +2787,7 @@ export enum SitePageFieldsEnum {
   PluginCreatorPackageJsonPeerDependenciesVersion = 'pluginCreator___packageJson___peerDependencies___version',
   PluginCreatorPackageJsonKeywords = 'pluginCreator___packageJson___keywords',
   PluginCreatorId = 'pluginCreatorId',
-  ComponentPath = 'componentPath'
+  ComponentPath = 'componentPath',
 }
 
 export type SitePageConnection = {
@@ -2804,11 +2800,9 @@ export type SitePageConnection = {
   group: Array<SitePageGroupConnection>;
 };
 
-
 export type SitePageConnectionDistinctArgs = {
   field: SitePageFieldsEnum;
 };
-
 
 export type SitePageConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -2925,14 +2919,12 @@ export type Site = Node & {
   internal: Internal;
 };
 
-
 export type SiteBuildTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type SitePortArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3148,7 +3140,7 @@ export enum SiteFieldsEnum {
   InternalIgnoreType = 'internal___ignoreType',
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
-  InternalType = 'internal___type'
+  InternalType = 'internal___type',
 }
 
 export type SiteConnection = {
@@ -3161,11 +3153,9 @@ export type SiteConnection = {
   group: Array<SiteGroupConnection>;
 };
 
-
 export type SiteConnectionDistinctArgs = {
   field: SiteFieldsEnum;
 };
-
 
 export type SiteConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -3300,7 +3290,7 @@ export enum MarkdownRemarkFieldsEnum {
   InternalIgnoreType = 'internal___ignoreType',
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
-  InternalType = 'internal___type'
+  InternalType = 'internal___type',
 }
 
 export type MarkdownRemarkConnection = {
@@ -3313,11 +3303,9 @@ export type MarkdownRemarkConnection = {
   group: Array<MarkdownRemarkGroupConnection>;
 };
 
-
 export type MarkdownRemarkConnectionDistinctArgs = {
   field: MarkdownRemarkFieldsEnum;
 };
-
 
 export type MarkdownRemarkConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -3486,7 +3474,7 @@ export enum ImageSharpFieldsEnum {
   InternalIgnoreType = 'internal___ignoreType',
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
-  InternalType = 'internal___type'
+  InternalType = 'internal___type',
 }
 
 export type ImageSharpConnection = {
@@ -3499,11 +3487,9 @@ export type ImageSharpConnection = {
   group: Array<ImageSharpGroupConnection>;
 };
 
-
 export type ImageSharpConnectionDistinctArgs = {
   field: ImageSharpFieldsEnum;
 };
-
 
 export type ImageSharpConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -3574,7 +3560,7 @@ export enum PrismicLinkTypes {
   /** Internal media content */
   Media = 'Media',
   /** URL */
-  Web = 'Web'
+  Web = 'Web',
 }
 
 export type IdQueryOperatorInput = {
@@ -3584,28 +3570,28 @@ export type IdQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<Scalars['ID']>>>;
 };
 
-export type PrismicIndexPage = PrismicDocument & Node & {
-  __typename?: 'PrismicIndexPage';
-  data?: Maybe<PrismicIndexPageDataType>;
-  dataRaw: Scalars['JSON'];
-  dataString: Scalars['String'];
-  first_publication_date: Scalars['Date'];
-  href: Scalars['String'];
-  url?: Maybe<Scalars['String']>;
-  lang: Scalars['String'];
-  last_publication_date: Scalars['Date'];
-  tags: Array<Scalars['String']>;
-  alternate_languages: Array<PrismicLinkType>;
-  type: Scalars['String'];
-  prismicId: Scalars['ID'];
-  _previewable: Scalars['ID'];
-  uid?: Maybe<Scalars['String']>;
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-};
-
+export type PrismicIndexPage = PrismicDocument &
+  Node & {
+    __typename?: 'PrismicIndexPage';
+    data?: Maybe<PrismicIndexPageDataType>;
+    dataRaw: Scalars['JSON'];
+    dataString: Scalars['String'];
+    first_publication_date: Scalars['Date'];
+    href: Scalars['String'];
+    url?: Maybe<Scalars['String']>;
+    lang: Scalars['String'];
+    last_publication_date: Scalars['Date'];
+    tags: Array<Scalars['String']>;
+    alternate_languages: Array<PrismicLinkType>;
+    type: Scalars['String'];
+    prismicId: Scalars['ID'];
+    _previewable: Scalars['ID'];
+    uid?: Maybe<Scalars['String']>;
+    id: Scalars['ID'];
+    parent?: Maybe<Node>;
+    children: Array<Node>;
+    internal: Internal;
+  };
 
 export type PrismicIndexPageFirst_Publication_DateArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3613,7 +3599,6 @@ export type PrismicIndexPageFirst_Publication_DateArgs = {
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type PrismicIndexPageLast_Publication_DateArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3654,14 +3639,12 @@ export type PrismicDocument = {
   _previewable: Scalars['ID'];
 };
 
-
 export type PrismicDocumentFirst_Publication_DateArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type PrismicDocumentLast_Publication_DateArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3703,27 +3686,27 @@ export type PrismicLinkType = {
 
 export type PrismicAllDocumentTypes = PrismicIndexPage | PrismicTest | PrismicFaqPage;
 
-export type PrismicTest = PrismicDocument & Node & {
-  __typename?: 'PrismicTest';
-  data?: Maybe<PrismicTestDataType>;
-  dataRaw: Scalars['JSON'];
-  dataString: Scalars['String'];
-  first_publication_date: Scalars['Date'];
-  href: Scalars['String'];
-  url?: Maybe<Scalars['String']>;
-  lang: Scalars['String'];
-  last_publication_date: Scalars['Date'];
-  tags: Array<Scalars['String']>;
-  alternate_languages: Array<PrismicLinkType>;
-  type: Scalars['String'];
-  prismicId: Scalars['ID'];
-  _previewable: Scalars['ID'];
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-};
-
+export type PrismicTest = PrismicDocument &
+  Node & {
+    __typename?: 'PrismicTest';
+    data?: Maybe<PrismicTestDataType>;
+    dataRaw: Scalars['JSON'];
+    dataString: Scalars['String'];
+    first_publication_date: Scalars['Date'];
+    href: Scalars['String'];
+    url?: Maybe<Scalars['String']>;
+    lang: Scalars['String'];
+    last_publication_date: Scalars['Date'];
+    tags: Array<Scalars['String']>;
+    alternate_languages: Array<PrismicLinkType>;
+    type: Scalars['String'];
+    prismicId: Scalars['ID'];
+    _previewable: Scalars['ID'];
+    id: Scalars['ID'];
+    parent?: Maybe<Node>;
+    children: Array<Node>;
+    internal: Internal;
+  };
 
 export type PrismicTestFirst_Publication_DateArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3731,7 +3714,6 @@ export type PrismicTestFirst_Publication_DateArgs = {
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type PrismicTestLast_Publication_DateArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3771,12 +3753,10 @@ export type PrismicImageType = PrismicImageInterface & {
   thumbnails?: Maybe<Scalars['PrismicImageThumbnailsType']>;
 };
 
-
 /** An image field with optional constrained thumbnails. */
 export type PrismicImageTypeUrlArgs = {
   imgixParams?: Maybe<ImgixUrlParamsInput>;
 };
-
 
 /** An image field with optional constrained thumbnails. */
 export type PrismicImageTypeFixedArgs = {
@@ -3785,7 +3765,6 @@ export type PrismicImageTypeFixedArgs = {
   imgixParams?: Maybe<ImgixUrlParamsInput>;
   placeholderImgixParams?: Maybe<ImgixUrlParamsInput>;
 };
-
 
 /** An image field with optional constrained thumbnails. */
 export type PrismicImageTypeFluidArgs = {
@@ -4290,28 +4269,27 @@ export type ImgixUrlParamsInput = {
   width?: Maybe<Scalars['Int']>;
 };
 
-
-export type PrismicFaqPage = PrismicDocument & Node & {
-  __typename?: 'PrismicFaqPage';
-  data?: Maybe<PrismicFaqPageDataType>;
-  dataRaw: Scalars['JSON'];
-  dataString: Scalars['String'];
-  first_publication_date: Scalars['Date'];
-  href: Scalars['String'];
-  url?: Maybe<Scalars['String']>;
-  lang: Scalars['String'];
-  last_publication_date: Scalars['Date'];
-  tags: Array<Scalars['String']>;
-  alternate_languages: Array<PrismicLinkType>;
-  type: Scalars['String'];
-  prismicId: Scalars['ID'];
-  _previewable: Scalars['ID'];
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-};
-
+export type PrismicFaqPage = PrismicDocument &
+  Node & {
+    __typename?: 'PrismicFaqPage';
+    data?: Maybe<PrismicFaqPageDataType>;
+    dataRaw: Scalars['JSON'];
+    dataString: Scalars['String'];
+    first_publication_date: Scalars['Date'];
+    href: Scalars['String'];
+    url?: Maybe<Scalars['String']>;
+    lang: Scalars['String'];
+    last_publication_date: Scalars['Date'];
+    tags: Array<Scalars['String']>;
+    alternate_languages: Array<PrismicLinkType>;
+    type: Scalars['String'];
+    prismicId: Scalars['ID'];
+    _previewable: Scalars['ID'];
+    id: Scalars['ID'];
+    parent?: Maybe<Node>;
+    children: Array<Node>;
+    internal: Internal;
+  };
 
 export type PrismicFaqPageFirst_Publication_DateArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -4319,7 +4297,6 @@ export type PrismicFaqPageFirst_Publication_DateArgs = {
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type PrismicFaqPageLast_Publication_DateArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -4491,7 +4468,7 @@ export enum PrismicIndexPageFieldsEnum {
   InternalIgnoreType = 'internal___ignoreType',
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
-  InternalType = 'internal___type'
+  InternalType = 'internal___type',
 }
 
 export type PrismicIndexPageConnection = {
@@ -4504,11 +4481,9 @@ export type PrismicIndexPageConnection = {
   group: Array<PrismicIndexPageGroupConnection>;
 };
 
-
 export type PrismicIndexPageConnectionDistinctArgs = {
   field: PrismicIndexPageFieldsEnum;
 };
-
 
 export type PrismicIndexPageConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -4781,7 +4756,7 @@ export enum PrismicTestFieldsEnum {
   InternalIgnoreType = 'internal___ignoreType',
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
-  InternalType = 'internal___type'
+  InternalType = 'internal___type',
 }
 
 export type PrismicTestConnection = {
@@ -4794,11 +4769,9 @@ export type PrismicTestConnection = {
   group: Array<PrismicTestGroupConnection>;
 };
 
-
 export type PrismicTestConnectionDistinctArgs = {
   field: PrismicTestFieldsEnum;
 };
-
 
 export type PrismicTestConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -4990,7 +4963,7 @@ export enum PrismicFaqPageFieldsEnum {
   InternalIgnoreType = 'internal___ignoreType',
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
-  InternalType = 'internal___type'
+  InternalType = 'internal___type',
 }
 
 export type PrismicFaqPageConnection = {
@@ -5003,11 +4976,9 @@ export type PrismicFaqPageConnection = {
   group: Array<PrismicFaqPageGroupConnection>;
 };
 
-
 export type PrismicFaqPageConnectionDistinctArgs = {
   field: PrismicFaqPageFieldsEnum;
 };
-
 
 export type PrismicFaqPageConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -5118,14 +5089,12 @@ export type PrismicFaqEntry = Node & {
   _previewable?: Maybe<Scalars['String']>;
 };
 
-
 export type PrismicFaqEntryFirst_Publication_DateArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type PrismicFaqEntryLast_Publication_DateArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -5322,7 +5291,7 @@ export enum PrismicFaqEntryFieldsEnum {
   DataRawAnswerType = 'dataRaw___answer___type',
   DataRawAnswerText = 'dataRaw___answer___text',
   Url = 'url',
-  Previewable = '_previewable'
+  Previewable = '_previewable',
 }
 
 export type PrismicFaqEntryConnection = {
@@ -5335,11 +5304,9 @@ export type PrismicFaqEntryConnection = {
   group: Array<PrismicFaqEntryGroupConnection>;
 };
 
-
 export type PrismicFaqEntryConnectionDistinctArgs = {
   field: PrismicFaqEntryFieldsEnum;
 };
-
 
 export type PrismicFaqEntryConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -5469,7 +5436,7 @@ export enum FaqJsonFieldsEnum {
   SectionMainSectionsAccordionTitle = 'section_main___sections___accordion___title',
   SectionMainSectionsAccordionAnchor = 'section_main___sections___accordion___anchor',
   SectionMainSectionsAccordionActive = 'section_main___sections___accordion___active',
-  SectionMainSectionsAccordionTextblock = 'section_main___sections___accordion___textblock'
+  SectionMainSectionsAccordionTextblock = 'section_main___sections___accordion___textblock',
 }
 
 export type FaqJsonConnection = {
@@ -5482,11 +5449,9 @@ export type FaqJsonConnection = {
   group: Array<FaqJsonGroupConnection>;
 };
 
-
 export type FaqJsonConnectionDistinctArgs = {
   field: FaqJsonFieldsEnum;
 };
-
 
 export type FaqJsonConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -5519,7 +5484,6 @@ export type SiteBuildMetadata = Node & {
   internal: Internal;
   buildTime?: Maybe<Scalars['Date']>;
 };
-
 
 export type SiteBuildMetadataBuildTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -5628,7 +5592,7 @@ export enum SiteBuildMetadataFieldsEnum {
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
-  BuildTime = 'buildTime'
+  BuildTime = 'buildTime',
 }
 
 export type SiteBuildMetadataConnection = {
@@ -5641,11 +5605,9 @@ export type SiteBuildMetadataConnection = {
   group: Array<SiteBuildMetadataGroupConnection>;
 };
 
-
 export type SiteBuildMetadataConnectionDistinctArgs = {
   field: SiteBuildMetadataFieldsEnum;
 };
-
 
 export type SiteBuildMetadataConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -5771,13 +5733,35 @@ export enum SitePluginFieldsEnum {
   PluginOptionsPluginsName = 'pluginOptions___plugins___name',
   PluginOptionsPluginsVersion = 'pluginOptions___plugins___version',
   PluginOptionsPluginsPluginOptionsMaxWidth = 'pluginOptions___plugins___pluginOptions___maxWidth',
+  PluginOptionsPluginsPluginOptionsPathPrefix = 'pluginOptions___plugins___pluginOptions___pathPrefix',
   PluginOptionsPluginsPluginOptionsWrapperStyle = 'pluginOptions___plugins___pluginOptions___wrapperStyle',
+  PluginOptionsPluginsPluginOptionsBackgroundColor = 'pluginOptions___plugins___pluginOptions___backgroundColor',
+  PluginOptionsPluginsPluginOptionsLinkImagesToOriginal = 'pluginOptions___plugins___pluginOptions___linkImagesToOriginal',
+  PluginOptionsPluginsPluginOptionsShowCaptions = 'pluginOptions___plugins___pluginOptions___showCaptions',
+  PluginOptionsPluginsPluginOptionsMarkdownCaptions = 'pluginOptions___plugins___pluginOptions___markdownCaptions',
+  PluginOptionsPluginsPluginOptionsWithWebp = 'pluginOptions___plugins___pluginOptions___withWebp',
+  PluginOptionsPluginsPluginOptionsTracedSvg = 'pluginOptions___plugins___pluginOptions___tracedSVG',
+  PluginOptionsPluginsPluginOptionsLoading = 'pluginOptions___plugins___pluginOptions___loading',
+  PluginOptionsPluginsPluginOptionsDisableBgImageOnAlpha = 'pluginOptions___plugins___pluginOptions___disableBgImageOnAlpha',
+  PluginOptionsPluginsPluginOptionsDisableBgImage = 'pluginOptions___plugins___pluginOptions___disableBgImage',
+  PluginOptionsPluginsPluginOptionsIgnoreFileExtensions = 'pluginOptions___plugins___pluginOptions___ignoreFileExtensions',
   PluginOptionsPluginsBrowserApIs = 'pluginOptions___plugins___browserAPIs',
   PluginOptionsPluginsPluginFilepath = 'pluginOptions___plugins___pluginFilepath',
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsName = 'pluginOptions___name',
   PluginOptionsMaxWidth = 'pluginOptions___maxWidth',
+  PluginOptionsPathPrefix = 'pluginOptions___pathPrefix',
   PluginOptionsWrapperStyle = 'pluginOptions___wrapperStyle',
+  PluginOptionsBackgroundColor = 'pluginOptions___backgroundColor',
+  PluginOptionsLinkImagesToOriginal = 'pluginOptions___linkImagesToOriginal',
+  PluginOptionsShowCaptions = 'pluginOptions___showCaptions',
+  PluginOptionsMarkdownCaptions = 'pluginOptions___markdownCaptions',
+  PluginOptionsWithWebp = 'pluginOptions___withWebp',
+  PluginOptionsTracedSvg = 'pluginOptions___tracedSVG',
+  PluginOptionsLoading = 'pluginOptions___loading',
+  PluginOptionsDisableBgImageOnAlpha = 'pluginOptions___disableBgImageOnAlpha',
+  PluginOptionsDisableBgImage = 'pluginOptions___disableBgImage',
+  PluginOptionsIgnoreFileExtensions = 'pluginOptions___ignoreFileExtensions',
   PluginOptionsShortName = 'pluginOptions___short_name',
   PluginOptionsStartUrl = 'pluginOptions___start_url',
   PluginOptionsBackgroundColor = 'pluginOptions___background_color',
@@ -5812,7 +5796,7 @@ export enum SitePluginFieldsEnum {
   PackageJsonPeerDependencies = 'packageJson___peerDependencies',
   PackageJsonPeerDependenciesName = 'packageJson___peerDependencies___name',
   PackageJsonPeerDependenciesVersion = 'packageJson___peerDependencies___version',
-  PackageJsonKeywords = 'packageJson___keywords'
+  PackageJsonKeywords = 'packageJson___keywords',
 }
 
 export type SitePluginConnection = {
@@ -5825,11 +5809,9 @@ export type SitePluginConnection = {
   group: Array<SitePluginGroupConnection>;
 };
 
-
 export type SitePluginConnectionDistinctArgs = {
   field: SitePluginFieldsEnum;
 };
-
 
 export type SitePluginConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -5866,12 +5848,10 @@ export type PrismicImageThumbnailType = PrismicImageInterface & {
   localFile?: Maybe<File>;
 };
 
-
 /** An image thumbnail with constraints. */
 export type PrismicImageThumbnailTypeUrlArgs = {
   imgixParams?: Maybe<ImgixUrlParamsInput>;
 };
-
 
 /** An image thumbnail with constraints. */
 export type PrismicImageThumbnailTypeFixedArgs = {
@@ -5880,7 +5860,6 @@ export type PrismicImageThumbnailTypeFixedArgs = {
   imgixParams?: Maybe<ImgixUrlParamsInput>;
   placeholderImgixParams?: Maybe<ImgixUrlParamsInput>;
 };
-
 
 /** An image thumbnail with constraints. */
 export type PrismicImageThumbnailTypeFluidArgs = {
@@ -5952,499 +5931,571 @@ export type PrismicSliceType = {
   slice_label?: Maybe<Scalars['String']>;
 };
 
-export type GatsbyImageSharpFixedFragment = (
-  { __typename?: 'ImageSharpFixed' }
-  & Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>
-);
+export type GatsbyImageSharpFixedFragment = { __typename?: 'ImageSharpFixed' } & Pick<
+  ImageSharpFixed,
+  'base64' | 'width' | 'height' | 'src' | 'srcSet'
+>;
 
-export type GatsbyImageSharpFixed_TracedSvgFragment = (
-  { __typename?: 'ImageSharpFixed' }
-  & Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>
-);
+export type GatsbyImageSharpFixed_TracedSvgFragment = { __typename?: 'ImageSharpFixed' } & Pick<
+  ImageSharpFixed,
+  'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'
+>;
 
-export type GatsbyImageSharpFixed_WithWebpFragment = (
-  { __typename?: 'ImageSharpFixed' }
-  & Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
-);
+export type GatsbyImageSharpFixed_WithWebpFragment = { __typename?: 'ImageSharpFixed' } & Pick<
+  ImageSharpFixed,
+  'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'
+>;
 
-export type GatsbyImageSharpFixed_WithWebp_TracedSvgFragment = (
-  { __typename?: 'ImageSharpFixed' }
-  & Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
-);
+export type GatsbyImageSharpFixed_WithWebp_TracedSvgFragment = {
+  __typename?: 'ImageSharpFixed';
+} & Pick<
+  ImageSharpFixed,
+  'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'
+>;
 
-export type GatsbyImageSharpFixed_NoBase64Fragment = (
-  { __typename?: 'ImageSharpFixed' }
-  & Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet'>
-);
+export type GatsbyImageSharpFixed_NoBase64Fragment = { __typename?: 'ImageSharpFixed' } & Pick<
+  ImageSharpFixed,
+  'width' | 'height' | 'src' | 'srcSet'
+>;
 
-export type GatsbyImageSharpFixed_WithWebp_NoBase64Fragment = (
-  { __typename?: 'ImageSharpFixed' }
-  & Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
-);
+export type GatsbyImageSharpFixed_WithWebp_NoBase64Fragment = {
+  __typename?: 'ImageSharpFixed';
+} & Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
 
-export type GatsbyImageSharpFluidFragment = (
-  { __typename?: 'ImageSharpFluid' }
-  & Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
-);
+export type GatsbyImageSharpFluidFragment = { __typename?: 'ImageSharpFluid' } & Pick<
+  ImageSharpFluid,
+  'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'
+>;
 
-export type GatsbyImageSharpFluidLimitPresentationSizeFragment = (
-  { __typename?: 'ImageSharpFluid' }
-  & { maxHeight: ImageSharpFluid['presentationHeight'], maxWidth: ImageSharpFluid['presentationWidth'] }
-);
+export type GatsbyImageSharpFluidLimitPresentationSizeFragment = {
+  __typename?: 'ImageSharpFluid';
+} & {
+  maxHeight: ImageSharpFluid['presentationHeight'];
+  maxWidth: ImageSharpFluid['presentationWidth'];
+};
 
-export type GatsbyImageSharpFluid_TracedSvgFragment = (
-  { __typename?: 'ImageSharpFluid' }
-  & Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
-);
+export type GatsbyImageSharpFluid_TracedSvgFragment = { __typename?: 'ImageSharpFluid' } & Pick<
+  ImageSharpFluid,
+  'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'
+>;
 
-export type GatsbyImageSharpFluid_WithWebpFragment = (
-  { __typename?: 'ImageSharpFluid' }
-  & Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
-);
+export type GatsbyImageSharpFluid_WithWebpFragment = { __typename?: 'ImageSharpFluid' } & Pick<
+  ImageSharpFluid,
+  'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
+>;
 
-export type GatsbyImageSharpFluid_WithWebp_TracedSvgFragment = (
-  { __typename?: 'ImageSharpFluid' }
-  & Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
-);
+export type GatsbyImageSharpFluid_WithWebp_TracedSvgFragment = {
+  __typename?: 'ImageSharpFluid';
+} & Pick<
+  ImageSharpFluid,
+  'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
+>;
 
-export type GatsbyImageSharpFluid_NoBase64Fragment = (
-  { __typename?: 'ImageSharpFluid' }
-  & Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
-);
+export type GatsbyImageSharpFluid_NoBase64Fragment = { __typename?: 'ImageSharpFluid' } & Pick<
+  ImageSharpFluid,
+  'aspectRatio' | 'src' | 'srcSet' | 'sizes'
+>;
 
-export type GatsbyImageSharpFluid_WithWebp_NoBase64Fragment = (
-  { __typename?: 'ImageSharpFluid' }
-  & Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
-);
+export type GatsbyImageSharpFluid_WithWebp_NoBase64Fragment = {
+  __typename?: 'ImageSharpFluid';
+} & Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
-export type GatsbyImageSharpResolutionsFragment = (
-  { __typename?: 'ImageSharpResolutions' }
-  & Pick<ImageSharpResolutions, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>
-);
+export type GatsbyImageSharpResolutionsFragment = { __typename?: 'ImageSharpResolutions' } & Pick<
+  ImageSharpResolutions,
+  'base64' | 'width' | 'height' | 'src' | 'srcSet'
+>;
 
-export type GatsbyImageSharpResolutions_TracedSvgFragment = (
-  { __typename?: 'ImageSharpResolutions' }
-  & Pick<ImageSharpResolutions, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>
-);
+export type GatsbyImageSharpResolutions_TracedSvgFragment = {
+  __typename?: 'ImageSharpResolutions';
+} & Pick<ImageSharpResolutions, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
 
-export type GatsbyImageSharpResolutions_WithWebpFragment = (
-  { __typename?: 'ImageSharpResolutions' }
-  & Pick<ImageSharpResolutions, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
-);
+export type GatsbyImageSharpResolutions_WithWebpFragment = {
+  __typename?: 'ImageSharpResolutions';
+} & Pick<
+  ImageSharpResolutions,
+  'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'
+>;
 
-export type GatsbyImageSharpResolutions_WithWebp_TracedSvgFragment = (
-  { __typename?: 'ImageSharpResolutions' }
-  & Pick<ImageSharpResolutions, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
-);
+export type GatsbyImageSharpResolutions_WithWebp_TracedSvgFragment = {
+  __typename?: 'ImageSharpResolutions';
+} & Pick<
+  ImageSharpResolutions,
+  'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'
+>;
 
-export type GatsbyImageSharpResolutions_NoBase64Fragment = (
-  { __typename?: 'ImageSharpResolutions' }
-  & Pick<ImageSharpResolutions, 'width' | 'height' | 'src' | 'srcSet'>
-);
+export type GatsbyImageSharpResolutions_NoBase64Fragment = {
+  __typename?: 'ImageSharpResolutions';
+} & Pick<ImageSharpResolutions, 'width' | 'height' | 'src' | 'srcSet'>;
 
-export type GatsbyImageSharpResolutions_WithWebp_NoBase64Fragment = (
-  { __typename?: 'ImageSharpResolutions' }
-  & Pick<ImageSharpResolutions, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
-);
+export type GatsbyImageSharpResolutions_WithWebp_NoBase64Fragment = {
+  __typename?: 'ImageSharpResolutions';
+} & Pick<ImageSharpResolutions, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
 
-export type GatsbyImageSharpSizesFragment = (
-  { __typename?: 'ImageSharpSizes' }
-  & Pick<ImageSharpSizes, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
-);
+export type GatsbyImageSharpSizesFragment = { __typename?: 'ImageSharpSizes' } & Pick<
+  ImageSharpSizes,
+  'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'
+>;
 
-export type GatsbyImageSharpSizes_TracedSvgFragment = (
-  { __typename?: 'ImageSharpSizes' }
-  & Pick<ImageSharpSizes, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
-);
+export type GatsbyImageSharpSizes_TracedSvgFragment = { __typename?: 'ImageSharpSizes' } & Pick<
+  ImageSharpSizes,
+  'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'
+>;
 
-export type GatsbyImageSharpSizes_WithWebpFragment = (
-  { __typename?: 'ImageSharpSizes' }
-  & Pick<ImageSharpSizes, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
-);
+export type GatsbyImageSharpSizes_WithWebpFragment = { __typename?: 'ImageSharpSizes' } & Pick<
+  ImageSharpSizes,
+  'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
+>;
 
-export type GatsbyImageSharpSizes_WithWebp_TracedSvgFragment = (
-  { __typename?: 'ImageSharpSizes' }
-  & Pick<ImageSharpSizes, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
-);
+export type GatsbyImageSharpSizes_WithWebp_TracedSvgFragment = {
+  __typename?: 'ImageSharpSizes';
+} & Pick<
+  ImageSharpSizes,
+  'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
+>;
 
-export type GatsbyImageSharpSizes_NoBase64Fragment = (
-  { __typename?: 'ImageSharpSizes' }
-  & Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
-);
+export type GatsbyImageSharpSizes_NoBase64Fragment = { __typename?: 'ImageSharpSizes' } & Pick<
+  ImageSharpSizes,
+  'aspectRatio' | 'src' | 'srcSet' | 'sizes'
+>;
 
-export type GatsbyImageSharpSizes_WithWebp_NoBase64Fragment = (
-  { __typename?: 'ImageSharpSizes' }
-  & Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
-);
+export type GatsbyImageSharpSizes_WithWebp_NoBase64Fragment = {
+  __typename?: 'ImageSharpSizes';
+} & Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
-export type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+export type PagesQueryQueryVariables = Exact<{ [key: string]: never }>;
 
+export type PagesQueryQuery = { __typename?: 'Query' } & {
+  allSitePage: { __typename?: 'SitePageConnection' } & {
+    nodes: Array<{ __typename?: 'SitePage' } & Pick<SitePage, 'path'>>;
+  };
+};
 
-export type PagesQueryQuery = (
-  { __typename?: 'Query' }
-  & { allSitePage: (
-    { __typename?: 'SitePageConnection' }
-    & { nodes: Array<(
-      { __typename?: 'SitePage' }
-      & Pick<SitePage, 'path'>
-    )> }
-  ) }
-);
+export type SiteFooterQueryQueryVariables = Exact<{ [key: string]: never }>;
 
-export type SiteFooterQueryQueryVariables = Exact<{ [key: string]: never; }>;
+export type SiteFooterQueryQuery = { __typename?: 'Query' } & {
+  site?: Maybe<
+    { __typename?: 'Site' } & {
+      siteMetadata?: Maybe<
+        { __typename?: 'SiteSiteMetadata' } & {
+          copyright?: Maybe<
+            { __typename?: 'SiteSiteMetadataCopyright' } & Pick<SiteSiteMetadataCopyright, 'text'>
+          >;
+        }
+      >;
+    }
+  >;
+};
 
+export type LogoQueryQueryVariables = Exact<{ [key: string]: never }>;
 
-export type SiteFooterQueryQuery = (
-  { __typename?: 'Query' }
-  & { site?: Maybe<(
-    { __typename?: 'Site' }
-    & { siteMetadata?: Maybe<(
-      { __typename?: 'SiteSiteMetadata' }
-      & { copyright?: Maybe<(
-        { __typename?: 'SiteSiteMetadataCopyright' }
-        & Pick<SiteSiteMetadataCopyright, 'text'>
-      )> }
-    )> }
-  )> }
-);
+export type LogoQueryQuery = { __typename?: 'Query' } & {
+  site?: Maybe<
+    { __typename?: 'Site' } & {
+      siteMetadata?: Maybe<
+        { __typename?: 'SiteSiteMetadata' } & {
+          mainNavEntries?: Maybe<
+            Array<
+              Maybe<
+                { __typename?: 'SiteSiteMetadataMainNavEntries' } & Pick<
+                  SiteSiteMetadataMainNavEntries,
+                  'link'
+                > & {
+                    names?: Maybe<
+                      { __typename?: 'SiteSiteMetadataMainNavEntriesNames' } & Pick<
+                        SiteSiteMetadataMainNavEntriesNames,
+                        'en' | 'de'
+                      >
+                    >;
+                  }
+              >
+            >
+          >;
+        }
+      >;
+    }
+  >;
+  allFile: { __typename?: 'FileConnection' } & {
+    edges: Array<
+      { __typename?: 'FileEdge' } & {
+        node: { __typename?: 'File' } & Pick<
+          File,
+          'id' | 'relativePath' | 'publicURL' | 'name' | 'root' | 'extension'
+        >;
+      }
+    >;
+  };
+};
 
-export type LogoQueryQueryVariables = Exact<{ [key: string]: never; }>;
+export type GithubQueryQueryVariables = Exact<{ [key: string]: never }>;
 
+export type GithubQueryQuery = { __typename?: 'Query' } & {
+  site?: Maybe<
+    { __typename?: 'Site' } & {
+      siteMetadata?: Maybe<
+        { __typename?: 'SiteSiteMetadata' } & {
+          githubLink?: Maybe<
+            { __typename?: 'SiteSiteMetadataGithubLink' } & Pick<
+              SiteSiteMetadataGithubLink,
+              'link'
+            > & {
+                names?: Maybe<
+                  { __typename?: 'SiteSiteMetadataGithubLinkNames' } & Pick<
+                    SiteSiteMetadataGithubLinkNames,
+                    'de' | 'en'
+                  >
+                >;
+              }
+          >;
+        }
+      >;
+    }
+  >;
+  allFile: { __typename?: 'FileConnection' } & {
+    edges: Array<
+      { __typename?: 'FileEdge' } & {
+        node: { __typename?: 'File' } & Pick<
+          File,
+          'id' | 'relativePath' | 'publicURL' | 'name' | 'root' | 'extension'
+        >;
+      }
+    >;
+  };
+};
 
-export type LogoQueryQuery = (
-  { __typename?: 'Query' }
-  & { site?: Maybe<(
-    { __typename?: 'Site' }
-    & { siteMetadata?: Maybe<(
-      { __typename?: 'SiteSiteMetadata' }
-      & { mainNavEntries?: Maybe<Array<Maybe<(
-        { __typename?: 'SiteSiteMetadataMainNavEntries' }
-        & Pick<SiteSiteMetadataMainNavEntries, 'link'>
-        & { names?: Maybe<(
-          { __typename?: 'SiteSiteMetadataMainNavEntriesNames' }
-          & Pick<SiteSiteMetadataMainNavEntriesNames, 'en' | 'de'>
-        )> }
-      )>>> }
-    )> }
-  )>, allFile: (
-    { __typename?: 'FileConnection' }
-    & { edges: Array<(
-      { __typename?: 'FileEdge' }
-      & { node: (
-        { __typename?: 'File' }
-        & Pick<File, 'id' | 'relativePath' | 'publicURL' | 'name' | 'root' | 'extension'>
-      ) }
-    )> }
-  ) }
-);
+export type SiteFooterNavigationQueryQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GithubQueryQueryVariables = Exact<{ [key: string]: never; }>;
+export type SiteFooterNavigationQueryQuery = { __typename?: 'Query' } & {
+  site?: Maybe<
+    { __typename?: 'Site' } & {
+      siteMetadata?: Maybe<
+        { __typename?: 'SiteSiteMetadata' } & {
+          footerNavEntries?: Maybe<
+            Array<
+              Maybe<
+                { __typename?: 'SiteSiteMetadataFooterNavEntries' } & Pick<
+                  SiteSiteMetadataFooterNavEntries,
+                  'id'
+                > & {
+                    links?: Maybe<
+                      Array<
+                        Maybe<
+                          { __typename?: 'SiteSiteMetadataFooterNavEntriesLinks' } & Pick<
+                            SiteSiteMetadataFooterNavEntriesLinks,
+                            'link'
+                          > & {
+                              names?: Maybe<
+                                {
+                                  __typename?: 'SiteSiteMetadataFooterNavEntriesLinksNames';
+                                } & Pick<SiteSiteMetadataFooterNavEntriesLinksNames, 'de' | 'en'>
+                              >;
+                            }
+                        >
+                      >
+                    >;
+                    titles?: Maybe<
+                      { __typename?: 'SiteSiteMetadataFooterNavEntriesTitles' } & Pick<
+                        SiteSiteMetadataFooterNavEntriesTitles,
+                        'de' | 'en'
+                      >
+                    >;
+                  }
+              >
+            >
+          >;
+        }
+      >;
+    }
+  >;
+  allFile: { __typename?: 'FileConnection' } & {
+    edges: Array<
+      { __typename?: 'FileEdge' } & {
+        node: { __typename?: 'File' } & Pick<
+          File,
+          'id' | 'relativePath' | 'publicURL' | 'name' | 'root' | 'extension'
+        >;
+      }
+    >;
+  };
+};
 
+export type SiteMainNavQueryQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GithubQueryQuery = (
-  { __typename?: 'Query' }
-  & { site?: Maybe<(
-    { __typename?: 'Site' }
-    & { siteMetadata?: Maybe<(
-      { __typename?: 'SiteSiteMetadata' }
-      & { githubLink?: Maybe<(
-        { __typename?: 'SiteSiteMetadataGithubLink' }
-        & Pick<SiteSiteMetadataGithubLink, 'link'>
-        & { names?: Maybe<(
-          { __typename?: 'SiteSiteMetadataGithubLinkNames' }
-          & Pick<SiteSiteMetadataGithubLinkNames, 'de' | 'en'>
-        )> }
-      )> }
-    )> }
-  )>, allFile: (
-    { __typename?: 'FileConnection' }
-    & { edges: Array<(
-      { __typename?: 'FileEdge' }
-      & { node: (
-        { __typename?: 'File' }
-        & Pick<File, 'id' | 'relativePath' | 'publicURL' | 'name' | 'root' | 'extension'>
-      ) }
-    )> }
-  ) }
-);
+export type SiteMainNavQueryQuery = { __typename?: 'Query' } & {
+  site?: Maybe<
+    { __typename?: 'Site' } & {
+      siteMetadata?: Maybe<
+        { __typename?: 'SiteSiteMetadata' } & {
+          mainNavEntries?: Maybe<
+            Array<
+              Maybe<
+                { __typename?: 'SiteSiteMetadataMainNavEntries' } & Pick<
+                  SiteSiteMetadataMainNavEntries,
+                  'link'
+                > & {
+                    names?: Maybe<
+                      { __typename?: 'SiteSiteMetadataMainNavEntriesNames' } & Pick<
+                        SiteSiteMetadataMainNavEntriesNames,
+                        'en' | 'de'
+                      >
+                    >;
+                  }
+              >
+            >
+          >;
+        }
+      >;
+    }
+  >;
+};
 
-export type SiteFooterNavigationQueryQueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never }>;
 
+export type Unnamed_1_Query = { __typename?: 'Query' } & {
+  site?: Maybe<
+    { __typename?: 'Site' } & {
+      siteMetadata?: Maybe<{ __typename?: 'SiteSiteMetadata' } & Pick<SiteSiteMetadata, 'title'>>;
+    }
+  >;
+};
 
-export type SiteFooterNavigationQueryQuery = (
-  { __typename?: 'Query' }
-  & { site?: Maybe<(
-    { __typename?: 'Site' }
-    & { siteMetadata?: Maybe<(
-      { __typename?: 'SiteSiteMetadata' }
-      & { footerNavEntries?: Maybe<Array<Maybe<(
-        { __typename?: 'SiteSiteMetadataFooterNavEntries' }
-        & Pick<SiteSiteMetadataFooterNavEntries, 'id'>
-        & { links?: Maybe<Array<Maybe<(
-          { __typename?: 'SiteSiteMetadataFooterNavEntriesLinks' }
-          & Pick<SiteSiteMetadataFooterNavEntriesLinks, 'link'>
-          & { names?: Maybe<(
-            { __typename?: 'SiteSiteMetadataFooterNavEntriesLinksNames' }
-            & Pick<SiteSiteMetadataFooterNavEntriesLinksNames, 'de' | 'en'>
-          )> }
-        )>>>, titles?: Maybe<(
-          { __typename?: 'SiteSiteMetadataFooterNavEntriesTitles' }
-          & Pick<SiteSiteMetadataFooterNavEntriesTitles, 'de' | 'en'>
-        )> }
-      )>>> }
-    )> }
-  )>, allFile: (
-    { __typename?: 'FileConnection' }
-    & { edges: Array<(
-      { __typename?: 'FileEdge' }
-      & { node: (
-        { __typename?: 'File' }
-        & Pick<File, 'id' | 'relativePath' | 'publicURL' | 'name' | 'root' | 'extension'>
-      ) }
-    )> }
-  ) }
-);
+export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never }>;
 
-export type SiteMainNavQueryQueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_2_Query = { __typename?: 'Query' } & {
+  site?: Maybe<
+    { __typename?: 'Site' } & {
+      siteMetadata?: Maybe<{ __typename?: 'SiteSiteMetadata' } & Pick<SiteSiteMetadata, 'title'>>;
+    }
+  >;
+  allMarkdownRemark: { __typename?: 'MarkdownRemarkConnection' } & {
+    edges: Array<
+      { __typename?: 'MarkdownRemarkEdge' } & {
+        node: { __typename?: 'MarkdownRemark' } & Pick<MarkdownRemark, 'excerpt'> & {
+            fields?: Maybe<
+              { __typename?: 'MarkdownRemarkFields' } & Pick<MarkdownRemarkFields, 'slug'>
+            >;
+            frontmatter?: Maybe<
+              { __typename?: 'MarkdownRemarkFrontmatter' } & Pick<
+                MarkdownRemarkFrontmatter,
+                'date' | 'title' | 'description'
+              >
+            >;
+          };
+      }
+    >;
+  };
+};
 
+export type PrismicFaqPageQueryVariables = Exact<{ [key: string]: never }>;
 
-export type SiteMainNavQueryQuery = (
-  { __typename?: 'Query' }
-  & { site?: Maybe<(
-    { __typename?: 'Site' }
-    & { siteMetadata?: Maybe<(
-      { __typename?: 'SiteSiteMetadata' }
-      & { mainNavEntries?: Maybe<Array<Maybe<(
-        { __typename?: 'SiteSiteMetadataMainNavEntries' }
-        & Pick<SiteSiteMetadataMainNavEntries, 'link'>
-        & { names?: Maybe<(
-          { __typename?: 'SiteSiteMetadataMainNavEntriesNames' }
-          & Pick<SiteSiteMetadataMainNavEntriesNames, 'en' | 'de'>
-        )> }
-      )>>> }
-    )> }
-  )> }
-);
+export type PrismicFaqPageQuery = { __typename?: 'Query' } & {
+  prismicFaqPage?: Maybe<
+    { __typename?: 'PrismicFaqPage' } & {
+      data?: Maybe<
+        { __typename?: 'PrismicFaqPageDataType' } & {
+          title?: Maybe<
+            { __typename?: 'PrismicStructuredTextType' } & Pick<PrismicStructuredTextType, 'raw'>
+          >;
+          description?: Maybe<
+            { __typename?: 'PrismicStructuredTextType' } & Pick<PrismicStructuredTextType, 'raw'>
+          >;
+          title_group_1?: Maybe<
+            { __typename?: 'PrismicStructuredTextType' } & Pick<PrismicStructuredTextType, 'raw'>
+          >;
+          entries?: Maybe<
+            Array<
+              Maybe<
+                { __typename?: 'PrismicFaqPageEntriesGroupType' } & {
+                  answer?: Maybe<
+                    { __typename?: 'PrismicStructuredTextType' } & Pick<
+                      PrismicStructuredTextType,
+                      'html' | 'text' | 'raw'
+                    >
+                  >;
+                  question?: Maybe<
+                    { __typename?: 'PrismicStructuredTextType' } & Pick<
+                      PrismicStructuredTextType,
+                      'html' | 'raw' | 'text'
+                    >
+                  >;
+                }
+              >
+            >
+          >;
+        }
+      >;
+    }
+  >;
+};
 
-export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never }>;
 
+export type Unnamed_3_Query = { __typename?: 'Query' } & {
+  site?: Maybe<
+    { __typename?: 'Site' } & {
+      siteMetadata?: Maybe<{ __typename?: 'SiteSiteMetadata' } & Pick<SiteSiteMetadata, 'title'>>;
+    }
+  >;
+  allMarkdownRemark: { __typename?: 'MarkdownRemarkConnection' } & {
+    edges: Array<
+      { __typename?: 'MarkdownRemarkEdge' } & {
+        node: { __typename?: 'MarkdownRemark' } & Pick<MarkdownRemark, 'excerpt'> & {
+            fields?: Maybe<
+              { __typename?: 'MarkdownRemarkFields' } & Pick<MarkdownRemarkFields, 'slug'>
+            >;
+            frontmatter?: Maybe<
+              { __typename?: 'MarkdownRemarkFrontmatter' } & Pick<
+                MarkdownRemarkFrontmatter,
+                'date' | 'title' | 'description'
+              >
+            >;
+          };
+      }
+    >;
+  };
+  allFile: { __typename?: 'FileConnection' } & {
+    edges: Array<
+      { __typename?: 'FileEdge' } & {
+        node: { __typename?: 'File' } & Pick<File, 'id' | 'name' | 'sourceInstanceName'> & {
+            childFaqJson?: Maybe<
+              { __typename?: 'FaqJson' } & {
+                section_main?: Maybe<
+                  { __typename?: 'FaqJsonSection_main' } & {
+                    sections?: Maybe<
+                      Array<
+                        Maybe<
+                          { __typename?: 'FaqJsonSection_mainSections' } & Pick<
+                            FaqJsonSection_MainSections,
+                            'id' | 'title'
+                          > & {
+                              accordion?: Maybe<
+                                Array<
+                                  Maybe<
+                                    { __typename?: 'FaqJsonSection_mainSectionsAccordion' } & Pick<
+                                      FaqJsonSection_MainSectionsAccordion,
+                                      'title' | 'textblock'
+                                    >
+                                  >
+                                >
+                              >;
+                            }
+                        >
+                      >
+                    >;
+                    headline?: Maybe<
+                      { __typename?: 'FaqJsonSection_mainHeadline' } & Pick<
+                        FaqJsonSection_MainHeadline,
+                        'title'
+                      >
+                    >;
+                  }
+                >;
+              }
+            >;
+          };
+      }
+    >;
+  };
+};
 
-export type Unnamed_1_Query = (
-  { __typename?: 'Query' }
-  & { site?: Maybe<(
-    { __typename?: 'Site' }
-    & { siteMetadata?: Maybe<(
-      { __typename?: 'SiteSiteMetadata' }
-      & Pick<SiteSiteMetadata, 'title'>
-    )> }
-  )> }
-);
+export type PageQueryQueryVariables = Exact<{ [key: string]: never }>;
 
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+export type PageQueryQuery = { __typename?: 'Query' } & {
+  allPrismicIndexPage: { __typename?: 'PrismicIndexPageConnection' } & {
+    nodes: Array<
+      { __typename?: 'PrismicIndexPage' } & {
+        data?: Maybe<
+          { __typename?: 'PrismicIndexPageDataType' } & {
+            description?: Maybe<
+              { __typename?: 'PrismicStructuredTextType' } & Pick<
+                PrismicStructuredTextType,
+                'html' | 'raw' | 'text'
+              >
+            >;
+            title?: Maybe<
+              { __typename?: 'PrismicStructuredTextType' } & Pick<
+                PrismicStructuredTextType,
+                'html' | 'raw' | 'text'
+              >
+            >;
+          }
+        >;
+      }
+    >;
+    edges: Array<
+      { __typename?: 'PrismicIndexPageEdge' } & {
+        node: { __typename?: 'PrismicIndexPage' } & {
+          data?: Maybe<
+            { __typename?: 'PrismicIndexPageDataType' } & {
+              description?: Maybe<
+                { __typename?: 'PrismicStructuredTextType' } & Pick<
+                  PrismicStructuredTextType,
+                  'html' | 'raw' | 'text'
+                >
+              >;
+              title?: Maybe<
+                { __typename?: 'PrismicStructuredTextType' } & Pick<
+                  PrismicStructuredTextType,
+                  'html' | 'raw' | 'text'
+                >
+              >;
+            }
+          >;
+        };
+      }
+    >;
+  };
+  allPrismicTest: { __typename?: 'PrismicTestConnection' } & {
+    nodes: Array<
+      { __typename?: 'PrismicTest' } & {
+        data?: Maybe<
+          { __typename?: 'PrismicTestDataType' } & {
+            image?: Maybe<
+              { __typename?: 'PrismicImageType' } & Pick<
+                PrismicImageType,
+                'alt' | 'copyright' | 'url' | 'thumbnails'
+              >
+            >;
+            text?: Maybe<
+              { __typename?: 'PrismicStructuredTextType' } & Pick<
+                PrismicStructuredTextType,
+                'html' | 'raw' | 'text'
+              >
+            >;
+          }
+        >;
+      }
+    >;
+  };
+};
 
+export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never }>;
 
-export type Unnamed_2_Query = (
-  { __typename?: 'Query' }
-  & { site?: Maybe<(
-    { __typename?: 'Site' }
-    & { siteMetadata?: Maybe<(
-      { __typename?: 'SiteSiteMetadata' }
-      & Pick<SiteSiteMetadata, 'title'>
-    )> }
-  )>, allMarkdownRemark: (
-    { __typename?: 'MarkdownRemarkConnection' }
-    & { edges: Array<(
-      { __typename?: 'MarkdownRemarkEdge' }
-      & { node: (
-        { __typename?: 'MarkdownRemark' }
-        & Pick<MarkdownRemark, 'excerpt'>
-        & { fields?: Maybe<(
-          { __typename?: 'MarkdownRemarkFields' }
-          & Pick<MarkdownRemarkFields, 'slug'>
-        )>, frontmatter?: Maybe<(
-          { __typename?: 'MarkdownRemarkFrontmatter' }
-          & Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'description'>
-        )> }
-      ) }
-    )> }
-  ) }
-);
-
-export type PrismicFaqPageQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type PrismicFaqPageQuery = (
-  { __typename?: 'Query' }
-  & { prismicFaqPage?: Maybe<(
-    { __typename?: 'PrismicFaqPage' }
-    & { data?: Maybe<(
-      { __typename?: 'PrismicFaqPageDataType' }
-      & { title?: Maybe<(
-        { __typename?: 'PrismicStructuredTextType' }
-        & Pick<PrismicStructuredTextType, 'raw'>
-      )>, description?: Maybe<(
-        { __typename?: 'PrismicStructuredTextType' }
-        & Pick<PrismicStructuredTextType, 'raw'>
-      )>, title_group_1?: Maybe<(
-        { __typename?: 'PrismicStructuredTextType' }
-        & Pick<PrismicStructuredTextType, 'raw'>
-      )>, entries?: Maybe<Array<Maybe<(
-        { __typename?: 'PrismicFaqPageEntriesGroupType' }
-        & { answer?: Maybe<(
-          { __typename?: 'PrismicStructuredTextType' }
-          & Pick<PrismicStructuredTextType, 'html' | 'text' | 'raw'>
-        )>, question?: Maybe<(
-          { __typename?: 'PrismicStructuredTextType' }
-          & Pick<PrismicStructuredTextType, 'html' | 'raw' | 'text'>
-        )> }
-      )>>> }
-    )> }
-  )> }
-);
-
-export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_3_Query = (
-  { __typename?: 'Query' }
-  & { site?: Maybe<(
-    { __typename?: 'Site' }
-    & { siteMetadata?: Maybe<(
-      { __typename?: 'SiteSiteMetadata' }
-      & Pick<SiteSiteMetadata, 'title'>
-    )> }
-  )>, allMarkdownRemark: (
-    { __typename?: 'MarkdownRemarkConnection' }
-    & { edges: Array<(
-      { __typename?: 'MarkdownRemarkEdge' }
-      & { node: (
-        { __typename?: 'MarkdownRemark' }
-        & Pick<MarkdownRemark, 'excerpt'>
-        & { fields?: Maybe<(
-          { __typename?: 'MarkdownRemarkFields' }
-          & Pick<MarkdownRemarkFields, 'slug'>
-        )>, frontmatter?: Maybe<(
-          { __typename?: 'MarkdownRemarkFrontmatter' }
-          & Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'description'>
-        )> }
-      ) }
-    )> }
-  ), allFile: (
-    { __typename?: 'FileConnection' }
-    & { edges: Array<(
-      { __typename?: 'FileEdge' }
-      & { node: (
-        { __typename?: 'File' }
-        & Pick<File, 'id' | 'name' | 'sourceInstanceName'>
-        & { childFaqJson?: Maybe<(
-          { __typename?: 'FaqJson' }
-          & { section_main?: Maybe<(
-            { __typename?: 'FaqJsonSection_main' }
-            & { sections?: Maybe<Array<Maybe<(
-              { __typename?: 'FaqJsonSection_mainSections' }
-              & Pick<FaqJsonSection_MainSections, 'id' | 'title'>
-              & { accordion?: Maybe<Array<Maybe<(
-                { __typename?: 'FaqJsonSection_mainSectionsAccordion' }
-                & Pick<FaqJsonSection_MainSectionsAccordion, 'title' | 'textblock'>
-              )>>> }
-            )>>>, headline?: Maybe<(
-              { __typename?: 'FaqJsonSection_mainHeadline' }
-              & Pick<FaqJsonSection_MainHeadline, 'title'>
-            )> }
-          )> }
-        )> }
-      ) }
-    )> }
-  ) }
-);
-
-export type PageQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type PageQueryQuery = (
-  { __typename?: 'Query' }
-  & { allPrismicIndexPage: (
-    { __typename?: 'PrismicIndexPageConnection' }
-    & { nodes: Array<(
-      { __typename?: 'PrismicIndexPage' }
-      & { data?: Maybe<(
-        { __typename?: 'PrismicIndexPageDataType' }
-        & { description?: Maybe<(
-          { __typename?: 'PrismicStructuredTextType' }
-          & Pick<PrismicStructuredTextType, 'html' | 'raw' | 'text'>
-        )>, title?: Maybe<(
-          { __typename?: 'PrismicStructuredTextType' }
-          & Pick<PrismicStructuredTextType, 'html' | 'raw' | 'text'>
-        )> }
-      )> }
-    )>, edges: Array<(
-      { __typename?: 'PrismicIndexPageEdge' }
-      & { node: (
-        { __typename?: 'PrismicIndexPage' }
-        & { data?: Maybe<(
-          { __typename?: 'PrismicIndexPageDataType' }
-          & { description?: Maybe<(
-            { __typename?: 'PrismicStructuredTextType' }
-            & Pick<PrismicStructuredTextType, 'html' | 'raw' | 'text'>
-          )>, title?: Maybe<(
-            { __typename?: 'PrismicStructuredTextType' }
-            & Pick<PrismicStructuredTextType, 'html' | 'raw' | 'text'>
-          )> }
-        )> }
-      ) }
-    )> }
-  ), allPrismicTest: (
-    { __typename?: 'PrismicTestConnection' }
-    & { nodes: Array<(
-      { __typename?: 'PrismicTest' }
-      & { data?: Maybe<(
-        { __typename?: 'PrismicTestDataType' }
-        & { image?: Maybe<(
-          { __typename?: 'PrismicImageType' }
-          & Pick<PrismicImageType, 'alt' | 'copyright' | 'url' | 'thumbnails'>
-        )>, text?: Maybe<(
-          { __typename?: 'PrismicStructuredTextType' }
-          & Pick<PrismicStructuredTextType, 'html' | 'raw' | 'text'>
-        )> }
-      )> }
-    )> }
-  ) }
-);
-
-export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_4_Query = (
-  { __typename?: 'Query' }
-  & { site?: Maybe<(
-    { __typename?: 'Site' }
-    & { siteMetadata?: Maybe<(
-      { __typename?: 'SiteSiteMetadata' }
-      & Pick<SiteSiteMetadata, 'title'>
-    )> }
-  )>, allMarkdownRemark: (
-    { __typename?: 'MarkdownRemarkConnection' }
-    & { edges: Array<(
-      { __typename?: 'MarkdownRemarkEdge' }
-      & { node: (
-        { __typename?: 'MarkdownRemark' }
-        & Pick<MarkdownRemark, 'excerpt'>
-        & { fields?: Maybe<(
-          { __typename?: 'MarkdownRemarkFields' }
-          & Pick<MarkdownRemarkFields, 'slug'>
-        )>, frontmatter?: Maybe<(
-          { __typename?: 'MarkdownRemarkFrontmatter' }
-          & Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'description'>
-        )> }
-      ) }
-    )> }
-  ) }
-);
-
-
+export type Unnamed_4_Query = { __typename?: 'Query' } & {
+  site?: Maybe<
+    { __typename?: 'Site' } & {
+      siteMetadata?: Maybe<{ __typename?: 'SiteSiteMetadata' } & Pick<SiteSiteMetadata, 'title'>>;
+    }
+  >;
+  allMarkdownRemark: { __typename?: 'MarkdownRemarkConnection' } & {
+    edges: Array<
+      { __typename?: 'MarkdownRemarkEdge' } & {
+        node: { __typename?: 'MarkdownRemark' } & Pick<MarkdownRemark, 'excerpt'> & {
+            fields?: Maybe<
+              { __typename?: 'MarkdownRemarkFields' } & Pick<MarkdownRemarkFields, 'slug'>
+            >;
+            frontmatter?: Maybe<
+              { __typename?: 'MarkdownRemarkFrontmatter' } & Pick<
+                MarkdownRemarkFrontmatter,
+                'date' | 'title' | 'description'
+              >
+            >;
+          };
+      }
+    >;
+  };
+};
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;
-
 
 export type LegacyStitchingResolver<TResult, TParent, TContext, TArgs> = {
   fragment: string;
@@ -6455,7 +6506,9 @@ export type NewStitchingResolver<TResult, TParent, TContext, TArgs> = {
   selectionSet: string;
   resolve: ResolverFn<TResult, TParent, TContext, TArgs>;
 };
-export type StitchingResolver<TResult, TParent, TContext, TArgs> = LegacyStitchingResolver<TResult, TParent, TContext, TArgs> | NewStitchingResolver<TResult, TParent, TContext, TArgs>;
+export type StitchingResolver<TResult, TParent, TContext, TArgs> =
+  | LegacyStitchingResolver<TResult, TParent, TContext, TArgs>
+  | NewStitchingResolver<TResult, TParent, TContext, TArgs>;
 export type Resolver<TResult, TParent = {}, TContext = {}, TArgs = {}> =
   | ResolverFn<TResult, TParent, TContext, TArgs>
   | StitchingResolver<TResult, TParent, TContext, TArgs>;
@@ -6481,7 +6534,13 @@ export type SubscriptionResolveFn<TResult, TParent, TContext, TArgs> = (
   info: GraphQLResolveInfo
 ) => TResult | Promise<TResult>;
 
-export interface SubscriptionSubscriberObject<TResult, TKey extends string, TParent, TContext, TArgs> {
+export interface SubscriptionSubscriberObject<
+  TResult,
+  TKey extends string,
+  TParent,
+  TContext,
+  TArgs
+> {
   subscribe: SubscriptionSubscribeFn<{ [key in TKey]: TResult }, TParent, TContext, TArgs>;
   resolve?: SubscriptionResolveFn<TResult, { [key in TKey]: TResult }, TContext, TArgs>;
 }
@@ -6495,7 +6554,13 @@ export type SubscriptionObject<TResult, TKey extends string, TParent, TContext, 
   | SubscriptionSubscriberObject<TResult, TKey, TParent, TContext, TArgs>
   | SubscriptionResolverObject<TResult, TParent, TContext, TArgs>;
 
-export type SubscriptionResolver<TResult, TKey extends string, TParent = {}, TContext = {}, TArgs = {}> =
+export type SubscriptionResolver<
+  TResult,
+  TKey extends string,
+  TParent = {},
+  TContext = {},
+  TArgs = {}
+> =
   | ((...args: any[]) => SubscriptionObject<TResult, TKey, TParent, TContext, TArgs>)
   | SubscriptionObject<TResult, TKey, TParent, TContext, TArgs>;
 
@@ -6505,7 +6570,11 @@ export type TypeResolveFn<TTypes, TParent = {}, TContext = {}> = (
   info: GraphQLResolveInfo
 ) => Maybe<TTypes> | Promise<Maybe<TTypes>>;
 
-export type IsTypeOfResolverFn<T = {}, TContext = {}> = (obj: T, context: TContext, info: GraphQLResolveInfo) => boolean | Promise<boolean>;
+export type IsTypeOfResolverFn<T = {}, TContext = {}> = (
+  obj: T,
+  context: TContext,
+  info: GraphQLResolveInfo
+) => boolean | Promise<boolean>;
 
 export type NextResolverFn<T> = () => Promise<T>;
 
@@ -6558,7 +6627,20 @@ export type ResolversTypes = {
   FaqJsonSection_mainSectionsAccordionFilterInput: FaqJsonSection_MainSectionsAccordionFilterInput;
   File: ResolverTypeWrapper<File>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
-  Node: ResolversTypes['File'] | ResolversTypes['ImageSharp'] | ResolversTypes['MarkdownRemark'] | ResolversTypes['FaqJson'] | ResolversTypes['Directory'] | ResolversTypes['SitePage'] | ResolversTypes['SitePlugin'] | ResolversTypes['Site'] | ResolversTypes['PrismicIndexPage'] | ResolversTypes['PrismicTest'] | ResolversTypes['PrismicFaqPage'] | ResolversTypes['PrismicFaqEntry'] | ResolversTypes['SiteBuildMetadata'];
+  Node:
+    | ResolversTypes['File']
+    | ResolversTypes['ImageSharp']
+    | ResolversTypes['MarkdownRemark']
+    | ResolversTypes['FaqJson']
+    | ResolversTypes['Directory']
+    | ResolversTypes['SitePage']
+    | ResolversTypes['SitePlugin']
+    | ResolversTypes['Site']
+    | ResolversTypes['PrismicIndexPage']
+    | ResolversTypes['PrismicTest']
+    | ResolversTypes['PrismicFaqPage']
+    | ResolversTypes['PrismicFaqEntry']
+    | ResolversTypes['SiteBuildMetadata'];
   Internal: ResolverTypeWrapper<Internal>;
   ImageSharp: ResolverTypeWrapper<ImageSharp>;
   DuotoneGradient: DuotoneGradient;
@@ -6663,39 +6745,101 @@ export type ResolversTypes = {
   SitePlugin: ResolverTypeWrapper<SitePlugin>;
   SitePluginPluginOptions: ResolverTypeWrapper<SitePluginPluginOptions>;
   SitePluginPluginOptionsPlugins: ResolverTypeWrapper<SitePluginPluginOptionsPlugins>;
-  SitePluginPluginOptionsPluginsPluginOptions: ResolverTypeWrapper<SitePluginPluginOptionsPluginsPluginOptions>;
+  SitePluginPluginOptionsPluginsPluginOptions: ResolverTypeWrapper<
+    SitePluginPluginOptionsPluginsPluginOptions
+  >;
   SitePluginPluginOptionsSchemas: ResolverTypeWrapper<SitePluginPluginOptionsSchemas>;
-  SitePluginPluginOptionsSchemasIndex_page: ResolverTypeWrapper<SitePluginPluginOptionsSchemasIndex_Page>;
-  SitePluginPluginOptionsSchemasIndex_pageMain: ResolverTypeWrapper<SitePluginPluginOptionsSchemasIndex_PageMain>;
-  SitePluginPluginOptionsSchemasIndex_pageMainUid: ResolverTypeWrapper<SitePluginPluginOptionsSchemasIndex_PageMainUid>;
-  SitePluginPluginOptionsSchemasIndex_pageMainUidConfig: ResolverTypeWrapper<SitePluginPluginOptionsSchemasIndex_PageMainUidConfig>;
-  SitePluginPluginOptionsSchemasIndex_pageMainTitle: ResolverTypeWrapper<SitePluginPluginOptionsSchemasIndex_PageMainTitle>;
-  SitePluginPluginOptionsSchemasIndex_pageMainTitleConfig: ResolverTypeWrapper<SitePluginPluginOptionsSchemasIndex_PageMainTitleConfig>;
-  SitePluginPluginOptionsSchemasIndex_pageMainDescription: ResolverTypeWrapper<SitePluginPluginOptionsSchemasIndex_PageMainDescription>;
-  SitePluginPluginOptionsSchemasIndex_pageMainDescriptionConfig: ResolverTypeWrapper<SitePluginPluginOptionsSchemasIndex_PageMainDescriptionConfig>;
+  SitePluginPluginOptionsSchemasIndex_page: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasIndex_Page
+  >;
+  SitePluginPluginOptionsSchemasIndex_pageMain: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasIndex_PageMain
+  >;
+  SitePluginPluginOptionsSchemasIndex_pageMainUid: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasIndex_PageMainUid
+  >;
+  SitePluginPluginOptionsSchemasIndex_pageMainUidConfig: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasIndex_PageMainUidConfig
+  >;
+  SitePluginPluginOptionsSchemasIndex_pageMainTitle: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasIndex_PageMainTitle
+  >;
+  SitePluginPluginOptionsSchemasIndex_pageMainTitleConfig: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasIndex_PageMainTitleConfig
+  >;
+  SitePluginPluginOptionsSchemasIndex_pageMainDescription: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasIndex_PageMainDescription
+  >;
+  SitePluginPluginOptionsSchemasIndex_pageMainDescriptionConfig: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasIndex_PageMainDescriptionConfig
+  >;
   SitePluginPluginOptionsSchemasTest: ResolverTypeWrapper<SitePluginPluginOptionsSchemasTest>;
-  SitePluginPluginOptionsSchemasTestMain: ResolverTypeWrapper<SitePluginPluginOptionsSchemasTestMain>;
-  SitePluginPluginOptionsSchemasTestMainTitle: ResolverTypeWrapper<SitePluginPluginOptionsSchemasTestMainTitle>;
-  SitePluginPluginOptionsSchemasTestMainTitleConfig: ResolverTypeWrapper<SitePluginPluginOptionsSchemasTestMainTitleConfig>;
-  SitePluginPluginOptionsSchemasTestMainText: ResolverTypeWrapper<SitePluginPluginOptionsSchemasTestMainText>;
-  SitePluginPluginOptionsSchemasTestMainTextConfig: ResolverTypeWrapper<SitePluginPluginOptionsSchemasTestMainTextConfig>;
-  SitePluginPluginOptionsSchemasTestMainImage: ResolverTypeWrapper<SitePluginPluginOptionsSchemasTestMainImage>;
-  SitePluginPluginOptionsSchemasTestMainImageConfig: ResolverTypeWrapper<SitePluginPluginOptionsSchemasTestMainImageConfig>;
-  SitePluginPluginOptionsSchemasFaq_page: ResolverTypeWrapper<SitePluginPluginOptionsSchemasFaq_Page>;
-  SitePluginPluginOptionsSchemasFaq_pageMain: ResolverTypeWrapper<SitePluginPluginOptionsSchemasFaq_PageMain>;
-  SitePluginPluginOptionsSchemasFaq_pageMainTitle: ResolverTypeWrapper<SitePluginPluginOptionsSchemasFaq_PageMainTitle>;
-  SitePluginPluginOptionsSchemasFaq_pageMainTitleConfig: ResolverTypeWrapper<SitePluginPluginOptionsSchemasFaq_PageMainTitleConfig>;
-  SitePluginPluginOptionsSchemasFaq_pageMainDescription: ResolverTypeWrapper<SitePluginPluginOptionsSchemasFaq_PageMainDescription>;
-  SitePluginPluginOptionsSchemasFaq_pageMainDescriptionConfig: ResolverTypeWrapper<SitePluginPluginOptionsSchemasFaq_PageMainDescriptionConfig>;
-  SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1: ResolverTypeWrapper<SitePluginPluginOptionsSchemasFaq_PageMainTitle_Group_1>;
-  SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1Config: ResolverTypeWrapper<SitePluginPluginOptionsSchemasFaq_PageMainTitle_Group_1Config>;
-  SitePluginPluginOptionsSchemasFaq_pageMainEntries: ResolverTypeWrapper<SitePluginPluginOptionsSchemasFaq_PageMainEntries>;
-  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfig: ResolverTypeWrapper<SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfig>;
-  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFields: ResolverTypeWrapper<SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFields>;
-  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestion: ResolverTypeWrapper<SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestion>;
-  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestionConfig: ResolverTypeWrapper<SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionConfig>;
-  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswer: ResolverTypeWrapper<SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswer>;
-  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswerConfig: ResolverTypeWrapper<SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswerConfig>;
+  SitePluginPluginOptionsSchemasTestMain: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasTestMain
+  >;
+  SitePluginPluginOptionsSchemasTestMainTitle: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasTestMainTitle
+  >;
+  SitePluginPluginOptionsSchemasTestMainTitleConfig: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasTestMainTitleConfig
+  >;
+  SitePluginPluginOptionsSchemasTestMainText: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasTestMainText
+  >;
+  SitePluginPluginOptionsSchemasTestMainTextConfig: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasTestMainTextConfig
+  >;
+  SitePluginPluginOptionsSchemasTestMainImage: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasTestMainImage
+  >;
+  SitePluginPluginOptionsSchemasTestMainImageConfig: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasTestMainImageConfig
+  >;
+  SitePluginPluginOptionsSchemasFaq_page: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasFaq_Page
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMain: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasFaq_PageMain
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainTitle: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasFaq_PageMainTitle
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainTitleConfig: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasFaq_PageMainTitleConfig
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainDescription: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasFaq_PageMainDescription
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainDescriptionConfig: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasFaq_PageMainDescriptionConfig
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasFaq_PageMainTitle_Group_1
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1Config: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasFaq_PageMainTitle_Group_1Config
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainEntries: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasFaq_PageMainEntries
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfig: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfig
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFields: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFields
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestion: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestion
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestionConfig: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionConfig
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswer: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswer
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswerConfig: ResolverTypeWrapper<
+    SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswerConfig
+  >;
   SitePluginPackageJson: ResolverTypeWrapper<SitePluginPackageJson>;
   SitePluginPackageJsonDependencies: ResolverTypeWrapper<SitePluginPackageJsonDependencies>;
   SitePluginPackageJsonDevDependencies: ResolverTypeWrapper<SitePluginPackageJsonDevDependencies>;
@@ -6729,9 +6873,13 @@ export type ResolversTypes = {
   SiteSiteMetadataMainNavEntries: ResolverTypeWrapper<SiteSiteMetadataMainNavEntries>;
   SiteSiteMetadataMainNavEntriesNames: ResolverTypeWrapper<SiteSiteMetadataMainNavEntriesNames>;
   SiteSiteMetadataFooterNavEntries: ResolverTypeWrapper<SiteSiteMetadataFooterNavEntries>;
-  SiteSiteMetadataFooterNavEntriesTitles: ResolverTypeWrapper<SiteSiteMetadataFooterNavEntriesTitles>;
+  SiteSiteMetadataFooterNavEntriesTitles: ResolverTypeWrapper<
+    SiteSiteMetadataFooterNavEntriesTitles
+  >;
   SiteSiteMetadataFooterNavEntriesLinks: ResolverTypeWrapper<SiteSiteMetadataFooterNavEntriesLinks>;
-  SiteSiteMetadataFooterNavEntriesLinksNames: ResolverTypeWrapper<SiteSiteMetadataFooterNavEntriesLinksNames>;
+  SiteSiteMetadataFooterNavEntriesLinksNames: ResolverTypeWrapper<
+    SiteSiteMetadataFooterNavEntriesLinksNames
+  >;
   SiteSiteMetadataGithubLink: ResolverTypeWrapper<SiteSiteMetadataGithubLink>;
   SiteSiteMetadataGithubLinkNames: ResolverTypeWrapper<SiteSiteMetadataGithubLinkNames>;
   SiteFilterInput: SiteFilterInput;
@@ -6758,14 +6906,26 @@ export type ResolversTypes = {
   PrismicLinkTypes: PrismicLinkTypes;
   IDQueryOperatorInput: IdQueryOperatorInput;
   PrismicIndexPage: ResolverTypeWrapper<PrismicIndexPage>;
-  PrismicDocument: ResolversTypes['PrismicIndexPage'] | ResolversTypes['PrismicTest'] | ResolversTypes['PrismicFaqPage'];
-  PrismicLinkType: ResolverTypeWrapper<Omit<PrismicLinkType, 'document'> & { document?: Maybe<ResolversTypes['PrismicAllDocumentTypes']> }>;
-  PrismicAllDocumentTypes: ResolversTypes['PrismicIndexPage'] | ResolversTypes['PrismicTest'] | ResolversTypes['PrismicFaqPage'];
+  PrismicDocument:
+    | ResolversTypes['PrismicIndexPage']
+    | ResolversTypes['PrismicTest']
+    | ResolversTypes['PrismicFaqPage'];
+  PrismicLinkType: ResolverTypeWrapper<
+    Omit<PrismicLinkType, 'document'> & {
+      document?: Maybe<ResolversTypes['PrismicAllDocumentTypes']>;
+    }
+  >;
+  PrismicAllDocumentTypes:
+    | ResolversTypes['PrismicIndexPage']
+    | ResolversTypes['PrismicTest']
+    | ResolversTypes['PrismicFaqPage'];
   PrismicTest: ResolverTypeWrapper<PrismicTest>;
   PrismicTestDataType: ResolverTypeWrapper<PrismicTestDataType>;
   PrismicStructuredTextType: ResolverTypeWrapper<PrismicStructuredTextType>;
   PrismicImageType: ResolverTypeWrapper<PrismicImageType>;
-  PrismicImageInterface: ResolversTypes['PrismicImageType'] | ResolversTypes['PrismicImageThumbnailType'];
+  PrismicImageInterface:
+    | ResolversTypes['PrismicImageType']
+    | ResolversTypes['PrismicImageThumbnailType'];
   PrismicImageDimensionsType: ResolverTypeWrapper<PrismicImageDimensionsType>;
   PrismicImageFixedType: ResolverTypeWrapper<PrismicImageFixedType>;
   PrismicImageFluidType: ResolverTypeWrapper<PrismicImageFluidType>;
@@ -6895,7 +7055,20 @@ export type ResolversParentTypes = {
   FaqJsonSection_mainSectionsAccordionFilterInput: FaqJsonSection_MainSectionsAccordionFilterInput;
   File: File;
   ID: Scalars['ID'];
-  Node: ResolversParentTypes['File'] | ResolversParentTypes['ImageSharp'] | ResolversParentTypes['MarkdownRemark'] | ResolversParentTypes['FaqJson'] | ResolversParentTypes['Directory'] | ResolversParentTypes['SitePage'] | ResolversParentTypes['SitePlugin'] | ResolversParentTypes['Site'] | ResolversParentTypes['PrismicIndexPage'] | ResolversParentTypes['PrismicTest'] | ResolversParentTypes['PrismicFaqPage'] | ResolversParentTypes['PrismicFaqEntry'] | ResolversParentTypes['SiteBuildMetadata'];
+  Node:
+    | ResolversParentTypes['File']
+    | ResolversParentTypes['ImageSharp']
+    | ResolversParentTypes['MarkdownRemark']
+    | ResolversParentTypes['FaqJson']
+    | ResolversParentTypes['Directory']
+    | ResolversParentTypes['SitePage']
+    | ResolversParentTypes['SitePlugin']
+    | ResolversParentTypes['Site']
+    | ResolversParentTypes['PrismicIndexPage']
+    | ResolversParentTypes['PrismicTest']
+    | ResolversParentTypes['PrismicFaqPage']
+    | ResolversParentTypes['PrismicFaqEntry']
+    | ResolversParentTypes['SiteBuildMetadata'];
   Internal: Internal;
   ImageSharp: ImageSharp;
   DuotoneGradient: DuotoneGradient;
@@ -7081,14 +7254,24 @@ export type ResolversParentTypes = {
   PrismicLinkTypesQueryOperatorInput: PrismicLinkTypesQueryOperatorInput;
   IDQueryOperatorInput: IdQueryOperatorInput;
   PrismicIndexPage: PrismicIndexPage;
-  PrismicDocument: ResolversParentTypes['PrismicIndexPage'] | ResolversParentTypes['PrismicTest'] | ResolversParentTypes['PrismicFaqPage'];
-  PrismicLinkType: Omit<PrismicLinkType, 'document'> & { document?: Maybe<ResolversParentTypes['PrismicAllDocumentTypes']> };
-  PrismicAllDocumentTypes: ResolversParentTypes['PrismicIndexPage'] | ResolversParentTypes['PrismicTest'] | ResolversParentTypes['PrismicFaqPage'];
+  PrismicDocument:
+    | ResolversParentTypes['PrismicIndexPage']
+    | ResolversParentTypes['PrismicTest']
+    | ResolversParentTypes['PrismicFaqPage'];
+  PrismicLinkType: Omit<PrismicLinkType, 'document'> & {
+    document?: Maybe<ResolversParentTypes['PrismicAllDocumentTypes']>;
+  };
+  PrismicAllDocumentTypes:
+    | ResolversParentTypes['PrismicIndexPage']
+    | ResolversParentTypes['PrismicTest']
+    | ResolversParentTypes['PrismicFaqPage'];
   PrismicTest: PrismicTest;
   PrismicTestDataType: PrismicTestDataType;
   PrismicStructuredTextType: PrismicStructuredTextType;
   PrismicImageType: PrismicImageType;
-  PrismicImageInterface: ResolversParentTypes['PrismicImageType'] | ResolversParentTypes['PrismicImageThumbnailType'];
+  PrismicImageInterface:
+    | ResolversParentTypes['PrismicImageType']
+    | ResolversParentTypes['PrismicImageThumbnailType'];
   PrismicImageDimensionsType: PrismicImageDimensionsType;
   PrismicImageFixedType: PrismicImageFixedType;
   PrismicImageFluidType: PrismicImageFluidType;
@@ -7170,81 +7353,269 @@ export type ResolversParentTypes = {
   PrismicSliceType: never;
 };
 
-export type DefaultDirectiveArgs = {   value: Scalars['JSON']; };
+export type DefaultDirectiveArgs = { value: Scalars['JSON'] };
 
-export type DefaultDirectiveResolver<Result, Parent, ContextType = any, Args = DefaultDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
+export type DefaultDirectiveResolver<
+  Result,
+  Parent,
+  ContextType = any,
+  Args = DefaultDirectiveArgs
+> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
-export type DateformatDirectiveArgs = {   formatString?: Maybe<Scalars['String']>;
+export type DateformatDirectiveArgs = {
+  formatString?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>; };
+  difference?: Maybe<Scalars['String']>;
+};
 
-export type DateformatDirectiveResolver<Result, Parent, ContextType = any, Args = DateformatDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
+export type DateformatDirectiveResolver<
+  Result,
+  Parent,
+  ContextType = any,
+  Args = DateformatDirectiveArgs
+> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
-export type LinkDirectiveArgs = {   by?: Scalars['String'];
+export type LinkDirectiveArgs = {
+  by?: Scalars['String'];
   from?: Maybe<Scalars['String']>;
-  on?: Maybe<Scalars['String']>; };
+  on?: Maybe<Scalars['String']>;
+};
 
-export type LinkDirectiveResolver<Result, Parent, ContextType = any, Args = LinkDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
+export type LinkDirectiveResolver<
+  Result,
+  Parent,
+  ContextType = any,
+  Args = LinkDirectiveArgs
+> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
-export type FileByRelativePathDirectiveArgs = {   from?: Maybe<Scalars['String']>; };
+export type FileByRelativePathDirectiveArgs = { from?: Maybe<Scalars['String']> };
 
-export type FileByRelativePathDirectiveResolver<Result, Parent, ContextType = any, Args = FileByRelativePathDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
+export type FileByRelativePathDirectiveResolver<
+  Result,
+  Parent,
+  ContextType = any,
+  Args = FileByRelativePathDirectiveArgs
+> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
-export type ProxyDirectiveArgs = {   from: Scalars['String'];
-  fromNode?: Scalars['Boolean']; };
+export type ProxyDirectiveArgs = { from: Scalars['String']; fromNode?: Scalars['Boolean'] };
 
-export type ProxyDirectiveResolver<Result, Parent, ContextType = any, Args = ProxyDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
+export type ProxyDirectiveResolver<
+  Result,
+  Parent,
+  ContextType = any,
+  Args = ProxyDirectiveArgs
+> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
-export type InferDirectiveArgs = {   noDefaultResolvers?: Maybe<Scalars['Boolean']>; };
+export type InferDirectiveArgs = { noDefaultResolvers?: Maybe<Scalars['Boolean']> };
 
-export type InferDirectiveResolver<Result, Parent, ContextType = any, Args = InferDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
+export type InferDirectiveResolver<
+  Result,
+  Parent,
+  ContextType = any,
+  Args = InferDirectiveArgs
+> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
-export type DontInferDirectiveArgs = {   noDefaultResolvers?: Maybe<Scalars['Boolean']>; };
+export type DontInferDirectiveArgs = { noDefaultResolvers?: Maybe<Scalars['Boolean']> };
 
-export type DontInferDirectiveResolver<Result, Parent, ContextType = any, Args = DontInferDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
+export type DontInferDirectiveResolver<
+  Result,
+  Parent,
+  ContextType = any,
+  Args = DontInferDirectiveArgs
+> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
-export type MimeTypesDirectiveArgs = {   types?: Array<Scalars['String']>; };
+export type MimeTypesDirectiveArgs = { types?: Array<Scalars['String']> };
 
-export type MimeTypesDirectiveResolver<Result, Parent, ContextType = any, Args = MimeTypesDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
+export type MimeTypesDirectiveResolver<
+  Result,
+  Parent,
+  ContextType = any,
+  Args = MimeTypesDirectiveArgs
+> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
-export type ChildOfDirectiveArgs = {   mimeTypes?: Array<Scalars['String']>;
+export type ChildOfDirectiveArgs = {
+  mimeTypes?: Array<Scalars['String']>;
   types?: Array<Scalars['String']>;
-  many?: Scalars['Boolean']; };
+  many?: Scalars['Boolean'];
+};
 
-export type ChildOfDirectiveResolver<Result, Parent, ContextType = any, Args = ChildOfDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
+export type ChildOfDirectiveResolver<
+  Result,
+  Parent,
+  ContextType = any,
+  Args = ChildOfDirectiveArgs
+> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
-export type NodeInterfaceDirectiveArgs = {  };
+export type NodeInterfaceDirectiveArgs = {};
 
-export type NodeInterfaceDirectiveResolver<Result, Parent, ContextType = any, Args = NodeInterfaceDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
+export type NodeInterfaceDirectiveResolver<
+  Result,
+  Parent,
+  ContextType = any,
+  Args = NodeInterfaceDirectiveArgs
+> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
-export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  file?: Resolver<Maybe<ResolversTypes['File']>, ParentType, ContextType, RequireFields<QueryFileArgs, never>>;
-  allFile?: Resolver<ResolversTypes['FileConnection'], ParentType, ContextType, RequireFields<QueryAllFileArgs, never>>;
-  directory?: Resolver<Maybe<ResolversTypes['Directory']>, ParentType, ContextType, RequireFields<QueryDirectoryArgs, never>>;
-  allDirectory?: Resolver<ResolversTypes['DirectoryConnection'], ParentType, ContextType, RequireFields<QueryAllDirectoryArgs, never>>;
-  sitePage?: Resolver<Maybe<ResolversTypes['SitePage']>, ParentType, ContextType, RequireFields<QuerySitePageArgs, never>>;
-  allSitePage?: Resolver<ResolversTypes['SitePageConnection'], ParentType, ContextType, RequireFields<QueryAllSitePageArgs, never>>;
-  site?: Resolver<Maybe<ResolversTypes['Site']>, ParentType, ContextType, RequireFields<QuerySiteArgs, never>>;
-  allSite?: Resolver<ResolversTypes['SiteConnection'], ParentType, ContextType, RequireFields<QueryAllSiteArgs, never>>;
-  markdownRemark?: Resolver<Maybe<ResolversTypes['MarkdownRemark']>, ParentType, ContextType, RequireFields<QueryMarkdownRemarkArgs, never>>;
-  allMarkdownRemark?: Resolver<ResolversTypes['MarkdownRemarkConnection'], ParentType, ContextType, RequireFields<QueryAllMarkdownRemarkArgs, never>>;
-  imageSharp?: Resolver<Maybe<ResolversTypes['ImageSharp']>, ParentType, ContextType, RequireFields<QueryImageSharpArgs, never>>;
-  allImageSharp?: Resolver<ResolversTypes['ImageSharpConnection'], ParentType, ContextType, RequireFields<QueryAllImageSharpArgs, never>>;
-  prismicIndexPage?: Resolver<Maybe<ResolversTypes['PrismicIndexPage']>, ParentType, ContextType, RequireFields<QueryPrismicIndexPageArgs, never>>;
-  allPrismicIndexPage?: Resolver<ResolversTypes['PrismicIndexPageConnection'], ParentType, ContextType, RequireFields<QueryAllPrismicIndexPageArgs, never>>;
-  prismicTest?: Resolver<Maybe<ResolversTypes['PrismicTest']>, ParentType, ContextType, RequireFields<QueryPrismicTestArgs, never>>;
-  allPrismicTest?: Resolver<ResolversTypes['PrismicTestConnection'], ParentType, ContextType, RequireFields<QueryAllPrismicTestArgs, never>>;
-  prismicFaqPage?: Resolver<Maybe<ResolversTypes['PrismicFaqPage']>, ParentType, ContextType, RequireFields<QueryPrismicFaqPageArgs, never>>;
-  allPrismicFaqPage?: Resolver<ResolversTypes['PrismicFaqPageConnection'], ParentType, ContextType, RequireFields<QueryAllPrismicFaqPageArgs, never>>;
-  prismicFaqEntry?: Resolver<Maybe<ResolversTypes['PrismicFaqEntry']>, ParentType, ContextType, RequireFields<QueryPrismicFaqEntryArgs, never>>;
-  allPrismicFaqEntry?: Resolver<ResolversTypes['PrismicFaqEntryConnection'], ParentType, ContextType, RequireFields<QueryAllPrismicFaqEntryArgs, never>>;
-  faqJson?: Resolver<Maybe<ResolversTypes['FaqJson']>, ParentType, ContextType, RequireFields<QueryFaqJsonArgs, never>>;
-  allFaqJson?: Resolver<ResolversTypes['FaqJsonConnection'], ParentType, ContextType, RequireFields<QueryAllFaqJsonArgs, never>>;
-  siteBuildMetadata?: Resolver<Maybe<ResolversTypes['SiteBuildMetadata']>, ParentType, ContextType, RequireFields<QuerySiteBuildMetadataArgs, never>>;
-  allSiteBuildMetadata?: Resolver<ResolversTypes['SiteBuildMetadataConnection'], ParentType, ContextType, RequireFields<QueryAllSiteBuildMetadataArgs, never>>;
-  sitePlugin?: Resolver<Maybe<ResolversTypes['SitePlugin']>, ParentType, ContextType, RequireFields<QuerySitePluginArgs, never>>;
-  allSitePlugin?: Resolver<ResolversTypes['SitePluginConnection'], ParentType, ContextType, RequireFields<QueryAllSitePluginArgs, never>>;
+export type QueryResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
+> = {
+  file?: Resolver<
+    Maybe<ResolversTypes['File']>,
+    ParentType,
+    ContextType,
+    RequireFields<QueryFileArgs, never>
+  >;
+  allFile?: Resolver<
+    ResolversTypes['FileConnection'],
+    ParentType,
+    ContextType,
+    RequireFields<QueryAllFileArgs, never>
+  >;
+  directory?: Resolver<
+    Maybe<ResolversTypes['Directory']>,
+    ParentType,
+    ContextType,
+    RequireFields<QueryDirectoryArgs, never>
+  >;
+  allDirectory?: Resolver<
+    ResolversTypes['DirectoryConnection'],
+    ParentType,
+    ContextType,
+    RequireFields<QueryAllDirectoryArgs, never>
+  >;
+  sitePage?: Resolver<
+    Maybe<ResolversTypes['SitePage']>,
+    ParentType,
+    ContextType,
+    RequireFields<QuerySitePageArgs, never>
+  >;
+  allSitePage?: Resolver<
+    ResolversTypes['SitePageConnection'],
+    ParentType,
+    ContextType,
+    RequireFields<QueryAllSitePageArgs, never>
+  >;
+  site?: Resolver<
+    Maybe<ResolversTypes['Site']>,
+    ParentType,
+    ContextType,
+    RequireFields<QuerySiteArgs, never>
+  >;
+  allSite?: Resolver<
+    ResolversTypes['SiteConnection'],
+    ParentType,
+    ContextType,
+    RequireFields<QueryAllSiteArgs, never>
+  >;
+  markdownRemark?: Resolver<
+    Maybe<ResolversTypes['MarkdownRemark']>,
+    ParentType,
+    ContextType,
+    RequireFields<QueryMarkdownRemarkArgs, never>
+  >;
+  allMarkdownRemark?: Resolver<
+    ResolversTypes['MarkdownRemarkConnection'],
+    ParentType,
+    ContextType,
+    RequireFields<QueryAllMarkdownRemarkArgs, never>
+  >;
+  imageSharp?: Resolver<
+    Maybe<ResolversTypes['ImageSharp']>,
+    ParentType,
+    ContextType,
+    RequireFields<QueryImageSharpArgs, never>
+  >;
+  allImageSharp?: Resolver<
+    ResolversTypes['ImageSharpConnection'],
+    ParentType,
+    ContextType,
+    RequireFields<QueryAllImageSharpArgs, never>
+  >;
+  prismicIndexPage?: Resolver<
+    Maybe<ResolversTypes['PrismicIndexPage']>,
+    ParentType,
+    ContextType,
+    RequireFields<QueryPrismicIndexPageArgs, never>
+  >;
+  allPrismicIndexPage?: Resolver<
+    ResolversTypes['PrismicIndexPageConnection'],
+    ParentType,
+    ContextType,
+    RequireFields<QueryAllPrismicIndexPageArgs, never>
+  >;
+  prismicTest?: Resolver<
+    Maybe<ResolversTypes['PrismicTest']>,
+    ParentType,
+    ContextType,
+    RequireFields<QueryPrismicTestArgs, never>
+  >;
+  allPrismicTest?: Resolver<
+    ResolversTypes['PrismicTestConnection'],
+    ParentType,
+    ContextType,
+    RequireFields<QueryAllPrismicTestArgs, never>
+  >;
+  prismicFaqPage?: Resolver<
+    Maybe<ResolversTypes['PrismicFaqPage']>,
+    ParentType,
+    ContextType,
+    RequireFields<QueryPrismicFaqPageArgs, never>
+  >;
+  allPrismicFaqPage?: Resolver<
+    ResolversTypes['PrismicFaqPageConnection'],
+    ParentType,
+    ContextType,
+    RequireFields<QueryAllPrismicFaqPageArgs, never>
+  >;
+  prismicFaqEntry?: Resolver<
+    Maybe<ResolversTypes['PrismicFaqEntry']>,
+    ParentType,
+    ContextType,
+    RequireFields<QueryPrismicFaqEntryArgs, never>
+  >;
+  allPrismicFaqEntry?: Resolver<
+    ResolversTypes['PrismicFaqEntryConnection'],
+    ParentType,
+    ContextType,
+    RequireFields<QueryAllPrismicFaqEntryArgs, never>
+  >;
+  faqJson?: Resolver<
+    Maybe<ResolversTypes['FaqJson']>,
+    ParentType,
+    ContextType,
+    RequireFields<QueryFaqJsonArgs, never>
+  >;
+  allFaqJson?: Resolver<
+    ResolversTypes['FaqJsonConnection'],
+    ParentType,
+    ContextType,
+    RequireFields<QueryAllFaqJsonArgs, never>
+  >;
+  siteBuildMetadata?: Resolver<
+    Maybe<ResolversTypes['SiteBuildMetadata']>,
+    ParentType,
+    ContextType,
+    RequireFields<QuerySiteBuildMetadataArgs, never>
+  >;
+  allSiteBuildMetadata?: Resolver<
+    ResolversTypes['SiteBuildMetadataConnection'],
+    ParentType,
+    ContextType,
+    RequireFields<QueryAllSiteBuildMetadataArgs, never>
+  >;
+  sitePlugin?: Resolver<
+    Maybe<ResolversTypes['SitePlugin']>,
+    ParentType,
+    ContextType,
+    RequireFields<QuerySitePluginArgs, never>
+  >;
+  allSitePlugin?: Resolver<
+    ResolversTypes['SitePluginConnection'],
+    ParentType,
+    ContextType,
+    RequireFields<QueryAllSitePluginArgs, never>
+  >;
 };
 
 export interface DateScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['Date'], any> {
@@ -7255,17 +7626,40 @@ export interface JsonScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes
   name: 'JSON';
 }
 
-export type FileResolvers<ContextType = any, ParentType extends ResolversParentTypes['File'] = ResolversParentTypes['File']> = {
+export type FileResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['File'] = ResolversParentTypes['File']
+> = {
   sourceInstanceName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   absolutePath?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   relativePath?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   extension?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   size?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   prettySize?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  modifiedTime?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<FileModifiedTimeArgs, never>>;
-  accessTime?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<FileAccessTimeArgs, never>>;
-  changeTime?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<FileChangeTimeArgs, never>>;
-  birthTime?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<FileBirthTimeArgs, never>>;
+  modifiedTime?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<FileModifiedTimeArgs, never>
+  >;
+  accessTime?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<FileAccessTimeArgs, never>
+  >;
+  changeTime?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<FileChangeTimeArgs, never>
+  >;
+  birthTime?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<FileBirthTimeArgs, never>
+  >;
   root?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   dir?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   base?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -7282,9 +7676,24 @@ export type FileResolvers<ContextType = any, ParentType extends ResolversParentT
   atimeMs?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
   mtimeMs?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
   ctimeMs?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  atime?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<FileAtimeArgs, never>>;
-  mtime?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<FileMtimeArgs, never>>;
-  ctime?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<FileCtimeArgs, never>>;
+  atime?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<FileAtimeArgs, never>
+  >;
+  mtime?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<FileMtimeArgs, never>
+  >;
+  ctime?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<FileCtimeArgs, never>
+  >;
   birthtime?: Resolver<Maybe<ResolversTypes['Date']>, ParentType, ContextType>;
   birthtimeMs?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
   blksize?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
@@ -7300,15 +7709,37 @@ export type FileResolvers<ContextType = any, ParentType extends ResolversParentT
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type NodeResolvers<ContextType = any, ParentType extends ResolversParentTypes['Node'] = ResolversParentTypes['Node']> = {
-  __resolveType: TypeResolveFn<'File' | 'ImageSharp' | 'MarkdownRemark' | 'FaqJson' | 'Directory' | 'SitePage' | 'SitePlugin' | 'Site' | 'PrismicIndexPage' | 'PrismicTest' | 'PrismicFaqPage' | 'PrismicFaqEntry' | 'SiteBuildMetadata', ParentType, ContextType>;
+export type NodeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['Node'] = ResolversParentTypes['Node']
+> = {
+  __resolveType: TypeResolveFn<
+    | 'File'
+    | 'ImageSharp'
+    | 'MarkdownRemark'
+    | 'FaqJson'
+    | 'Directory'
+    | 'SitePage'
+    | 'SitePlugin'
+    | 'Site'
+    | 'PrismicIndexPage'
+    | 'PrismicTest'
+    | 'PrismicFaqPage'
+    | 'PrismicFaqEntry'
+    | 'SiteBuildMetadata',
+    ParentType,
+    ContextType
+  >;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   parent?: Resolver<Maybe<ResolversTypes['Node']>, ParentType, ContextType>;
   children?: Resolver<Array<ResolversTypes['Node']>, ParentType, ContextType>;
   internal?: Resolver<ResolversTypes['Internal'], ParentType, ContextType>;
 };
 
-export type InternalResolvers<ContextType = any, ParentType extends ResolversParentTypes['Internal'] = ResolversParentTypes['Internal']> = {
+export type InternalResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['Internal'] = ResolversParentTypes['Internal']
+> = {
   content?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   contentDigest?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -7320,13 +7751,106 @@ export type InternalResolvers<ContextType = any, ParentType extends ResolversPar
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type ImageSharpResolvers<ContextType = any, ParentType extends ResolversParentTypes['ImageSharp'] = ResolversParentTypes['ImageSharp']> = {
-  fixed?: Resolver<Maybe<ResolversTypes['ImageSharpFixed']>, ParentType, ContextType, RequireFields<ImageSharpFixedArgs, 'jpegProgressive' | 'pngCompressionSpeed' | 'grayscale' | 'toFormat' | 'toFormatBase64' | 'cropFocus' | 'fit' | 'background' | 'rotate' | 'trim'>>;
-  resolutions?: Resolver<Maybe<ResolversTypes['ImageSharpResolutions']>, ParentType, ContextType, RequireFields<ImageSharpResolutionsArgs, 'jpegProgressive' | 'pngCompressionSpeed' | 'grayscale' | 'toFormat' | 'toFormatBase64' | 'cropFocus' | 'fit' | 'background' | 'rotate' | 'trim'>>;
-  fluid?: Resolver<Maybe<ResolversTypes['ImageSharpFluid']>, ParentType, ContextType, RequireFields<ImageSharpFluidArgs, 'grayscale' | 'jpegProgressive' | 'pngCompressionSpeed' | 'toFormat' | 'toFormatBase64' | 'cropFocus' | 'fit' | 'background' | 'rotate' | 'trim' | 'sizes' | 'srcSetBreakpoints'>>;
-  sizes?: Resolver<Maybe<ResolversTypes['ImageSharpSizes']>, ParentType, ContextType, RequireFields<ImageSharpSizesArgs, 'grayscale' | 'jpegProgressive' | 'pngCompressionSpeed' | 'toFormat' | 'toFormatBase64' | 'cropFocus' | 'fit' | 'background' | 'rotate' | 'trim' | 'sizes' | 'srcSetBreakpoints'>>;
+export type ImageSharpResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['ImageSharp'] = ResolversParentTypes['ImageSharp']
+> = {
+  fixed?: Resolver<
+    Maybe<ResolversTypes['ImageSharpFixed']>,
+    ParentType,
+    ContextType,
+    RequireFields<
+      ImageSharpFixedArgs,
+      | 'jpegProgressive'
+      | 'pngCompressionSpeed'
+      | 'grayscale'
+      | 'toFormat'
+      | 'toFormatBase64'
+      | 'cropFocus'
+      | 'fit'
+      | 'background'
+      | 'rotate'
+      | 'trim'
+    >
+  >;
+  resolutions?: Resolver<
+    Maybe<ResolversTypes['ImageSharpResolutions']>,
+    ParentType,
+    ContextType,
+    RequireFields<
+      ImageSharpResolutionsArgs,
+      | 'jpegProgressive'
+      | 'pngCompressionSpeed'
+      | 'grayscale'
+      | 'toFormat'
+      | 'toFormatBase64'
+      | 'cropFocus'
+      | 'fit'
+      | 'background'
+      | 'rotate'
+      | 'trim'
+    >
+  >;
+  fluid?: Resolver<
+    Maybe<ResolversTypes['ImageSharpFluid']>,
+    ParentType,
+    ContextType,
+    RequireFields<
+      ImageSharpFluidArgs,
+      | 'grayscale'
+      | 'jpegProgressive'
+      | 'pngCompressionSpeed'
+      | 'toFormat'
+      | 'toFormatBase64'
+      | 'cropFocus'
+      | 'fit'
+      | 'background'
+      | 'rotate'
+      | 'trim'
+      | 'sizes'
+      | 'srcSetBreakpoints'
+    >
+  >;
+  sizes?: Resolver<
+    Maybe<ResolversTypes['ImageSharpSizes']>,
+    ParentType,
+    ContextType,
+    RequireFields<
+      ImageSharpSizesArgs,
+      | 'grayscale'
+      | 'jpegProgressive'
+      | 'pngCompressionSpeed'
+      | 'toFormat'
+      | 'toFormatBase64'
+      | 'cropFocus'
+      | 'fit'
+      | 'background'
+      | 'rotate'
+      | 'trim'
+      | 'sizes'
+      | 'srcSetBreakpoints'
+    >
+  >;
   original?: Resolver<Maybe<ResolversTypes['ImageSharpOriginal']>, ParentType, ContextType>;
-  resize?: Resolver<Maybe<ResolversTypes['ImageSharpResize']>, ParentType, ContextType, RequireFields<ImageSharpResizeArgs, 'jpegProgressive' | 'pngCompressionLevel' | 'pngCompressionSpeed' | 'grayscale' | 'base64' | 'toFormat' | 'cropFocus' | 'fit' | 'background' | 'rotate' | 'trim'>>;
+  resize?: Resolver<
+    Maybe<ResolversTypes['ImageSharpResize']>,
+    ParentType,
+    ContextType,
+    RequireFields<
+      ImageSharpResizeArgs,
+      | 'jpegProgressive'
+      | 'pngCompressionLevel'
+      | 'pngCompressionSpeed'
+      | 'grayscale'
+      | 'base64'
+      | 'toFormat'
+      | 'cropFocus'
+      | 'fit'
+      | 'background'
+      | 'rotate'
+      | 'trim'
+    >
+  >;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   parent?: Resolver<Maybe<ResolversTypes['Node']>, ParentType, ContextType>;
   children?: Resolver<Array<ResolversTypes['Node']>, ParentType, ContextType>;
@@ -7334,7 +7858,10 @@ export type ImageSharpResolvers<ContextType = any, ParentType extends ResolversP
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type ImageSharpFixedResolvers<ContextType = any, ParentType extends ResolversParentTypes['ImageSharpFixed'] = ResolversParentTypes['ImageSharpFixed']> = {
+export type ImageSharpFixedResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['ImageSharpFixed'] = ResolversParentTypes['ImageSharpFixed']
+> = {
   base64?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   tracedSVG?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   aspectRatio?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
@@ -7348,7 +7875,10 @@ export type ImageSharpFixedResolvers<ContextType = any, ParentType extends Resol
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type ImageSharpResolutionsResolvers<ContextType = any, ParentType extends ResolversParentTypes['ImageSharpResolutions'] = ResolversParentTypes['ImageSharpResolutions']> = {
+export type ImageSharpResolutionsResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['ImageSharpResolutions'] = ResolversParentTypes['ImageSharpResolutions']
+> = {
   base64?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   tracedSVG?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   aspectRatio?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
@@ -7362,7 +7892,10 @@ export type ImageSharpResolutionsResolvers<ContextType = any, ParentType extends
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type ImageSharpFluidResolvers<ContextType = any, ParentType extends ResolversParentTypes['ImageSharpFluid'] = ResolversParentTypes['ImageSharpFluid']> = {
+export type ImageSharpFluidResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['ImageSharpFluid'] = ResolversParentTypes['ImageSharpFluid']
+> = {
   base64?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   tracedSVG?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   aspectRatio?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
@@ -7378,7 +7911,10 @@ export type ImageSharpFluidResolvers<ContextType = any, ParentType extends Resol
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type ImageSharpSizesResolvers<ContextType = any, ParentType extends ResolversParentTypes['ImageSharpSizes'] = ResolversParentTypes['ImageSharpSizes']> = {
+export type ImageSharpSizesResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['ImageSharpSizes'] = ResolversParentTypes['ImageSharpSizes']
+> = {
   base64?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   tracedSVG?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   aspectRatio?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
@@ -7394,14 +7930,20 @@ export type ImageSharpSizesResolvers<ContextType = any, ParentType extends Resol
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type ImageSharpOriginalResolvers<ContextType = any, ParentType extends ResolversParentTypes['ImageSharpOriginal'] = ResolversParentTypes['ImageSharpOriginal']> = {
+export type ImageSharpOriginalResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['ImageSharpOriginal'] = ResolversParentTypes['ImageSharpOriginal']
+> = {
   width?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
   height?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
   src?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type ImageSharpResizeResolvers<ContextType = any, ParentType extends ResolversParentTypes['ImageSharpResize'] = ResolversParentTypes['ImageSharpResize']> = {
+export type ImageSharpResizeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['ImageSharpResize'] = ResolversParentTypes['ImageSharpResize']
+> = {
   src?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   tracedSVG?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   width?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
@@ -7411,19 +7953,46 @@ export type ImageSharpResizeResolvers<ContextType = any, ParentType extends Reso
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type MarkdownRemarkResolvers<ContextType = any, ParentType extends ResolversParentTypes['MarkdownRemark'] = ResolversParentTypes['MarkdownRemark']> = {
+export type MarkdownRemarkResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['MarkdownRemark'] = ResolversParentTypes['MarkdownRemark']
+> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  frontmatter?: Resolver<Maybe<ResolversTypes['MarkdownRemarkFrontmatter']>, ParentType, ContextType>;
-  excerpt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<MarkdownRemarkExcerptArgs, 'pruneLength' | 'truncate' | 'format'>>;
+  frontmatter?: Resolver<
+    Maybe<ResolversTypes['MarkdownRemarkFrontmatter']>,
+    ParentType,
+    ContextType
+  >;
+  excerpt?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<MarkdownRemarkExcerptArgs, 'pruneLength' | 'truncate' | 'format'>
+  >;
   rawMarkdownBody?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   fileAbsolutePath?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   fields?: Resolver<Maybe<ResolversTypes['MarkdownRemarkFields']>, ParentType, ContextType>;
   html?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   htmlAst?: Resolver<Maybe<ResolversTypes['JSON']>, ParentType, ContextType>;
-  excerptAst?: Resolver<Maybe<ResolversTypes['JSON']>, ParentType, ContextType, RequireFields<MarkdownRemarkExcerptAstArgs, 'pruneLength' | 'truncate'>>;
-  headings?: Resolver<Maybe<Array<Maybe<ResolversTypes['MarkdownHeading']>>>, ParentType, ContextType, RequireFields<MarkdownRemarkHeadingsArgs, never>>;
+  excerptAst?: Resolver<
+    Maybe<ResolversTypes['JSON']>,
+    ParentType,
+    ContextType,
+    RequireFields<MarkdownRemarkExcerptAstArgs, 'pruneLength' | 'truncate'>
+  >;
+  headings?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['MarkdownHeading']>>>,
+    ParentType,
+    ContextType,
+    RequireFields<MarkdownRemarkHeadingsArgs, never>
+  >;
   timeToRead?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
-  tableOfContents?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<MarkdownRemarkTableOfContentsArgs, 'absolute' | 'pathToSlugField'>>;
+  tableOfContents?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<MarkdownRemarkTableOfContentsArgs, 'absolute' | 'pathToSlugField'>
+  >;
   wordCount?: Resolver<Maybe<ResolversTypes['MarkdownWordCount']>, ParentType, ContextType>;
   parent?: Resolver<Maybe<ResolversTypes['Node']>, ParentType, ContextType>;
   children?: Resolver<Array<ResolversTypes['Node']>, ParentType, ContextType>;
@@ -7431,33 +8000,53 @@ export type MarkdownRemarkResolvers<ContextType = any, ParentType extends Resolv
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type MarkdownRemarkFrontmatterResolvers<ContextType = any, ParentType extends ResolversParentTypes['MarkdownRemarkFrontmatter'] = ResolversParentTypes['MarkdownRemarkFrontmatter']> = {
+export type MarkdownRemarkFrontmatterResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['MarkdownRemarkFrontmatter'] = ResolversParentTypes['MarkdownRemarkFrontmatter']
+> = {
   title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  date?: Resolver<Maybe<ResolversTypes['Date']>, ParentType, ContextType, RequireFields<MarkdownRemarkFrontmatterDateArgs, never>>;
+  date?: Resolver<
+    Maybe<ResolversTypes['Date']>,
+    ParentType,
+    ContextType,
+    RequireFields<MarkdownRemarkFrontmatterDateArgs, never>
+  >;
   description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type MarkdownRemarkFieldsResolvers<ContextType = any, ParentType extends ResolversParentTypes['MarkdownRemarkFields'] = ResolversParentTypes['MarkdownRemarkFields']> = {
+export type MarkdownRemarkFieldsResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['MarkdownRemarkFields'] = ResolversParentTypes['MarkdownRemarkFields']
+> = {
   slug?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type MarkdownHeadingResolvers<ContextType = any, ParentType extends ResolversParentTypes['MarkdownHeading'] = ResolversParentTypes['MarkdownHeading']> = {
+export type MarkdownHeadingResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['MarkdownHeading'] = ResolversParentTypes['MarkdownHeading']
+> = {
   id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   value?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   depth?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type MarkdownWordCountResolvers<ContextType = any, ParentType extends ResolversParentTypes['MarkdownWordCount'] = ResolversParentTypes['MarkdownWordCount']> = {
+export type MarkdownWordCountResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['MarkdownWordCount'] = ResolversParentTypes['MarkdownWordCount']
+> = {
   paragraphs?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   sentences?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   words?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type FaqJsonResolvers<ContextType = any, ParentType extends ResolversParentTypes['FaqJson'] = ResolversParentTypes['FaqJson']> = {
+export type FaqJsonResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['FaqJson'] = ResolversParentTypes['FaqJson']
+> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   parent?: Resolver<Maybe<ResolversTypes['Node']>, ParentType, ContextType>;
   children?: Resolver<Array<ResolversTypes['Node']>, ParentType, ContextType>;
@@ -7466,19 +8055,36 @@ export type FaqJsonResolvers<ContextType = any, ParentType extends ResolversPare
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type FaqJsonSection_MainResolvers<ContextType = any, ParentType extends ResolversParentTypes['FaqJsonSection_main'] = ResolversParentTypes['FaqJsonSection_main']> = {
-  headline?: Resolver<Maybe<ResolversTypes['FaqJsonSection_mainHeadline']>, ParentType, ContextType>;
+export type FaqJsonSection_MainResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['FaqJsonSection_main'] = ResolversParentTypes['FaqJsonSection_main']
+> = {
+  headline?: Resolver<
+    Maybe<ResolversTypes['FaqJsonSection_mainHeadline']>,
+    ParentType,
+    ContextType
+  >;
   texts?: Resolver<Maybe<ResolversTypes['FaqJsonSection_mainTexts']>, ParentType, ContextType>;
-  sections?: Resolver<Maybe<Array<Maybe<ResolversTypes['FaqJsonSection_mainSections']>>>, ParentType, ContextType>;
+  sections?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['FaqJsonSection_mainSections']>>>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type FaqJsonSection_MainHeadlineResolvers<ContextType = any, ParentType extends ResolversParentTypes['FaqJsonSection_mainHeadline'] = ResolversParentTypes['FaqJsonSection_mainHeadline']> = {
+export type FaqJsonSection_MainHeadlineResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['FaqJsonSection_mainHeadline'] = ResolversParentTypes['FaqJsonSection_mainHeadline']
+> = {
   title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type FaqJsonSection_MainTextsResolvers<ContextType = any, ParentType extends ResolversParentTypes['FaqJsonSection_mainTexts'] = ResolversParentTypes['FaqJsonSection_mainTexts']> = {
+export type FaqJsonSection_MainTextsResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['FaqJsonSection_mainTexts'] = ResolversParentTypes['FaqJsonSection_mainTexts']
+> = {
   permalink?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   search?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   questions?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -7486,15 +8092,25 @@ export type FaqJsonSection_MainTextsResolvers<ContextType = any, ParentType exte
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type FaqJsonSection_MainSectionsResolvers<ContextType = any, ParentType extends ResolversParentTypes['FaqJsonSection_mainSections'] = ResolversParentTypes['FaqJsonSection_mainSections']> = {
+export type FaqJsonSection_MainSectionsResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['FaqJsonSection_mainSections'] = ResolversParentTypes['FaqJsonSection_mainSections']
+> = {
   title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   active?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
   id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  accordion?: Resolver<Maybe<Array<Maybe<ResolversTypes['FaqJsonSection_mainSectionsAccordion']>>>, ParentType, ContextType>;
+  accordion?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['FaqJsonSection_mainSectionsAccordion']>>>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type FaqJsonSection_MainSectionsAccordionResolvers<ContextType = any, ParentType extends ResolversParentTypes['FaqJsonSection_mainSectionsAccordion'] = ResolversParentTypes['FaqJsonSection_mainSectionsAccordion']> = {
+export type FaqJsonSection_MainSectionsAccordionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['FaqJsonSection_mainSectionsAccordion'] = ResolversParentTypes['FaqJsonSection_mainSectionsAccordion']
+> = {
   title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   anchor?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   active?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
@@ -7502,24 +8118,43 @@ export type FaqJsonSection_MainSectionsAccordionResolvers<ContextType = any, Par
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type FileConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['FileConnection'] = ResolversParentTypes['FileConnection']> = {
+export type FileConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['FileConnection'] = ResolversParentTypes['FileConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['FileEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['File']>, ParentType, ContextType>;
   pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  distinct?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType, RequireFields<FileConnectionDistinctArgs, 'field'>>;
-  group?: Resolver<Array<ResolversTypes['FileGroupConnection']>, ParentType, ContextType, RequireFields<FileConnectionGroupArgs, 'field'>>;
+  distinct?: Resolver<
+    Array<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<FileConnectionDistinctArgs, 'field'>
+  >;
+  group?: Resolver<
+    Array<ResolversTypes['FileGroupConnection']>,
+    ParentType,
+    ContextType,
+    RequireFields<FileConnectionGroupArgs, 'field'>
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type FileEdgeResolvers<ContextType = any, ParentType extends ResolversParentTypes['FileEdge'] = ResolversParentTypes['FileEdge']> = {
+export type FileEdgeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['FileEdge'] = ResolversParentTypes['FileEdge']
+> = {
   next?: Resolver<Maybe<ResolversTypes['File']>, ParentType, ContextType>;
   node?: Resolver<ResolversTypes['File'], ParentType, ContextType>;
   previous?: Resolver<Maybe<ResolversTypes['File']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PageInfoResolvers<ContextType = any, ParentType extends ResolversParentTypes['PageInfo'] = ResolversParentTypes['PageInfo']> = {
+export type PageInfoResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PageInfo'] = ResolversParentTypes['PageInfo']
+> = {
   currentPage?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   hasPreviousPage?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   hasNextPage?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
@@ -7530,7 +8165,10 @@ export type PageInfoResolvers<ContextType = any, ParentType extends ResolversPar
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type FileGroupConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['FileGroupConnection'] = ResolversParentTypes['FileGroupConnection']> = {
+export type FileGroupConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['FileGroupConnection'] = ResolversParentTypes['FileGroupConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['FileEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['File']>, ParentType, ContextType>;
@@ -7540,17 +8178,40 @@ export type FileGroupConnectionResolvers<ContextType = any, ParentType extends R
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type DirectoryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Directory'] = ResolversParentTypes['Directory']> = {
+export type DirectoryResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['Directory'] = ResolversParentTypes['Directory']
+> = {
   sourceInstanceName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   absolutePath?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   relativePath?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   extension?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   size?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   prettySize?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  modifiedTime?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<DirectoryModifiedTimeArgs, never>>;
-  accessTime?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<DirectoryAccessTimeArgs, never>>;
-  changeTime?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<DirectoryChangeTimeArgs, never>>;
-  birthTime?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<DirectoryBirthTimeArgs, never>>;
+  modifiedTime?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<DirectoryModifiedTimeArgs, never>
+  >;
+  accessTime?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<DirectoryAccessTimeArgs, never>
+  >;
+  changeTime?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<DirectoryChangeTimeArgs, never>
+  >;
+  birthTime?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<DirectoryBirthTimeArgs, never>
+  >;
   root?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   dir?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   base?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -7567,9 +8228,24 @@ export type DirectoryResolvers<ContextType = any, ParentType extends ResolversPa
   atimeMs?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
   mtimeMs?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
   ctimeMs?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
-  atime?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<DirectoryAtimeArgs, never>>;
-  mtime?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<DirectoryMtimeArgs, never>>;
-  ctime?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<DirectoryCtimeArgs, never>>;
+  atime?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<DirectoryAtimeArgs, never>
+  >;
+  mtime?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<DirectoryMtimeArgs, never>
+  >;
+  ctime?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<DirectoryCtimeArgs, never>
+  >;
   birthtime?: Resolver<Maybe<ResolversTypes['Date']>, ParentType, ContextType>;
   birthtimeMs?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
   blksize?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
@@ -7581,24 +8257,43 @@ export type DirectoryResolvers<ContextType = any, ParentType extends ResolversPa
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type DirectoryConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['DirectoryConnection'] = ResolversParentTypes['DirectoryConnection']> = {
+export type DirectoryConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['DirectoryConnection'] = ResolversParentTypes['DirectoryConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['DirectoryEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['Directory']>, ParentType, ContextType>;
   pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  distinct?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType, RequireFields<DirectoryConnectionDistinctArgs, 'field'>>;
-  group?: Resolver<Array<ResolversTypes['DirectoryGroupConnection']>, ParentType, ContextType, RequireFields<DirectoryConnectionGroupArgs, 'field'>>;
+  distinct?: Resolver<
+    Array<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<DirectoryConnectionDistinctArgs, 'field'>
+  >;
+  group?: Resolver<
+    Array<ResolversTypes['DirectoryGroupConnection']>,
+    ParentType,
+    ContextType,
+    RequireFields<DirectoryConnectionGroupArgs, 'field'>
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type DirectoryEdgeResolvers<ContextType = any, ParentType extends ResolversParentTypes['DirectoryEdge'] = ResolversParentTypes['DirectoryEdge']> = {
+export type DirectoryEdgeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['DirectoryEdge'] = ResolversParentTypes['DirectoryEdge']
+> = {
   next?: Resolver<Maybe<ResolversTypes['Directory']>, ParentType, ContextType>;
   node?: Resolver<ResolversTypes['Directory'], ParentType, ContextType>;
   previous?: Resolver<Maybe<ResolversTypes['Directory']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type DirectoryGroupConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['DirectoryGroupConnection'] = ResolversParentTypes['DirectoryGroupConnection']> = {
+export type DirectoryGroupConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['DirectoryGroupConnection'] = ResolversParentTypes['DirectoryGroupConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['DirectoryEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['Directory']>, ParentType, ContextType>;
@@ -7608,7 +8303,10 @@ export type DirectoryGroupConnectionResolvers<ContextType = any, ParentType exte
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePageResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePage'] = ResolversParentTypes['SitePage']> = {
+export type SitePageResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePage'] = ResolversParentTypes['SitePage']
+> = {
   path?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   component?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   internalComponentName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -7618,7 +8316,11 @@ export type SitePageResolvers<ContextType = any, ParentType extends ResolversPar
   parent?: Resolver<Maybe<ResolversTypes['Node']>, ParentType, ContextType>;
   children?: Resolver<Array<ResolversTypes['Node']>, ParentType, ContextType>;
   internal?: Resolver<ResolversTypes['Internal'], ParentType, ContextType>;
-  isCreatedByStatefulCreatePages?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  isCreatedByStatefulCreatePages?: Resolver<
+    Maybe<ResolversTypes['Boolean']>,
+    ParentType,
+    ContextType
+  >;
   context?: Resolver<Maybe<ResolversTypes['SitePageContext']>, ParentType, ContextType>;
   pluginCreator?: Resolver<Maybe<ResolversTypes['SitePlugin']>, ParentType, ContextType>;
   pluginCreatorId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -7626,46 +8328,82 @@ export type SitePageResolvers<ContextType = any, ParentType extends ResolversPar
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePageContextResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePageContext'] = ResolversParentTypes['SitePageContext']> = {
+export type SitePageContextResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePageContext'] = ResolversParentTypes['SitePageContext']
+> = {
   slug?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   previous?: Resolver<Maybe<ResolversTypes['SitePageContextPrevious']>, ParentType, ContextType>;
   next?: Resolver<Maybe<ResolversTypes['SitePageContextNext']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePageContextPreviousResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePageContextPrevious'] = ResolversParentTypes['SitePageContextPrevious']> = {
-  fields?: Resolver<Maybe<ResolversTypes['SitePageContextPreviousFields']>, ParentType, ContextType>;
-  frontmatter?: Resolver<Maybe<ResolversTypes['SitePageContextPreviousFrontmatter']>, ParentType, ContextType>;
+export type SitePageContextPreviousResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePageContextPrevious'] = ResolversParentTypes['SitePageContextPrevious']
+> = {
+  fields?: Resolver<
+    Maybe<ResolversTypes['SitePageContextPreviousFields']>,
+    ParentType,
+    ContextType
+  >;
+  frontmatter?: Resolver<
+    Maybe<ResolversTypes['SitePageContextPreviousFrontmatter']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePageContextPreviousFieldsResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePageContextPreviousFields'] = ResolversParentTypes['SitePageContextPreviousFields']> = {
+export type SitePageContextPreviousFieldsResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePageContextPreviousFields'] = ResolversParentTypes['SitePageContextPreviousFields']
+> = {
   slug?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePageContextPreviousFrontmatterResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePageContextPreviousFrontmatter'] = ResolversParentTypes['SitePageContextPreviousFrontmatter']> = {
+export type SitePageContextPreviousFrontmatterResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePageContextPreviousFrontmatter'] = ResolversParentTypes['SitePageContextPreviousFrontmatter']
+> = {
   title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePageContextNextResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePageContextNext'] = ResolversParentTypes['SitePageContextNext']> = {
+export type SitePageContextNextResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePageContextNext'] = ResolversParentTypes['SitePageContextNext']
+> = {
   fields?: Resolver<Maybe<ResolversTypes['SitePageContextNextFields']>, ParentType, ContextType>;
-  frontmatter?: Resolver<Maybe<ResolversTypes['SitePageContextNextFrontmatter']>, ParentType, ContextType>;
+  frontmatter?: Resolver<
+    Maybe<ResolversTypes['SitePageContextNextFrontmatter']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePageContextNextFieldsResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePageContextNextFields'] = ResolversParentTypes['SitePageContextNextFields']> = {
+export type SitePageContextNextFieldsResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePageContextNextFields'] = ResolversParentTypes['SitePageContextNextFields']
+> = {
   slug?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePageContextNextFrontmatterResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePageContextNextFrontmatter'] = ResolversParentTypes['SitePageContextNextFrontmatter']> = {
+export type SitePageContextNextFrontmatterResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePageContextNextFrontmatter'] = ResolversParentTypes['SitePageContextNextFrontmatter']
+> = {
   title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePlugin'] = ResolversParentTypes['SitePlugin']> = {
+export type SitePluginResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePlugin'] = ResolversParentTypes['SitePlugin']
+> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   parent?: Resolver<Maybe<ResolversTypes['Node']>, ParentType, ContextType>;
   children?: Resolver<Array<ResolversTypes['Node']>, ParentType, ContextType>;
@@ -7673,7 +8411,11 @@ export type SitePluginResolvers<ContextType = any, ParentType extends ResolversP
   resolve?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   version?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  pluginOptions?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptions']>, ParentType, ContextType>;
+  pluginOptions?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptions']>,
+    ParentType,
+    ContextType
+  >;
   nodeAPIs?: Resolver<Maybe<Array<Maybe<ResolversTypes['String']>>>, ParentType, ContextType>;
   browserAPIs?: Resolver<Maybe<Array<Maybe<ResolversTypes['String']>>>, ParentType, ContextType>;
   ssrAPIs?: Resolver<Maybe<Array<Maybe<ResolversTypes['String']>>>, ParentType, ContextType>;
@@ -7682,12 +8424,34 @@ export type SitePluginResolvers<ContextType = any, ParentType extends ResolversP
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptions'] = ResolversParentTypes['SitePluginPluginOptions']> = {
-  plugins?: Resolver<Maybe<Array<Maybe<ResolversTypes['SitePluginPluginOptionsPlugins']>>>, ParentType, ContextType>;
+export type SitePluginPluginOptionsResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptions'] = ResolversParentTypes['SitePluginPluginOptions']
+> = {
+  plugins?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['SitePluginPluginOptionsPlugins']>>>,
+    ParentType,
+    ContextType
+  >;
   path?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   maxWidth?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  pathPrefix?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   wrapperStyle?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  backgroundColor?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  linkImagesToOriginal?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  showCaptions?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  markdownCaptions?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  withWebp?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  tracedSVG?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  loading?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  disableBgImageOnAlpha?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  disableBgImage?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  ignoreFileExtensions?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['String']>>>,
+    ParentType,
+    ContextType
+  >;
   short_name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   start_url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   background_color?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -7702,270 +8466,566 @@ export type SitePluginPluginOptionsResolvers<ContextType = any, ParentType exten
   displayName?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
   repositoryName?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   accessToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  schemas?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemas']>, ParentType, ContextType>;
+  schemas?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemas']>,
+    ParentType,
+    ContextType
+  >;
   pathCheck?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsPluginsResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsPlugins'] = ResolversParentTypes['SitePluginPluginOptionsPlugins']> = {
+export type SitePluginPluginOptionsPluginsResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsPlugins'] = ResolversParentTypes['SitePluginPluginOptionsPlugins']
+> = {
   resolve?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   version?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  pluginOptions?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsPluginsPluginOptions']>, ParentType, ContextType>;
+  pluginOptions?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsPluginsPluginOptions']>,
+    ParentType,
+    ContextType
+  >;
   browserAPIs?: Resolver<Maybe<Array<Maybe<ResolversTypes['String']>>>, ParentType, ContextType>;
   pluginFilepath?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsPluginsPluginOptionsResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsPluginsPluginOptions'] = ResolversParentTypes['SitePluginPluginOptionsPluginsPluginOptions']> = {
+export type SitePluginPluginOptionsPluginsPluginOptionsResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsPluginsPluginOptions'] = ResolversParentTypes['SitePluginPluginOptionsPluginsPluginOptions']
+> = {
   maxWidth?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  pathPrefix?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   wrapperStyle?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  backgroundColor?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  linkImagesToOriginal?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  showCaptions?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  markdownCaptions?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  withWebp?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  tracedSVG?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  loading?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  disableBgImageOnAlpha?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  disableBgImage?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  ignoreFileExtensions?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['String']>>>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemas'] = ResolversParentTypes['SitePluginPluginOptionsSchemas']> = {
-  index_page?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_page']>, ParentType, ContextType>;
-  test?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTest']>, ParentType, ContextType>;
-  faq_page?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_page']>, ParentType, ContextType>;
+export type SitePluginPluginOptionsSchemasResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemas'] = ResolversParentTypes['SitePluginPluginOptionsSchemas']
+> = {
+  index_page?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_page']>,
+    ParentType,
+    ContextType
+  >;
+  test?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTest']>,
+    ParentType,
+    ContextType
+  >;
+  faq_page?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_page']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasIndex_PageResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_page'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_page']> = {
-  Main?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_pageMain']>, ParentType, ContextType>;
+export type SitePluginPluginOptionsSchemasIndex_PageResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_page'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_page']
+> = {
+  Main?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_pageMain']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasIndex_PageMainResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMain'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMain']> = {
-  uid?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_pageMainUid']>, ParentType, ContextType>;
-  title?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_pageMainTitle']>, ParentType, ContextType>;
-  description?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_pageMainDescription']>, ParentType, ContextType>;
+export type SitePluginPluginOptionsSchemasIndex_PageMainResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMain'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMain']
+> = {
+  uid?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_pageMainUid']>,
+    ParentType,
+    ContextType
+  >;
+  title?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_pageMainTitle']>,
+    ParentType,
+    ContextType
+  >;
+  description?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_pageMainDescription']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasIndex_PageMainUidResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainUid'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainUid']> = {
+export type SitePluginPluginOptionsSchemasIndex_PageMainUidResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainUid'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainUid']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  config?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_pageMainUidConfig']>, ParentType, ContextType>;
+  config?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_pageMainUidConfig']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasIndex_PageMainUidConfigResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainUidConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainUidConfig']> = {
+export type SitePluginPluginOptionsSchemasIndex_PageMainUidConfigResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainUidConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainUidConfig']
+> = {
   label?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasIndex_PageMainTitleResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainTitle'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainTitle']> = {
+export type SitePluginPluginOptionsSchemasIndex_PageMainTitleResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainTitle'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainTitle']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  config?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_pageMainTitleConfig']>, ParentType, ContextType>;
+  config?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_pageMainTitleConfig']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasIndex_PageMainTitleConfigResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainTitleConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainTitleConfig']> = {
+export type SitePluginPluginOptionsSchemasIndex_PageMainTitleConfigResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainTitleConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainTitleConfig']
+> = {
   single?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   label?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasIndex_PageMainDescriptionResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainDescription'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainDescription']> = {
+export type SitePluginPluginOptionsSchemasIndex_PageMainDescriptionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainDescription'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainDescription']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  config?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_pageMainDescriptionConfig']>, ParentType, ContextType>;
+  config?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasIndex_pageMainDescriptionConfig']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasIndex_PageMainDescriptionConfigResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainDescriptionConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainDescriptionConfig']> = {
+export type SitePluginPluginOptionsSchemasIndex_PageMainDescriptionConfigResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainDescriptionConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasIndex_pageMainDescriptionConfig']
+> = {
   multi?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   label?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasTestResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTest'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTest']> = {
-  Main?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTestMain']>, ParentType, ContextType>;
+export type SitePluginPluginOptionsSchemasTestResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTest'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTest']
+> = {
+  Main?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTestMain']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasTestMainResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTestMain'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTestMain']> = {
-  title?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTestMainTitle']>, ParentType, ContextType>;
-  text?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTestMainText']>, ParentType, ContextType>;
-  image?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTestMainImage']>, ParentType, ContextType>;
+export type SitePluginPluginOptionsSchemasTestMainResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTestMain'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTestMain']
+> = {
+  title?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTestMainTitle']>,
+    ParentType,
+    ContextType
+  >;
+  text?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTestMainText']>,
+    ParentType,
+    ContextType
+  >;
+  image?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTestMainImage']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasTestMainTitleResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainTitle'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainTitle']> = {
+export type SitePluginPluginOptionsSchemasTestMainTitleResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainTitle'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainTitle']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  config?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTestMainTitleConfig']>, ParentType, ContextType>;
+  config?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTestMainTitleConfig']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasTestMainTitleConfigResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainTitleConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainTitleConfig']> = {
+export type SitePluginPluginOptionsSchemasTestMainTitleConfigResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainTitleConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainTitleConfig']
+> = {
   single?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   label?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasTestMainTextResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainText'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainText']> = {
+export type SitePluginPluginOptionsSchemasTestMainTextResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainText'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainText']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  config?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTestMainTextConfig']>, ParentType, ContextType>;
+  config?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTestMainTextConfig']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasTestMainTextConfigResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainTextConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainTextConfig']> = {
+export type SitePluginPluginOptionsSchemasTestMainTextConfigResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainTextConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainTextConfig']
+> = {
   multi?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   label?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasTestMainImageResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainImage'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainImage']> = {
+export type SitePluginPluginOptionsSchemasTestMainImageResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainImage'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainImage']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  config?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTestMainImageConfig']>, ParentType, ContextType>;
+  config?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasTestMainImageConfig']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasTestMainImageConfigResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainImageConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainImageConfig']> = {
+export type SitePluginPluginOptionsSchemasTestMainImageConfigResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainImageConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasTestMainImageConfig']
+> = {
   label?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasFaq_PageResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_page'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_page']> = {
-  Main?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMain']>, ParentType, ContextType>;
+export type SitePluginPluginOptionsSchemasFaq_PageResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_page'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_page']
+> = {
+  Main?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMain']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasFaq_PageMainResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMain'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMain']> = {
-  title?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle']>, ParentType, ContextType>;
-  description?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainDescription']>, ParentType, ContextType>;
-  title_group_1?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1']>, ParentType, ContextType>;
-  entries?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntries']>, ParentType, ContextType>;
+export type SitePluginPluginOptionsSchemasFaq_PageMainResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMain'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMain']
+> = {
+  title?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle']>,
+    ParentType,
+    ContextType
+  >;
+  description?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainDescription']>,
+    ParentType,
+    ContextType
+  >;
+  title_group_1?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1']>,
+    ParentType,
+    ContextType
+  >;
+  entries?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntries']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasFaq_PageMainTitleResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle']> = {
+export type SitePluginPluginOptionsSchemasFaq_PageMainTitleResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  config?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitleConfig']>, ParentType, ContextType>;
+  config?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitleConfig']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasFaq_PageMainTitleConfigResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitleConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitleConfig']> = {
+export type SitePluginPluginOptionsSchemasFaq_PageMainTitleConfigResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitleConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitleConfig']
+> = {
   single?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   label?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasFaq_PageMainDescriptionResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainDescription'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainDescription']> = {
+export type SitePluginPluginOptionsSchemasFaq_PageMainDescriptionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainDescription'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainDescription']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  config?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainDescriptionConfig']>, ParentType, ContextType>;
+  config?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainDescriptionConfig']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasFaq_PageMainDescriptionConfigResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainDescriptionConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainDescriptionConfig']> = {
+export type SitePluginPluginOptionsSchemasFaq_PageMainDescriptionConfigResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainDescriptionConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainDescriptionConfig']
+> = {
   multi?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   label?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasFaq_PageMainTitle_Group_1Resolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1']> = {
+export type SitePluginPluginOptionsSchemasFaq_PageMainTitle_Group_1Resolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  config?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1Config']>, ParentType, ContextType>;
+  config?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1Config']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasFaq_PageMainTitle_Group_1ConfigResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1Config'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1Config']> = {
+export type SitePluginPluginOptionsSchemasFaq_PageMainTitle_Group_1ConfigResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1Config'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1Config']
+> = {
   single?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   label?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntries'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntries']> = {
+export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntries'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntries']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  config?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfig']>, ParentType, ContextType>;
+  config?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfig']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfig']> = {
-  fields?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFields']>, ParentType, ContextType>;
+export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfig']
+> = {
+  fields?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFields']>,
+    ParentType,
+    ContextType
+  >;
   label?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFields'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFields']> = {
-  question?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestion']>, ParentType, ContextType>;
-  answer?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswer']>, ParentType, ContextType>;
+export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFields'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFields']
+> = {
+  question?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestion']>,
+    ParentType,
+    ContextType
+  >;
+  answer?: Resolver<
+    Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswer']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestion'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestion']> = {
+export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestion'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestion']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  config?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestionConfig']>, ParentType, ContextType>;
+  config?: Resolver<
+    Maybe<
+      ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestionConfig']
+    >,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionConfigResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestionConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestionConfig']> = {
+export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionConfigResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestionConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestionConfig']
+> = {
   multi?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   label?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswerResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswer'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswer']> = {
+export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswerResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswer'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswer']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  config?: Resolver<Maybe<ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswerConfig']>, ParentType, ContextType>;
+  config?: Resolver<
+    Maybe<
+      ResolversTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswerConfig']
+    >,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswerConfigResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswerConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswerConfig']> = {
+export type SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswerConfigResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswerConfig'] = ResolversParentTypes['SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswerConfig']
+> = {
   multi?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   label?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPackageJsonResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPackageJson'] = ResolversParentTypes['SitePluginPackageJson']> = {
+export type SitePluginPackageJsonResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPackageJson'] = ResolversParentTypes['SitePluginPackageJson']
+> = {
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   version?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   main?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   author?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   license?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  dependencies?: Resolver<Maybe<Array<Maybe<ResolversTypes['SitePluginPackageJsonDependencies']>>>, ParentType, ContextType>;
-  devDependencies?: Resolver<Maybe<Array<Maybe<ResolversTypes['SitePluginPackageJsonDevDependencies']>>>, ParentType, ContextType>;
-  peerDependencies?: Resolver<Maybe<Array<Maybe<ResolversTypes['SitePluginPackageJsonPeerDependencies']>>>, ParentType, ContextType>;
+  dependencies?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['SitePluginPackageJsonDependencies']>>>,
+    ParentType,
+    ContextType
+  >;
+  devDependencies?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['SitePluginPackageJsonDevDependencies']>>>,
+    ParentType,
+    ContextType
+  >;
+  peerDependencies?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['SitePluginPackageJsonPeerDependencies']>>>,
+    ParentType,
+    ContextType
+  >;
   keywords?: Resolver<Maybe<Array<Maybe<ResolversTypes['String']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPackageJsonDependenciesResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPackageJsonDependencies'] = ResolversParentTypes['SitePluginPackageJsonDependencies']> = {
+export type SitePluginPackageJsonDependenciesResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPackageJsonDependencies'] = ResolversParentTypes['SitePluginPackageJsonDependencies']
+> = {
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   version?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPackageJsonDevDependenciesResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPackageJsonDevDependencies'] = ResolversParentTypes['SitePluginPackageJsonDevDependencies']> = {
+export type SitePluginPackageJsonDevDependenciesResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPackageJsonDevDependencies'] = ResolversParentTypes['SitePluginPackageJsonDevDependencies']
+> = {
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   version?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginPackageJsonPeerDependenciesResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginPackageJsonPeerDependencies'] = ResolversParentTypes['SitePluginPackageJsonPeerDependencies']> = {
+export type SitePluginPackageJsonPeerDependenciesResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginPackageJsonPeerDependencies'] = ResolversParentTypes['SitePluginPackageJsonPeerDependencies']
+> = {
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   version?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePageConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePageConnection'] = ResolversParentTypes['SitePageConnection']> = {
+export type SitePageConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePageConnection'] = ResolversParentTypes['SitePageConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['SitePageEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['SitePage']>, ParentType, ContextType>;
   pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  distinct?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType, RequireFields<SitePageConnectionDistinctArgs, 'field'>>;
-  group?: Resolver<Array<ResolversTypes['SitePageGroupConnection']>, ParentType, ContextType, RequireFields<SitePageConnectionGroupArgs, 'field'>>;
+  distinct?: Resolver<
+    Array<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<SitePageConnectionDistinctArgs, 'field'>
+  >;
+  group?: Resolver<
+    Array<ResolversTypes['SitePageGroupConnection']>,
+    ParentType,
+    ContextType,
+    RequireFields<SitePageConnectionGroupArgs, 'field'>
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePageEdgeResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePageEdge'] = ResolversParentTypes['SitePageEdge']> = {
+export type SitePageEdgeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePageEdge'] = ResolversParentTypes['SitePageEdge']
+> = {
   next?: Resolver<Maybe<ResolversTypes['SitePage']>, ParentType, ContextType>;
   node?: Resolver<ResolversTypes['SitePage'], ParentType, ContextType>;
   previous?: Resolver<Maybe<ResolversTypes['SitePage']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePageGroupConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePageGroupConnection'] = ResolversParentTypes['SitePageGroupConnection']> = {
+export type SitePageGroupConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePageGroupConnection'] = ResolversParentTypes['SitePageGroupConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['SitePageEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['SitePage']>, ParentType, ContextType>;
@@ -7975,10 +9035,23 @@ export type SitePageGroupConnectionResolvers<ContextType = any, ParentType exten
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteResolvers<ContextType = any, ParentType extends ResolversParentTypes['Site'] = ResolversParentTypes['Site']> = {
-  buildTime?: Resolver<Maybe<ResolversTypes['Date']>, ParentType, ContextType, RequireFields<SiteBuildTimeArgs, never>>;
+export type SiteResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['Site'] = ResolversParentTypes['Site']
+> = {
+  buildTime?: Resolver<
+    Maybe<ResolversTypes['Date']>,
+    ParentType,
+    ContextType,
+    RequireFields<SiteBuildTimeArgs, never>
+  >;
   siteMetadata?: Resolver<Maybe<ResolversTypes['SiteSiteMetadata']>, ParentType, ContextType>;
-  port?: Resolver<Maybe<ResolversTypes['Date']>, ParentType, ContextType, RequireFields<SitePortArgs, never>>;
+  port?: Resolver<
+    Maybe<ResolversTypes['Date']>,
+    ParentType,
+    ContextType,
+    RequireFields<SitePortArgs, never>
+  >;
   host?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   polyfill?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
   pathPrefix?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -7989,102 +9062,189 @@ export type SiteResolvers<ContextType = any, ParentType extends ResolversParentT
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteSiteMetadataResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteSiteMetadata'] = ResolversParentTypes['SiteSiteMetadata']> = {
+export type SiteSiteMetadataResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteSiteMetadata'] = ResolversParentTypes['SiteSiteMetadata']
+> = {
   title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   author?: Resolver<Maybe<ResolversTypes['SiteSiteMetadataAuthor']>, ParentType, ContextType>;
   description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   siteUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   social?: Resolver<Maybe<ResolversTypes['SiteSiteMetadataSocial']>, ParentType, ContextType>;
   copyright?: Resolver<Maybe<ResolversTypes['SiteSiteMetadataCopyright']>, ParentType, ContextType>;
-  mainNavEntries?: Resolver<Maybe<Array<Maybe<ResolversTypes['SiteSiteMetadataMainNavEntries']>>>, ParentType, ContextType>;
-  footerNavEntries?: Resolver<Maybe<Array<Maybe<ResolversTypes['SiteSiteMetadataFooterNavEntries']>>>, ParentType, ContextType>;
-  githubLink?: Resolver<Maybe<ResolversTypes['SiteSiteMetadataGithubLink']>, ParentType, ContextType>;
+  mainNavEntries?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['SiteSiteMetadataMainNavEntries']>>>,
+    ParentType,
+    ContextType
+  >;
+  footerNavEntries?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['SiteSiteMetadataFooterNavEntries']>>>,
+    ParentType,
+    ContextType
+  >;
+  githubLink?: Resolver<
+    Maybe<ResolversTypes['SiteSiteMetadataGithubLink']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteSiteMetadataAuthorResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteSiteMetadataAuthor'] = ResolversParentTypes['SiteSiteMetadataAuthor']> = {
+export type SiteSiteMetadataAuthorResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteSiteMetadataAuthor'] = ResolversParentTypes['SiteSiteMetadataAuthor']
+> = {
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   summary?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteSiteMetadataSocialResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteSiteMetadataSocial'] = ResolversParentTypes['SiteSiteMetadataSocial']> = {
+export type SiteSiteMetadataSocialResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteSiteMetadataSocial'] = ResolversParentTypes['SiteSiteMetadataSocial']
+> = {
   twitter?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteSiteMetadataCopyrightResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteSiteMetadataCopyright'] = ResolversParentTypes['SiteSiteMetadataCopyright']> = {
+export type SiteSiteMetadataCopyrightResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteSiteMetadataCopyright'] = ResolversParentTypes['SiteSiteMetadataCopyright']
+> = {
   text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteSiteMetadataMainNavEntriesResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteSiteMetadataMainNavEntries'] = ResolversParentTypes['SiteSiteMetadataMainNavEntries']> = {
+export type SiteSiteMetadataMainNavEntriesResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteSiteMetadataMainNavEntries'] = ResolversParentTypes['SiteSiteMetadataMainNavEntries']
+> = {
   link?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  names?: Resolver<Maybe<ResolversTypes['SiteSiteMetadataMainNavEntriesNames']>, ParentType, ContextType>;
+  names?: Resolver<
+    Maybe<ResolversTypes['SiteSiteMetadataMainNavEntriesNames']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteSiteMetadataMainNavEntriesNamesResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteSiteMetadataMainNavEntriesNames'] = ResolversParentTypes['SiteSiteMetadataMainNavEntriesNames']> = {
+export type SiteSiteMetadataMainNavEntriesNamesResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteSiteMetadataMainNavEntriesNames'] = ResolversParentTypes['SiteSiteMetadataMainNavEntriesNames']
+> = {
   en?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   de?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteSiteMetadataFooterNavEntriesResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteSiteMetadataFooterNavEntries'] = ResolversParentTypes['SiteSiteMetadataFooterNavEntries']> = {
+export type SiteSiteMetadataFooterNavEntriesResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteSiteMetadataFooterNavEntries'] = ResolversParentTypes['SiteSiteMetadataFooterNavEntries']
+> = {
   id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  titles?: Resolver<Maybe<ResolversTypes['SiteSiteMetadataFooterNavEntriesTitles']>, ParentType, ContextType>;
-  links?: Resolver<Maybe<Array<Maybe<ResolversTypes['SiteSiteMetadataFooterNavEntriesLinks']>>>, ParentType, ContextType>;
+  titles?: Resolver<
+    Maybe<ResolversTypes['SiteSiteMetadataFooterNavEntriesTitles']>,
+    ParentType,
+    ContextType
+  >;
+  links?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['SiteSiteMetadataFooterNavEntriesLinks']>>>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteSiteMetadataFooterNavEntriesTitlesResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteSiteMetadataFooterNavEntriesTitles'] = ResolversParentTypes['SiteSiteMetadataFooterNavEntriesTitles']> = {
+export type SiteSiteMetadataFooterNavEntriesTitlesResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteSiteMetadataFooterNavEntriesTitles'] = ResolversParentTypes['SiteSiteMetadataFooterNavEntriesTitles']
+> = {
   en?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   de?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteSiteMetadataFooterNavEntriesLinksResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteSiteMetadataFooterNavEntriesLinks'] = ResolversParentTypes['SiteSiteMetadataFooterNavEntriesLinks']> = {
+export type SiteSiteMetadataFooterNavEntriesLinksResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteSiteMetadataFooterNavEntriesLinks'] = ResolversParentTypes['SiteSiteMetadataFooterNavEntriesLinks']
+> = {
   link?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  names?: Resolver<Maybe<ResolversTypes['SiteSiteMetadataFooterNavEntriesLinksNames']>, ParentType, ContextType>;
+  names?: Resolver<
+    Maybe<ResolversTypes['SiteSiteMetadataFooterNavEntriesLinksNames']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteSiteMetadataFooterNavEntriesLinksNamesResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteSiteMetadataFooterNavEntriesLinksNames'] = ResolversParentTypes['SiteSiteMetadataFooterNavEntriesLinksNames']> = {
+export type SiteSiteMetadataFooterNavEntriesLinksNamesResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteSiteMetadataFooterNavEntriesLinksNames'] = ResolversParentTypes['SiteSiteMetadataFooterNavEntriesLinksNames']
+> = {
   en?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   de?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteSiteMetadataGithubLinkResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteSiteMetadataGithubLink'] = ResolversParentTypes['SiteSiteMetadataGithubLink']> = {
+export type SiteSiteMetadataGithubLinkResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteSiteMetadataGithubLink'] = ResolversParentTypes['SiteSiteMetadataGithubLink']
+> = {
   link?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  names?: Resolver<Maybe<ResolversTypes['SiteSiteMetadataGithubLinkNames']>, ParentType, ContextType>;
+  names?: Resolver<
+    Maybe<ResolversTypes['SiteSiteMetadataGithubLinkNames']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteSiteMetadataGithubLinkNamesResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteSiteMetadataGithubLinkNames'] = ResolversParentTypes['SiteSiteMetadataGithubLinkNames']> = {
+export type SiteSiteMetadataGithubLinkNamesResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteSiteMetadataGithubLinkNames'] = ResolversParentTypes['SiteSiteMetadataGithubLinkNames']
+> = {
   en?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   de?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteConnection'] = ResolversParentTypes['SiteConnection']> = {
+export type SiteConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteConnection'] = ResolversParentTypes['SiteConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['SiteEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['Site']>, ParentType, ContextType>;
   pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  distinct?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType, RequireFields<SiteConnectionDistinctArgs, 'field'>>;
-  group?: Resolver<Array<ResolversTypes['SiteGroupConnection']>, ParentType, ContextType, RequireFields<SiteConnectionGroupArgs, 'field'>>;
+  distinct?: Resolver<
+    Array<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<SiteConnectionDistinctArgs, 'field'>
+  >;
+  group?: Resolver<
+    Array<ResolversTypes['SiteGroupConnection']>,
+    ParentType,
+    ContextType,
+    RequireFields<SiteConnectionGroupArgs, 'field'>
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteEdgeResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteEdge'] = ResolversParentTypes['SiteEdge']> = {
+export type SiteEdgeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteEdge'] = ResolversParentTypes['SiteEdge']
+> = {
   next?: Resolver<Maybe<ResolversTypes['Site']>, ParentType, ContextType>;
   node?: Resolver<ResolversTypes['Site'], ParentType, ContextType>;
   previous?: Resolver<Maybe<ResolversTypes['Site']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteGroupConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteGroupConnection'] = ResolversParentTypes['SiteGroupConnection']> = {
+export type SiteGroupConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteGroupConnection'] = ResolversParentTypes['SiteGroupConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['SiteEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['Site']>, ParentType, ContextType>;
@@ -8094,24 +9254,43 @@ export type SiteGroupConnectionResolvers<ContextType = any, ParentType extends R
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type MarkdownRemarkConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['MarkdownRemarkConnection'] = ResolversParentTypes['MarkdownRemarkConnection']> = {
+export type MarkdownRemarkConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['MarkdownRemarkConnection'] = ResolversParentTypes['MarkdownRemarkConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['MarkdownRemarkEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['MarkdownRemark']>, ParentType, ContextType>;
   pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  distinct?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType, RequireFields<MarkdownRemarkConnectionDistinctArgs, 'field'>>;
-  group?: Resolver<Array<ResolversTypes['MarkdownRemarkGroupConnection']>, ParentType, ContextType, RequireFields<MarkdownRemarkConnectionGroupArgs, 'field'>>;
+  distinct?: Resolver<
+    Array<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<MarkdownRemarkConnectionDistinctArgs, 'field'>
+  >;
+  group?: Resolver<
+    Array<ResolversTypes['MarkdownRemarkGroupConnection']>,
+    ParentType,
+    ContextType,
+    RequireFields<MarkdownRemarkConnectionGroupArgs, 'field'>
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type MarkdownRemarkEdgeResolvers<ContextType = any, ParentType extends ResolversParentTypes['MarkdownRemarkEdge'] = ResolversParentTypes['MarkdownRemarkEdge']> = {
+export type MarkdownRemarkEdgeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['MarkdownRemarkEdge'] = ResolversParentTypes['MarkdownRemarkEdge']
+> = {
   next?: Resolver<Maybe<ResolversTypes['MarkdownRemark']>, ParentType, ContextType>;
   node?: Resolver<ResolversTypes['MarkdownRemark'], ParentType, ContextType>;
   previous?: Resolver<Maybe<ResolversTypes['MarkdownRemark']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type MarkdownRemarkGroupConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['MarkdownRemarkGroupConnection'] = ResolversParentTypes['MarkdownRemarkGroupConnection']> = {
+export type MarkdownRemarkGroupConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['MarkdownRemarkGroupConnection'] = ResolversParentTypes['MarkdownRemarkGroupConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['MarkdownRemarkEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['MarkdownRemark']>, ParentType, ContextType>;
@@ -8121,24 +9300,43 @@ export type MarkdownRemarkGroupConnectionResolvers<ContextType = any, ParentType
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type ImageSharpConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['ImageSharpConnection'] = ResolversParentTypes['ImageSharpConnection']> = {
+export type ImageSharpConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['ImageSharpConnection'] = ResolversParentTypes['ImageSharpConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['ImageSharpEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['ImageSharp']>, ParentType, ContextType>;
   pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  distinct?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType, RequireFields<ImageSharpConnectionDistinctArgs, 'field'>>;
-  group?: Resolver<Array<ResolversTypes['ImageSharpGroupConnection']>, ParentType, ContextType, RequireFields<ImageSharpConnectionGroupArgs, 'field'>>;
+  distinct?: Resolver<
+    Array<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<ImageSharpConnectionDistinctArgs, 'field'>
+  >;
+  group?: Resolver<
+    Array<ResolversTypes['ImageSharpGroupConnection']>,
+    ParentType,
+    ContextType,
+    RequireFields<ImageSharpConnectionGroupArgs, 'field'>
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type ImageSharpEdgeResolvers<ContextType = any, ParentType extends ResolversParentTypes['ImageSharpEdge'] = ResolversParentTypes['ImageSharpEdge']> = {
+export type ImageSharpEdgeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['ImageSharpEdge'] = ResolversParentTypes['ImageSharpEdge']
+> = {
   next?: Resolver<Maybe<ResolversTypes['ImageSharp']>, ParentType, ContextType>;
   node?: Resolver<ResolversTypes['ImageSharp'], ParentType, ContextType>;
   previous?: Resolver<Maybe<ResolversTypes['ImageSharp']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type ImageSharpGroupConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['ImageSharpGroupConnection'] = ResolversParentTypes['ImageSharpGroupConnection']> = {
+export type ImageSharpGroupConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['ImageSharpGroupConnection'] = ResolversParentTypes['ImageSharpGroupConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['ImageSharpEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['ImageSharp']>, ParentType, ContextType>;
@@ -8148,15 +9346,28 @@ export type ImageSharpGroupConnectionResolvers<ContextType = any, ParentType ext
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicIndexPageResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicIndexPage'] = ResolversParentTypes['PrismicIndexPage']> = {
+export type PrismicIndexPageResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicIndexPage'] = ResolversParentTypes['PrismicIndexPage']
+> = {
   data?: Resolver<Maybe<ResolversTypes['PrismicIndexPageDataType']>, ParentType, ContextType>;
   dataRaw?: Resolver<ResolversTypes['JSON'], ParentType, ContextType>;
   dataString?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  first_publication_date?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<PrismicIndexPageFirst_Publication_DateArgs, never>>;
+  first_publication_date?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<PrismicIndexPageFirst_Publication_DateArgs, never>
+  >;
   href?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   lang?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  last_publication_date?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<PrismicIndexPageLast_Publication_DateArgs, never>>;
+  last_publication_date?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<PrismicIndexPageLast_Publication_DateArgs, never>
+  >;
   tags?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType>;
   alternate_languages?: Resolver<Array<ResolversTypes['PrismicLinkType']>, ParentType, ContextType>;
   type?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -8170,16 +9381,33 @@ export type PrismicIndexPageResolvers<ContextType = any, ParentType extends Reso
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicDocumentResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicDocument'] = ResolversParentTypes['PrismicDocument']> = {
-  __resolveType: TypeResolveFn<'PrismicIndexPage' | 'PrismicTest' | 'PrismicFaqPage', ParentType, ContextType>;
+export type PrismicDocumentResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicDocument'] = ResolversParentTypes['PrismicDocument']
+> = {
+  __resolveType: TypeResolveFn<
+    'PrismicIndexPage' | 'PrismicTest' | 'PrismicFaqPage',
+    ParentType,
+    ContextType
+  >;
   dataRaw?: Resolver<ResolversTypes['JSON'], ParentType, ContextType>;
   dataString?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  first_publication_date?: Resolver<Maybe<ResolversTypes['Date']>, ParentType, ContextType, RequireFields<PrismicDocumentFirst_Publication_DateArgs, never>>;
+  first_publication_date?: Resolver<
+    Maybe<ResolversTypes['Date']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicDocumentFirst_Publication_DateArgs, never>
+  >;
   href?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   lang?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  last_publication_date?: Resolver<Maybe<ResolversTypes['Date']>, ParentType, ContextType, RequireFields<PrismicDocumentLast_Publication_DateArgs, never>>;
+  last_publication_date?: Resolver<
+    Maybe<ResolversTypes['Date']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicDocumentLast_Publication_DateArgs, never>
+  >;
   tags?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType>;
   alternate_languages?: Resolver<Array<ResolversTypes['PrismicLinkType']>, ParentType, ContextType>;
   type?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -8187,7 +9415,10 @@ export type PrismicDocumentResolvers<ContextType = any, ParentType extends Resol
   _previewable?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
 };
 
-export type PrismicLinkTypeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicLinkType'] = ResolversParentTypes['PrismicLinkType']> = {
+export type PrismicLinkTypeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicLinkType'] = ResolversParentTypes['PrismicLinkType']
+> = {
   link_type?: Resolver<ResolversTypes['PrismicLinkTypes'], ParentType, ContextType>;
   isBroken?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
   url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -8204,19 +9435,39 @@ export type PrismicLinkTypeResolvers<ContextType = any, ParentType extends Resol
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicAllDocumentTypesResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicAllDocumentTypes'] = ResolversParentTypes['PrismicAllDocumentTypes']> = {
-  __resolveType: TypeResolveFn<'PrismicIndexPage' | 'PrismicTest' | 'PrismicFaqPage', ParentType, ContextType>;
+export type PrismicAllDocumentTypesResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicAllDocumentTypes'] = ResolversParentTypes['PrismicAllDocumentTypes']
+> = {
+  __resolveType: TypeResolveFn<
+    'PrismicIndexPage' | 'PrismicTest' | 'PrismicFaqPage',
+    ParentType,
+    ContextType
+  >;
 };
 
-export type PrismicTestResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicTest'] = ResolversParentTypes['PrismicTest']> = {
+export type PrismicTestResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicTest'] = ResolversParentTypes['PrismicTest']
+> = {
   data?: Resolver<Maybe<ResolversTypes['PrismicTestDataType']>, ParentType, ContextType>;
   dataRaw?: Resolver<ResolversTypes['JSON'], ParentType, ContextType>;
   dataString?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  first_publication_date?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<PrismicTestFirst_Publication_DateArgs, never>>;
+  first_publication_date?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<PrismicTestFirst_Publication_DateArgs, never>
+  >;
   href?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   lang?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  last_publication_date?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<PrismicTestLast_Publication_DateArgs, never>>;
+  last_publication_date?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<PrismicTestLast_Publication_DateArgs, never>
+  >;
   tags?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType>;
   alternate_languages?: Resolver<Array<ResolversTypes['PrismicLinkType']>, ParentType, ContextType>;
   type?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -8229,50 +9480,99 @@ export type PrismicTestResolvers<ContextType = any, ParentType extends Resolvers
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicTestDataTypeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicTestDataType'] = ResolversParentTypes['PrismicTestDataType']> = {
+export type PrismicTestDataTypeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicTestDataType'] = ResolversParentTypes['PrismicTestDataType']
+> = {
   title?: Resolver<Maybe<ResolversTypes['PrismicStructuredTextType']>, ParentType, ContextType>;
   text?: Resolver<Maybe<ResolversTypes['PrismicStructuredTextType']>, ParentType, ContextType>;
   image?: Resolver<Maybe<ResolversTypes['PrismicImageType']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicStructuredTextTypeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicStructuredTextType'] = ResolversParentTypes['PrismicStructuredTextType']> = {
+export type PrismicStructuredTextTypeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicStructuredTextType'] = ResolversParentTypes['PrismicStructuredTextType']
+> = {
   html?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   raw?: Resolver<Maybe<ResolversTypes['JSON']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicImageTypeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicImageType'] = ResolversParentTypes['PrismicImageType']> = {
+export type PrismicImageTypeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicImageType'] = ResolversParentTypes['PrismicImageType']
+> = {
   alt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   copyright?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  dimensions?: Resolver<Maybe<ResolversTypes['PrismicImageDimensionsType']>, ParentType, ContextType>;
-  url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<PrismicImageTypeUrlArgs, 'imgixParams'>>;
-  fixed?: Resolver<Maybe<ResolversTypes['PrismicImageFixedType']>, ParentType, ContextType, RequireFields<PrismicImageTypeFixedArgs, 'width' | 'imgixParams' | 'placeholderImgixParams'>>;
-  fluid?: Resolver<Maybe<ResolversTypes['PrismicImageFluidType']>, ParentType, ContextType, RequireFields<PrismicImageTypeFluidArgs, 'maxWidth' | 'imgixParams' | 'placeholderImgixParams'>>;
+  dimensions?: Resolver<
+    Maybe<ResolversTypes['PrismicImageDimensionsType']>,
+    ParentType,
+    ContextType
+  >;
+  url?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicImageTypeUrlArgs, 'imgixParams'>
+  >;
+  fixed?: Resolver<
+    Maybe<ResolversTypes['PrismicImageFixedType']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicImageTypeFixedArgs, 'width' | 'imgixParams' | 'placeholderImgixParams'>
+  >;
+  fluid?: Resolver<
+    Maybe<ResolversTypes['PrismicImageFluidType']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicImageTypeFluidArgs, 'maxWidth' | 'imgixParams' | 'placeholderImgixParams'>
+  >;
   localFile?: Resolver<Maybe<ResolversTypes['File']>, ParentType, ContextType>;
-  thumbnails?: Resolver<Maybe<ResolversTypes['PrismicImageThumbnailsType']>, ParentType, ContextType>;
+  thumbnails?: Resolver<
+    Maybe<ResolversTypes['PrismicImageThumbnailsType']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicImageInterfaceResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicImageInterface'] = ResolversParentTypes['PrismicImageInterface']> = {
-  __resolveType: TypeResolveFn<'PrismicImageType' | 'PrismicImageThumbnailType', ParentType, ContextType>;
+export type PrismicImageInterfaceResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicImageInterface'] = ResolversParentTypes['PrismicImageInterface']
+> = {
+  __resolveType: TypeResolveFn<
+    'PrismicImageType' | 'PrismicImageThumbnailType',
+    ParentType,
+    ContextType
+  >;
   alt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   copyright?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  dimensions?: Resolver<Maybe<ResolversTypes['PrismicImageDimensionsType']>, ParentType, ContextType>;
+  dimensions?: Resolver<
+    Maybe<ResolversTypes['PrismicImageDimensionsType']>,
+    ParentType,
+    ContextType
+  >;
   url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   localFile?: Resolver<Maybe<ResolversTypes['File']>, ParentType, ContextType>;
   fixed?: Resolver<Maybe<ResolversTypes['PrismicImageFixedType']>, ParentType, ContextType>;
   fluid?: Resolver<Maybe<ResolversTypes['PrismicImageFluidType']>, ParentType, ContextType>;
 };
 
-export type PrismicImageDimensionsTypeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicImageDimensionsType'] = ResolversParentTypes['PrismicImageDimensionsType']> = {
+export type PrismicImageDimensionsTypeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicImageDimensionsType'] = ResolversParentTypes['PrismicImageDimensionsType']
+> = {
   width?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   height?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicImageFixedTypeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicImageFixedType'] = ResolversParentTypes['PrismicImageFixedType']> = {
+export type PrismicImageFixedTypeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicImageFixedType'] = ResolversParentTypes['PrismicImageFixedType']
+> = {
   base64?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   src?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   srcSet?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -8284,7 +9584,10 @@ export type PrismicImageFixedTypeResolvers<ContextType = any, ParentType extends
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicImageFluidTypeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicImageFluidType'] = ResolversParentTypes['PrismicImageFluidType']> = {
+export type PrismicImageFluidTypeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicImageFluidType'] = ResolversParentTypes['PrismicImageFluidType']
+> = {
   base64?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   src?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   srcSet?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -8295,19 +9598,33 @@ export type PrismicImageFluidTypeResolvers<ContextType = any, ParentType extends
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export interface PrismicImageThumbnailsTypeScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['PrismicImageThumbnailsType'], any> {
+export interface PrismicImageThumbnailsTypeScalarConfig
+  extends GraphQLScalarTypeConfig<ResolversTypes['PrismicImageThumbnailsType'], any> {
   name: 'PrismicImageThumbnailsType';
 }
 
-export type PrismicFaqPageResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqPage'] = ResolversParentTypes['PrismicFaqPage']> = {
+export type PrismicFaqPageResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqPage'] = ResolversParentTypes['PrismicFaqPage']
+> = {
   data?: Resolver<Maybe<ResolversTypes['PrismicFaqPageDataType']>, ParentType, ContextType>;
   dataRaw?: Resolver<ResolversTypes['JSON'], ParentType, ContextType>;
   dataString?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  first_publication_date?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<PrismicFaqPageFirst_Publication_DateArgs, never>>;
+  first_publication_date?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<PrismicFaqPageFirst_Publication_DateArgs, never>
+  >;
   href?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   lang?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  last_publication_date?: Resolver<ResolversTypes['Date'], ParentType, ContextType, RequireFields<PrismicFaqPageLast_Publication_DateArgs, never>>;
+  last_publication_date?: Resolver<
+    ResolversTypes['Date'],
+    ParentType,
+    ContextType,
+    RequireFields<PrismicFaqPageLast_Publication_DateArgs, never>
+  >;
   tags?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType>;
   alternate_languages?: Resolver<Array<ResolversTypes['PrismicLinkType']>, ParentType, ContextType>;
   type?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -8320,44 +9637,88 @@ export type PrismicFaqPageResolvers<ContextType = any, ParentType extends Resolv
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqPageDataTypeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqPageDataType'] = ResolversParentTypes['PrismicFaqPageDataType']> = {
+export type PrismicFaqPageDataTypeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqPageDataType'] = ResolversParentTypes['PrismicFaqPageDataType']
+> = {
   title?: Resolver<Maybe<ResolversTypes['PrismicStructuredTextType']>, ParentType, ContextType>;
-  description?: Resolver<Maybe<ResolversTypes['PrismicStructuredTextType']>, ParentType, ContextType>;
-  title_group_1?: Resolver<Maybe<ResolversTypes['PrismicStructuredTextType']>, ParentType, ContextType>;
-  entries?: Resolver<Maybe<Array<Maybe<ResolversTypes['PrismicFaqPageEntriesGroupType']>>>, ParentType, ContextType>;
+  description?: Resolver<
+    Maybe<ResolversTypes['PrismicStructuredTextType']>,
+    ParentType,
+    ContextType
+  >;
+  title_group_1?: Resolver<
+    Maybe<ResolversTypes['PrismicStructuredTextType']>,
+    ParentType,
+    ContextType
+  >;
+  entries?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['PrismicFaqPageEntriesGroupType']>>>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqPageEntriesGroupTypeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqPageEntriesGroupType'] = ResolversParentTypes['PrismicFaqPageEntriesGroupType']> = {
+export type PrismicFaqPageEntriesGroupTypeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqPageEntriesGroupType'] = ResolversParentTypes['PrismicFaqPageEntriesGroupType']
+> = {
   question?: Resolver<Maybe<ResolversTypes['PrismicStructuredTextType']>, ParentType, ContextType>;
   answer?: Resolver<Maybe<ResolversTypes['PrismicStructuredTextType']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicIndexPageDataTypeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicIndexPageDataType'] = ResolversParentTypes['PrismicIndexPageDataType']> = {
+export type PrismicIndexPageDataTypeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicIndexPageDataType'] = ResolversParentTypes['PrismicIndexPageDataType']
+> = {
   title?: Resolver<Maybe<ResolversTypes['PrismicStructuredTextType']>, ParentType, ContextType>;
-  description?: Resolver<Maybe<ResolversTypes['PrismicStructuredTextType']>, ParentType, ContextType>;
+  description?: Resolver<
+    Maybe<ResolversTypes['PrismicStructuredTextType']>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicIndexPageConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicIndexPageConnection'] = ResolversParentTypes['PrismicIndexPageConnection']> = {
+export type PrismicIndexPageConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicIndexPageConnection'] = ResolversParentTypes['PrismicIndexPageConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['PrismicIndexPageEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['PrismicIndexPage']>, ParentType, ContextType>;
   pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  distinct?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType, RequireFields<PrismicIndexPageConnectionDistinctArgs, 'field'>>;
-  group?: Resolver<Array<ResolversTypes['PrismicIndexPageGroupConnection']>, ParentType, ContextType, RequireFields<PrismicIndexPageConnectionGroupArgs, 'field'>>;
+  distinct?: Resolver<
+    Array<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicIndexPageConnectionDistinctArgs, 'field'>
+  >;
+  group?: Resolver<
+    Array<ResolversTypes['PrismicIndexPageGroupConnection']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicIndexPageConnectionGroupArgs, 'field'>
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicIndexPageEdgeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicIndexPageEdge'] = ResolversParentTypes['PrismicIndexPageEdge']> = {
+export type PrismicIndexPageEdgeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicIndexPageEdge'] = ResolversParentTypes['PrismicIndexPageEdge']
+> = {
   next?: Resolver<Maybe<ResolversTypes['PrismicIndexPage']>, ParentType, ContextType>;
   node?: Resolver<ResolversTypes['PrismicIndexPage'], ParentType, ContextType>;
   previous?: Resolver<Maybe<ResolversTypes['PrismicIndexPage']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicIndexPageGroupConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicIndexPageGroupConnection'] = ResolversParentTypes['PrismicIndexPageGroupConnection']> = {
+export type PrismicIndexPageGroupConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicIndexPageGroupConnection'] = ResolversParentTypes['PrismicIndexPageGroupConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['PrismicIndexPageEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['PrismicIndexPage']>, ParentType, ContextType>;
@@ -8367,24 +9728,43 @@ export type PrismicIndexPageGroupConnectionResolvers<ContextType = any, ParentTy
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicTestConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicTestConnection'] = ResolversParentTypes['PrismicTestConnection']> = {
+export type PrismicTestConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicTestConnection'] = ResolversParentTypes['PrismicTestConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['PrismicTestEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['PrismicTest']>, ParentType, ContextType>;
   pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  distinct?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType, RequireFields<PrismicTestConnectionDistinctArgs, 'field'>>;
-  group?: Resolver<Array<ResolversTypes['PrismicTestGroupConnection']>, ParentType, ContextType, RequireFields<PrismicTestConnectionGroupArgs, 'field'>>;
+  distinct?: Resolver<
+    Array<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicTestConnectionDistinctArgs, 'field'>
+  >;
+  group?: Resolver<
+    Array<ResolversTypes['PrismicTestGroupConnection']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicTestConnectionGroupArgs, 'field'>
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicTestEdgeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicTestEdge'] = ResolversParentTypes['PrismicTestEdge']> = {
+export type PrismicTestEdgeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicTestEdge'] = ResolversParentTypes['PrismicTestEdge']
+> = {
   next?: Resolver<Maybe<ResolversTypes['PrismicTest']>, ParentType, ContextType>;
   node?: Resolver<ResolversTypes['PrismicTest'], ParentType, ContextType>;
   previous?: Resolver<Maybe<ResolversTypes['PrismicTest']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicTestGroupConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicTestGroupConnection'] = ResolversParentTypes['PrismicTestGroupConnection']> = {
+export type PrismicTestGroupConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicTestGroupConnection'] = ResolversParentTypes['PrismicTestGroupConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['PrismicTestEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['PrismicTest']>, ParentType, ContextType>;
@@ -8394,24 +9774,43 @@ export type PrismicTestGroupConnectionResolvers<ContextType = any, ParentType ex
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqPageConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqPageConnection'] = ResolversParentTypes['PrismicFaqPageConnection']> = {
+export type PrismicFaqPageConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqPageConnection'] = ResolversParentTypes['PrismicFaqPageConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['PrismicFaqPageEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['PrismicFaqPage']>, ParentType, ContextType>;
   pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  distinct?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType, RequireFields<PrismicFaqPageConnectionDistinctArgs, 'field'>>;
-  group?: Resolver<Array<ResolversTypes['PrismicFaqPageGroupConnection']>, ParentType, ContextType, RequireFields<PrismicFaqPageConnectionGroupArgs, 'field'>>;
+  distinct?: Resolver<
+    Array<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicFaqPageConnectionDistinctArgs, 'field'>
+  >;
+  group?: Resolver<
+    Array<ResolversTypes['PrismicFaqPageGroupConnection']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicFaqPageConnectionGroupArgs, 'field'>
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqPageEdgeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqPageEdge'] = ResolversParentTypes['PrismicFaqPageEdge']> = {
+export type PrismicFaqPageEdgeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqPageEdge'] = ResolversParentTypes['PrismicFaqPageEdge']
+> = {
   next?: Resolver<Maybe<ResolversTypes['PrismicFaqPage']>, ParentType, ContextType>;
   node?: Resolver<ResolversTypes['PrismicFaqPage'], ParentType, ContextType>;
   previous?: Resolver<Maybe<ResolversTypes['PrismicFaqPage']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqPageGroupConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqPageGroupConnection'] = ResolversParentTypes['PrismicFaqPageGroupConnection']> = {
+export type PrismicFaqPageGroupConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqPageGroupConnection'] = ResolversParentTypes['PrismicFaqPageGroupConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['PrismicFaqPageEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['PrismicFaqPage']>, ParentType, ContextType>;
@@ -8421,15 +9820,28 @@ export type PrismicFaqPageGroupConnectionResolvers<ContextType = any, ParentType
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqEntryResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqEntry'] = ResolversParentTypes['PrismicFaqEntry']> = {
+export type PrismicFaqEntryResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqEntry'] = ResolversParentTypes['PrismicFaqEntry']
+> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   parent?: Resolver<Maybe<ResolversTypes['Node']>, ParentType, ContextType>;
   children?: Resolver<Array<ResolversTypes['Node']>, ParentType, ContextType>;
   internal?: Resolver<ResolversTypes['Internal'], ParentType, ContextType>;
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   href?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  first_publication_date?: Resolver<Maybe<ResolversTypes['Date']>, ParentType, ContextType, RequireFields<PrismicFaqEntryFirst_Publication_DateArgs, never>>;
-  last_publication_date?: Resolver<Maybe<ResolversTypes['Date']>, ParentType, ContextType, RequireFields<PrismicFaqEntryLast_Publication_DateArgs, never>>;
+  first_publication_date?: Resolver<
+    Maybe<ResolversTypes['Date']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicFaqEntryFirst_Publication_DateArgs, never>
+  >;
+  last_publication_date?: Resolver<
+    Maybe<ResolversTypes['Date']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicFaqEntryLast_Publication_DateArgs, never>
+  >;
   slugs?: Resolver<Maybe<Array<Maybe<ResolversTypes['String']>>>, ParentType, ContextType>;
   lang?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   data?: Resolver<Maybe<ResolversTypes['PrismicFaqEntryData']>, ParentType, ContextType>;
@@ -8441,74 +9853,141 @@ export type PrismicFaqEntryResolvers<ContextType = any, ParentType extends Resol
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqEntryDataResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqEntryData'] = ResolversParentTypes['PrismicFaqEntryData']> = {
-  title?: Resolver<Maybe<Array<Maybe<ResolversTypes['PrismicFaqEntryDataTitle']>>>, ParentType, ContextType>;
-  question?: Resolver<Maybe<Array<Maybe<ResolversTypes['PrismicFaqEntryDataQuestion']>>>, ParentType, ContextType>;
-  answer?: Resolver<Maybe<Array<Maybe<ResolversTypes['PrismicFaqEntryDataAnswer']>>>, ParentType, ContextType>;
+export type PrismicFaqEntryDataResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqEntryData'] = ResolversParentTypes['PrismicFaqEntryData']
+> = {
+  title?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['PrismicFaqEntryDataTitle']>>>,
+    ParentType,
+    ContextType
+  >;
+  question?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['PrismicFaqEntryDataQuestion']>>>,
+    ParentType,
+    ContextType
+  >;
+  answer?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['PrismicFaqEntryDataAnswer']>>>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqEntryDataTitleResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqEntryDataTitle'] = ResolversParentTypes['PrismicFaqEntryDataTitle']> = {
+export type PrismicFaqEntryDataTitleResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqEntryDataTitle'] = ResolversParentTypes['PrismicFaqEntryDataTitle']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqEntryDataQuestionResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqEntryDataQuestion'] = ResolversParentTypes['PrismicFaqEntryDataQuestion']> = {
+export type PrismicFaqEntryDataQuestionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqEntryDataQuestion'] = ResolversParentTypes['PrismicFaqEntryDataQuestion']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqEntryDataAnswerResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqEntryDataAnswer'] = ResolversParentTypes['PrismicFaqEntryDataAnswer']> = {
+export type PrismicFaqEntryDataAnswerResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqEntryDataAnswer'] = ResolversParentTypes['PrismicFaqEntryDataAnswer']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqEntryDataRawResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqEntryDataRaw'] = ResolversParentTypes['PrismicFaqEntryDataRaw']> = {
-  title?: Resolver<Maybe<Array<Maybe<ResolversTypes['PrismicFaqEntryDataRawTitle']>>>, ParentType, ContextType>;
-  question?: Resolver<Maybe<Array<Maybe<ResolversTypes['PrismicFaqEntryDataRawQuestion']>>>, ParentType, ContextType>;
-  answer?: Resolver<Maybe<Array<Maybe<ResolversTypes['PrismicFaqEntryDataRawAnswer']>>>, ParentType, ContextType>;
+export type PrismicFaqEntryDataRawResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqEntryDataRaw'] = ResolversParentTypes['PrismicFaqEntryDataRaw']
+> = {
+  title?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['PrismicFaqEntryDataRawTitle']>>>,
+    ParentType,
+    ContextType
+  >;
+  question?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['PrismicFaqEntryDataRawQuestion']>>>,
+    ParentType,
+    ContextType
+  >;
+  answer?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['PrismicFaqEntryDataRawAnswer']>>>,
+    ParentType,
+    ContextType
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqEntryDataRawTitleResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqEntryDataRawTitle'] = ResolversParentTypes['PrismicFaqEntryDataRawTitle']> = {
+export type PrismicFaqEntryDataRawTitleResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqEntryDataRawTitle'] = ResolversParentTypes['PrismicFaqEntryDataRawTitle']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqEntryDataRawQuestionResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqEntryDataRawQuestion'] = ResolversParentTypes['PrismicFaqEntryDataRawQuestion']> = {
+export type PrismicFaqEntryDataRawQuestionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqEntryDataRawQuestion'] = ResolversParentTypes['PrismicFaqEntryDataRawQuestion']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqEntryDataRawAnswerResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqEntryDataRawAnswer'] = ResolversParentTypes['PrismicFaqEntryDataRawAnswer']> = {
+export type PrismicFaqEntryDataRawAnswerResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqEntryDataRawAnswer'] = ResolversParentTypes['PrismicFaqEntryDataRawAnswer']
+> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqEntryConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqEntryConnection'] = ResolversParentTypes['PrismicFaqEntryConnection']> = {
+export type PrismicFaqEntryConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqEntryConnection'] = ResolversParentTypes['PrismicFaqEntryConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['PrismicFaqEntryEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['PrismicFaqEntry']>, ParentType, ContextType>;
   pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  distinct?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType, RequireFields<PrismicFaqEntryConnectionDistinctArgs, 'field'>>;
-  group?: Resolver<Array<ResolversTypes['PrismicFaqEntryGroupConnection']>, ParentType, ContextType, RequireFields<PrismicFaqEntryConnectionGroupArgs, 'field'>>;
+  distinct?: Resolver<
+    Array<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicFaqEntryConnectionDistinctArgs, 'field'>
+  >;
+  group?: Resolver<
+    Array<ResolversTypes['PrismicFaqEntryGroupConnection']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicFaqEntryConnectionGroupArgs, 'field'>
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqEntryEdgeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqEntryEdge'] = ResolversParentTypes['PrismicFaqEntryEdge']> = {
+export type PrismicFaqEntryEdgeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqEntryEdge'] = ResolversParentTypes['PrismicFaqEntryEdge']
+> = {
   next?: Resolver<Maybe<ResolversTypes['PrismicFaqEntry']>, ParentType, ContextType>;
   node?: Resolver<ResolversTypes['PrismicFaqEntry'], ParentType, ContextType>;
   previous?: Resolver<Maybe<ResolversTypes['PrismicFaqEntry']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicFaqEntryGroupConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicFaqEntryGroupConnection'] = ResolversParentTypes['PrismicFaqEntryGroupConnection']> = {
+export type PrismicFaqEntryGroupConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicFaqEntryGroupConnection'] = ResolversParentTypes['PrismicFaqEntryGroupConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['PrismicFaqEntryEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['PrismicFaqEntry']>, ParentType, ContextType>;
@@ -8518,24 +9997,43 @@ export type PrismicFaqEntryGroupConnectionResolvers<ContextType = any, ParentTyp
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type FaqJsonConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['FaqJsonConnection'] = ResolversParentTypes['FaqJsonConnection']> = {
+export type FaqJsonConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['FaqJsonConnection'] = ResolversParentTypes['FaqJsonConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['FaqJsonEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['FaqJson']>, ParentType, ContextType>;
   pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  distinct?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType, RequireFields<FaqJsonConnectionDistinctArgs, 'field'>>;
-  group?: Resolver<Array<ResolversTypes['FaqJsonGroupConnection']>, ParentType, ContextType, RequireFields<FaqJsonConnectionGroupArgs, 'field'>>;
+  distinct?: Resolver<
+    Array<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<FaqJsonConnectionDistinctArgs, 'field'>
+  >;
+  group?: Resolver<
+    Array<ResolversTypes['FaqJsonGroupConnection']>,
+    ParentType,
+    ContextType,
+    RequireFields<FaqJsonConnectionGroupArgs, 'field'>
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type FaqJsonEdgeResolvers<ContextType = any, ParentType extends ResolversParentTypes['FaqJsonEdge'] = ResolversParentTypes['FaqJsonEdge']> = {
+export type FaqJsonEdgeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['FaqJsonEdge'] = ResolversParentTypes['FaqJsonEdge']
+> = {
   next?: Resolver<Maybe<ResolversTypes['FaqJson']>, ParentType, ContextType>;
   node?: Resolver<ResolversTypes['FaqJson'], ParentType, ContextType>;
   previous?: Resolver<Maybe<ResolversTypes['FaqJson']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type FaqJsonGroupConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['FaqJsonGroupConnection'] = ResolversParentTypes['FaqJsonGroupConnection']> = {
+export type FaqJsonGroupConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['FaqJsonGroupConnection'] = ResolversParentTypes['FaqJsonGroupConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['FaqJsonEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['FaqJson']>, ParentType, ContextType>;
@@ -8545,33 +10043,60 @@ export type FaqJsonGroupConnectionResolvers<ContextType = any, ParentType extend
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteBuildMetadataResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteBuildMetadata'] = ResolversParentTypes['SiteBuildMetadata']> = {
+export type SiteBuildMetadataResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteBuildMetadata'] = ResolversParentTypes['SiteBuildMetadata']
+> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   parent?: Resolver<Maybe<ResolversTypes['Node']>, ParentType, ContextType>;
   children?: Resolver<Array<ResolversTypes['Node']>, ParentType, ContextType>;
   internal?: Resolver<ResolversTypes['Internal'], ParentType, ContextType>;
-  buildTime?: Resolver<Maybe<ResolversTypes['Date']>, ParentType, ContextType, RequireFields<SiteBuildMetadataBuildTimeArgs, never>>;
+  buildTime?: Resolver<
+    Maybe<ResolversTypes['Date']>,
+    ParentType,
+    ContextType,
+    RequireFields<SiteBuildMetadataBuildTimeArgs, never>
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteBuildMetadataConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteBuildMetadataConnection'] = ResolversParentTypes['SiteBuildMetadataConnection']> = {
+export type SiteBuildMetadataConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteBuildMetadataConnection'] = ResolversParentTypes['SiteBuildMetadataConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['SiteBuildMetadataEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['SiteBuildMetadata']>, ParentType, ContextType>;
   pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  distinct?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType, RequireFields<SiteBuildMetadataConnectionDistinctArgs, 'field'>>;
-  group?: Resolver<Array<ResolversTypes['SiteBuildMetadataGroupConnection']>, ParentType, ContextType, RequireFields<SiteBuildMetadataConnectionGroupArgs, 'field'>>;
+  distinct?: Resolver<
+    Array<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<SiteBuildMetadataConnectionDistinctArgs, 'field'>
+  >;
+  group?: Resolver<
+    Array<ResolversTypes['SiteBuildMetadataGroupConnection']>,
+    ParentType,
+    ContextType,
+    RequireFields<SiteBuildMetadataConnectionGroupArgs, 'field'>
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteBuildMetadataEdgeResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteBuildMetadataEdge'] = ResolversParentTypes['SiteBuildMetadataEdge']> = {
+export type SiteBuildMetadataEdgeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteBuildMetadataEdge'] = ResolversParentTypes['SiteBuildMetadataEdge']
+> = {
   next?: Resolver<Maybe<ResolversTypes['SiteBuildMetadata']>, ParentType, ContextType>;
   node?: Resolver<ResolversTypes['SiteBuildMetadata'], ParentType, ContextType>;
   previous?: Resolver<Maybe<ResolversTypes['SiteBuildMetadata']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SiteBuildMetadataGroupConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['SiteBuildMetadataGroupConnection'] = ResolversParentTypes['SiteBuildMetadataGroupConnection']> = {
+export type SiteBuildMetadataGroupConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SiteBuildMetadataGroupConnection'] = ResolversParentTypes['SiteBuildMetadataGroupConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['SiteBuildMetadataEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['SiteBuildMetadata']>, ParentType, ContextType>;
@@ -8581,24 +10106,43 @@ export type SiteBuildMetadataGroupConnectionResolvers<ContextType = any, ParentT
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginConnection'] = ResolversParentTypes['SitePluginConnection']> = {
+export type SitePluginConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginConnection'] = ResolversParentTypes['SitePluginConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['SitePluginEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['SitePlugin']>, ParentType, ContextType>;
   pageInfo?: Resolver<ResolversTypes['PageInfo'], ParentType, ContextType>;
-  distinct?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType, RequireFields<SitePluginConnectionDistinctArgs, 'field'>>;
-  group?: Resolver<Array<ResolversTypes['SitePluginGroupConnection']>, ParentType, ContextType, RequireFields<SitePluginConnectionGroupArgs, 'field'>>;
+  distinct?: Resolver<
+    Array<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<SitePluginConnectionDistinctArgs, 'field'>
+  >;
+  group?: Resolver<
+    Array<ResolversTypes['SitePluginGroupConnection']>,
+    ParentType,
+    ContextType,
+    RequireFields<SitePluginConnectionGroupArgs, 'field'>
+  >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginEdgeResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginEdge'] = ResolversParentTypes['SitePluginEdge']> = {
+export type SitePluginEdgeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginEdge'] = ResolversParentTypes['SitePluginEdge']
+> = {
   next?: Resolver<Maybe<ResolversTypes['SitePlugin']>, ParentType, ContextType>;
   node?: Resolver<ResolversTypes['SitePlugin'], ParentType, ContextType>;
   previous?: Resolver<Maybe<ResolversTypes['SitePlugin']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type SitePluginGroupConnectionResolvers<ContextType = any, ParentType extends ResolversParentTypes['SitePluginGroupConnection'] = ResolversParentTypes['SitePluginGroupConnection']> = {
+export type SitePluginGroupConnectionResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SitePluginGroupConnection'] = ResolversParentTypes['SitePluginGroupConnection']
+> = {
   totalCount?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   edges?: Resolver<Array<ResolversTypes['SitePluginEdge']>, ParentType, ContextType>;
   nodes?: Resolver<Array<ResolversTypes['SitePlugin']>, ParentType, ContextType>;
@@ -8608,24 +10152,58 @@ export type SitePluginGroupConnectionResolvers<ContextType = any, ParentType ext
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicImageThumbnailTypeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicImageThumbnailType'] = ResolversParentTypes['PrismicImageThumbnailType']> = {
+export type PrismicImageThumbnailTypeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicImageThumbnailType'] = ResolversParentTypes['PrismicImageThumbnailType']
+> = {
   alt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   copyright?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  dimensions?: Resolver<Maybe<ResolversTypes['PrismicImageDimensionsType']>, ParentType, ContextType>;
-  url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<PrismicImageThumbnailTypeUrlArgs, 'imgixParams'>>;
-  fixed?: Resolver<Maybe<ResolversTypes['PrismicImageFixedType']>, ParentType, ContextType, RequireFields<PrismicImageThumbnailTypeFixedArgs, 'width' | 'imgixParams' | 'placeholderImgixParams'>>;
-  fluid?: Resolver<Maybe<ResolversTypes['PrismicImageFluidType']>, ParentType, ContextType, RequireFields<PrismicImageThumbnailTypeFluidArgs, 'maxWidth' | 'imgixParams' | 'placeholderImgixParams'>>;
+  dimensions?: Resolver<
+    Maybe<ResolversTypes['PrismicImageDimensionsType']>,
+    ParentType,
+    ContextType
+  >;
+  url?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType,
+    RequireFields<PrismicImageThumbnailTypeUrlArgs, 'imgixParams'>
+  >;
+  fixed?: Resolver<
+    Maybe<ResolversTypes['PrismicImageFixedType']>,
+    ParentType,
+    ContextType,
+    RequireFields<
+      PrismicImageThumbnailTypeFixedArgs,
+      'width' | 'imgixParams' | 'placeholderImgixParams'
+    >
+  >;
+  fluid?: Resolver<
+    Maybe<ResolversTypes['PrismicImageFluidType']>,
+    ParentType,
+    ContextType,
+    RequireFields<
+      PrismicImageThumbnailTypeFluidArgs,
+      'maxWidth' | 'imgixParams' | 'placeholderImgixParams'
+    >
+  >;
   localFile?: Resolver<Maybe<ResolversTypes['File']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicGeoPointTypeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicGeoPointType'] = ResolversParentTypes['PrismicGeoPointType']> = {
+export type PrismicGeoPointTypeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicGeoPointType'] = ResolversParentTypes['PrismicGeoPointType']
+> = {
   latitude?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
   longitude?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicEmbedTypeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicEmbedType'] = ResolversParentTypes['PrismicEmbedType']> = {
+export type PrismicEmbedTypeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicEmbedType'] = ResolversParentTypes['PrismicEmbedType']
+> = {
   author_id?: Resolver<Maybe<ResolversTypes['ID']>, ParentType, ContextType>;
   author_name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   author_url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -8649,7 +10227,10 @@ export type PrismicEmbedTypeResolvers<ContextType = any, ParentType extends Reso
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type PrismicSliceTypeResolvers<ContextType = any, ParentType extends ResolversParentTypes['PrismicSliceType'] = ResolversParentTypes['PrismicSliceType']> = {
+export type PrismicSliceTypeResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['PrismicSliceType'] = ResolversParentTypes['PrismicSliceType']
+> = {
   __resolveType: TypeResolveFn<null, ParentType, ContextType>;
   slice_type?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   slice_label?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -8699,43 +10280,107 @@ export type Resolvers<ContextType = any> = {
   SitePlugin?: SitePluginResolvers<ContextType>;
   SitePluginPluginOptions?: SitePluginPluginOptionsResolvers<ContextType>;
   SitePluginPluginOptionsPlugins?: SitePluginPluginOptionsPluginsResolvers<ContextType>;
-  SitePluginPluginOptionsPluginsPluginOptions?: SitePluginPluginOptionsPluginsPluginOptionsResolvers<ContextType>;
+  SitePluginPluginOptionsPluginsPluginOptions?: SitePluginPluginOptionsPluginsPluginOptionsResolvers<
+    ContextType
+  >;
   SitePluginPluginOptionsSchemas?: SitePluginPluginOptionsSchemasResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasIndex_page?: SitePluginPluginOptionsSchemasIndex_PageResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasIndex_pageMain?: SitePluginPluginOptionsSchemasIndex_PageMainResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasIndex_pageMainUid?: SitePluginPluginOptionsSchemasIndex_PageMainUidResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasIndex_pageMainUidConfig?: SitePluginPluginOptionsSchemasIndex_PageMainUidConfigResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasIndex_pageMainTitle?: SitePluginPluginOptionsSchemasIndex_PageMainTitleResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasIndex_pageMainTitleConfig?: SitePluginPluginOptionsSchemasIndex_PageMainTitleConfigResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasIndex_pageMainDescription?: SitePluginPluginOptionsSchemasIndex_PageMainDescriptionResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasIndex_pageMainDescriptionConfig?: SitePluginPluginOptionsSchemasIndex_PageMainDescriptionConfigResolvers<ContextType>;
+  SitePluginPluginOptionsSchemasIndex_page?: SitePluginPluginOptionsSchemasIndex_PageResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasIndex_pageMain?: SitePluginPluginOptionsSchemasIndex_PageMainResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasIndex_pageMainUid?: SitePluginPluginOptionsSchemasIndex_PageMainUidResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasIndex_pageMainUidConfig?: SitePluginPluginOptionsSchemasIndex_PageMainUidConfigResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasIndex_pageMainTitle?: SitePluginPluginOptionsSchemasIndex_PageMainTitleResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasIndex_pageMainTitleConfig?: SitePluginPluginOptionsSchemasIndex_PageMainTitleConfigResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasIndex_pageMainDescription?: SitePluginPluginOptionsSchemasIndex_PageMainDescriptionResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasIndex_pageMainDescriptionConfig?: SitePluginPluginOptionsSchemasIndex_PageMainDescriptionConfigResolvers<
+    ContextType
+  >;
   SitePluginPluginOptionsSchemasTest?: SitePluginPluginOptionsSchemasTestResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasTestMain?: SitePluginPluginOptionsSchemasTestMainResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasTestMainTitle?: SitePluginPluginOptionsSchemasTestMainTitleResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasTestMainTitleConfig?: SitePluginPluginOptionsSchemasTestMainTitleConfigResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasTestMainText?: SitePluginPluginOptionsSchemasTestMainTextResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasTestMainTextConfig?: SitePluginPluginOptionsSchemasTestMainTextConfigResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasTestMainImage?: SitePluginPluginOptionsSchemasTestMainImageResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasTestMainImageConfig?: SitePluginPluginOptionsSchemasTestMainImageConfigResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasFaq_page?: SitePluginPluginOptionsSchemasFaq_PageResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasFaq_pageMain?: SitePluginPluginOptionsSchemasFaq_PageMainResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasFaq_pageMainTitle?: SitePluginPluginOptionsSchemasFaq_PageMainTitleResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasFaq_pageMainTitleConfig?: SitePluginPluginOptionsSchemasFaq_PageMainTitleConfigResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasFaq_pageMainDescription?: SitePluginPluginOptionsSchemasFaq_PageMainDescriptionResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasFaq_pageMainDescriptionConfig?: SitePluginPluginOptionsSchemasFaq_PageMainDescriptionConfigResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1?: SitePluginPluginOptionsSchemasFaq_PageMainTitle_Group_1Resolvers<ContextType>;
-  SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1Config?: SitePluginPluginOptionsSchemasFaq_PageMainTitle_Group_1ConfigResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasFaq_pageMainEntries?: SitePluginPluginOptionsSchemasFaq_PageMainEntriesResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfig?: SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFields?: SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestion?: SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestionConfig?: SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionConfigResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswer?: SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswerResolvers<ContextType>;
-  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswerConfig?: SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswerConfigResolvers<ContextType>;
+  SitePluginPluginOptionsSchemasTestMain?: SitePluginPluginOptionsSchemasTestMainResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasTestMainTitle?: SitePluginPluginOptionsSchemasTestMainTitleResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasTestMainTitleConfig?: SitePluginPluginOptionsSchemasTestMainTitleConfigResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasTestMainText?: SitePluginPluginOptionsSchemasTestMainTextResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasTestMainTextConfig?: SitePluginPluginOptionsSchemasTestMainTextConfigResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasTestMainImage?: SitePluginPluginOptionsSchemasTestMainImageResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasTestMainImageConfig?: SitePluginPluginOptionsSchemasTestMainImageConfigResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasFaq_page?: SitePluginPluginOptionsSchemasFaq_PageResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMain?: SitePluginPluginOptionsSchemasFaq_PageMainResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainTitle?: SitePluginPluginOptionsSchemasFaq_PageMainTitleResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainTitleConfig?: SitePluginPluginOptionsSchemasFaq_PageMainTitleConfigResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainDescription?: SitePluginPluginOptionsSchemasFaq_PageMainDescriptionResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainDescriptionConfig?: SitePluginPluginOptionsSchemasFaq_PageMainDescriptionConfigResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1?: SitePluginPluginOptionsSchemasFaq_PageMainTitle_Group_1Resolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainTitle_group_1Config?: SitePluginPluginOptionsSchemasFaq_PageMainTitle_Group_1ConfigResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainEntries?: SitePluginPluginOptionsSchemasFaq_PageMainEntriesResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfig?: SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFields?: SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestion?: SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsQuestionConfig?: SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsQuestionConfigResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswer?: SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswerResolvers<
+    ContextType
+  >;
+  SitePluginPluginOptionsSchemasFaq_pageMainEntriesConfigFieldsAnswerConfig?: SitePluginPluginOptionsSchemasFaq_PageMainEntriesConfigFieldsAnswerConfigResolvers<
+    ContextType
+  >;
   SitePluginPackageJson?: SitePluginPackageJsonResolvers<ContextType>;
   SitePluginPackageJsonDependencies?: SitePluginPackageJsonDependenciesResolvers<ContextType>;
   SitePluginPackageJsonDevDependencies?: SitePluginPackageJsonDevDependenciesResolvers<ContextType>;
-  SitePluginPackageJsonPeerDependencies?: SitePluginPackageJsonPeerDependenciesResolvers<ContextType>;
+  SitePluginPackageJsonPeerDependencies?: SitePluginPackageJsonPeerDependenciesResolvers<
+    ContextType
+  >;
   SitePageConnection?: SitePageConnectionResolvers<ContextType>;
   SitePageEdge?: SitePageEdgeResolvers<ContextType>;
   SitePageGroupConnection?: SitePageGroupConnectionResolvers<ContextType>;
@@ -8747,9 +10392,15 @@ export type Resolvers<ContextType = any> = {
   SiteSiteMetadataMainNavEntries?: SiteSiteMetadataMainNavEntriesResolvers<ContextType>;
   SiteSiteMetadataMainNavEntriesNames?: SiteSiteMetadataMainNavEntriesNamesResolvers<ContextType>;
   SiteSiteMetadataFooterNavEntries?: SiteSiteMetadataFooterNavEntriesResolvers<ContextType>;
-  SiteSiteMetadataFooterNavEntriesTitles?: SiteSiteMetadataFooterNavEntriesTitlesResolvers<ContextType>;
-  SiteSiteMetadataFooterNavEntriesLinks?: SiteSiteMetadataFooterNavEntriesLinksResolvers<ContextType>;
-  SiteSiteMetadataFooterNavEntriesLinksNames?: SiteSiteMetadataFooterNavEntriesLinksNamesResolvers<ContextType>;
+  SiteSiteMetadataFooterNavEntriesTitles?: SiteSiteMetadataFooterNavEntriesTitlesResolvers<
+    ContextType
+  >;
+  SiteSiteMetadataFooterNavEntriesLinks?: SiteSiteMetadataFooterNavEntriesLinksResolvers<
+    ContextType
+  >;
+  SiteSiteMetadataFooterNavEntriesLinksNames?: SiteSiteMetadataFooterNavEntriesLinksNamesResolvers<
+    ContextType
+  >;
   SiteSiteMetadataGithubLink?: SiteSiteMetadataGithubLinkResolvers<ContextType>;
   SiteSiteMetadataGithubLinkNames?: SiteSiteMetadataGithubLinkNamesResolvers<ContextType>;
   SiteConnection?: SiteConnectionResolvers<ContextType>;
@@ -8815,7 +10466,6 @@ export type Resolvers<ContextType = any> = {
   PrismicSliceType?: PrismicSliceTypeResolvers<ContextType>;
 };
 
-
 /**
  * @deprecated
  * Use "Resolvers" root object instead. If you wish to get "IResolvers", add "typesPrefix: I" to your config.
@@ -8833,7 +10483,6 @@ export type DirectiveResolvers<ContextType = any> = {
   childOf?: ChildOfDirectiveResolver<any, any, ContextType>;
   nodeInterface?: NodeInterfaceDirectiveResolver<any, any, ContextType>;
 };
-
 
 /**
  * @deprecated

@@ -10,3 +10,6 @@ generates:
       - "typescript"
       - "typescript-operations"
       - "typescript-resolvers"
+hooks:
+  afterAllFileWrite:
+    - prettier --write
