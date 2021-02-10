@@ -1,13 +1,15 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable camelcase */
 import React, { FC, Fragment } from 'react';
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
+
+import Layout from '../../components/layout/layout';
 
 import * as Types from './faq-prismic.types';
 import * as Styles from './faq-prismic.styles';
 
-const FaqPage = ({ data }: Types.FaqPageProps): JSX.Element => {
+const FaqPage = ({ data, location }: Types.FaqPageProps & PageProps): JSX.Element => {
   const { prismicFaqPage } = data;
 
   const {
@@ -15,23 +17,24 @@ const FaqPage = ({ data }: Types.FaqPageProps): JSX.Element => {
   } = prismicFaqPage!.data!;
 
   return (
-    <div className="wrapper">
-      {!!title && (
+    <Layout location={location}>
+      <div className="wrapper">
+        {!!title && (
         <RichText
           render={title.raw}
         />
-      )}
-      {!!description && (
+        )}
+        {!!description && (
         <RichText
           render={description.raw}
         />
-      )}
-      {!!title_group_1 && (
+        )}
+        {!!title_group_1 && (
         <RichText
           render={title_group_1.raw}
         />
-      )}
-      {!!entries && (
+        )}
+        {!!entries && (
         <dl>
           {entries.map((entry: any) => (
             <Fragment key={entry.question.text}>
@@ -48,8 +51,9 @@ const FaqPage = ({ data }: Types.FaqPageProps): JSX.Element => {
             </Fragment>
           ))}
         </dl>
-      )}
-    </div>
+        )}
+      </div>
+    </Layout>
   );
 };
 
