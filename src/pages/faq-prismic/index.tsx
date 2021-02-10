@@ -17,7 +17,7 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
   } = prismicFaqPage!.data!;
 
   return (
-    <Layout location={location} title={title}>
+    <Layout>
       <div className="wrapper">
         {!!title && (
         <RichText

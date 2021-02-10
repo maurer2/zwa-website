@@ -1,5 +1,5 @@
 import { PrismicFaqPage } from '../../types/graphql';
 
-export type FaqPageProps = {
+export interface FaqPageProps {
   prismicFaqPage: PrismicFaqPage
 }
