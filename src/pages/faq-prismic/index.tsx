@@ -9,7 +9,7 @@ import Layout from '../../components/layout/layout';
 import * as Types from './faq-prismic.types';
 // import * as Styles from './faq-prismic.styles';
 
-const FaqPage: FC = ({ data, location }: PageProps<Types.FaqPageProps>): JSX.Element => {
+const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Element => {
   const { prismicFaqPage } = data;
 
   const {
