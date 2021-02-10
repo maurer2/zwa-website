@@ -7,9 +7,9 @@ import { RichText } from 'prismic-reactjs';
 import Layout from '../../components/layout/layout';
 
 import * as Types from './faq-prismic.types';
-import * as Styles from './faq-prismic.styles';
+// import * as Styles from './faq-prismic.styles';
 
-const FaqPage = ({ data, location }: Types.FaqPageProps & PageProps): JSX.Element => {
+const FaqPage: FC = ({ data, location }: PageProps<Types.FaqPageProps>): JSX.Element => {
   const { prismicFaqPage } = data;
 
   const {
@@ -17,7 +17,7 @@ const FaqPage = ({ data, location }: Types.FaqPageProps & PageProps): JSX.Elemen
   } = prismicFaqPage!.data!;
 
   return (
-    <Layout location={location}>
+    <Layout location={location} title={title}>
       <div className="wrapper">
         {!!title && (
         <RichText
