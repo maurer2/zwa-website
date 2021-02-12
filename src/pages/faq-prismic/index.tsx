@@ -3,7 +3,9 @@
 import React, { FC, Fragment } from 'react';
 import { graphql, PageProps } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
+import { kebabCase } from 'lodash-es';
 
+import { PrismicFaqPageEntriesGroupType } from '../../types/graphql';
 import Layout from '../../components/layout/layout';
 
 import * as Types from './faq-prismic.types';
@@ -18,11 +20,9 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
 
   return (
     <Layout>
-      <div className="wrapper">
+      <>
         {!!title && (
-        <RichText
-          render={title.raw}
-        />
+          <h1>{title.text}</h1>
         )}
         {!!description && (
         <RichText
@@ -30,29 +30,25 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
         />
         )}
         {!!title_group_1 && (
-        <RichText
-          render={title_group_1.raw}
-        />
+          <h2>{title_group_1.text}</h2>
         )}
         {!!entries && (
         <dl>
-          {entries.map((entry: any) => (
-            <Fragment key={entry.question.text}>
-              <dt>
-                <RichText
-                  render={entry.question.raw}
-                />
-              </dt>
-              <dd>
-                <RichText
-                  render={entry.answer.raw}
-                />
-              </dd>
+          {(entries as PrismicFaqPageEntriesGroupType[]).map((entry: PrismicFaqPageEntriesGroupType) => (
+            <Fragment key={`${entry!.question!.text}`}>
+              <details>
+                <summary>{entry!.question!.text}</summary>
+                <div>
+                  <RichText
+                    render={entry!.answer!.raw}
+                  />
+                </div>
+              </details>
             </Fragment>
           ))}
         </dl>
         )}
-      </div>
+      </>
     </Layout>
   );
 };
@@ -64,22 +60,23 @@ export const pageQuery = graphql`
     prismicFaqPage {
       data {
         title {
+          text
           raw
         }
         description {
+          text
           raw
         }
         title_group_1 {
+          text
           raw
         }
         entries {
           answer {
-            html
             text
             raw
           }
           question {
-            html
             raw
             text
           }
