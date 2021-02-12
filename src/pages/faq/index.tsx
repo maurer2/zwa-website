@@ -8,8 +8,8 @@ import { kebabCase } from 'lodash-es';
 import { PrismicFaqPageEntriesGroupType } from '../../types/graphql';
 import Layout from '../../components/layout/layout';
 
-import * as Types from './faq-prismic.types';
-// import * as Styles from './faq-prismic.styles';
+import * as Types from './faq.types';
+// import * as Styles from './faq.styles';
 
 const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Element => {
   const { prismicFaqPage } = data;
