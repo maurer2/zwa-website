@@ -1,9 +1,11 @@
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable camelcase */
 import React, { FC, Fragment } from 'react';
 import { graphql, PageProps } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
 import { kebabCase } from 'lodash-es';
+// import { Link } from 'gatsby';
 
 import { PrismicFaqPageEntriesGroupType } from '../../types/graphql';
 import Layout from '../../components/layout/layout';
@@ -18,6 +20,17 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
     description, entries, title, title_group_1,
   } = prismicFaqPage!.data!;
 
+  const slugLookupTable: Map<string, string> = new Map();
+  for (const entry of entries as PrismicFaqPageEntriesGroupType[]) {
+    const { text } = entry!.question!;
+
+    if (text) {
+      const slug = kebabCase(text);
+
+      slugLookupTable.set(text, slug);
+    }
+  }
+
   function scrollToAnchor() {
     // scrollIntoView
   }
@@ -29,12 +42,18 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
           <h2>Navigation</h2>
           <ul>
             {(entries as PrismicFaqPageEntriesGroupType[]).map((entry) => {
-              const slug = kebabCase(entry!.question!.text);
+              const { question } = entry;
+
+              if (!question || !question.text) {
+                return null;
+              }
+
+              const slug = slugLookupTable.get(question!.text);
 
               return (
-                <li key={`${entry!.question!.text}`}>
+                <li key={slug}>
                   <a href={`#${slug}`}>
-                    {entry!.question!.text}
+                    {question.text}
                   </a>
                 </li>
               );
@@ -56,7 +75,13 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
         {!!entries && (
         <dl>
           {(entries as PrismicFaqPageEntriesGroupType[]).map((entry) => {
-            const slug = kebabCase(entry!.question!.text);
+            const { question } = entry;
+
+            if (!question || !question.text) {
+              return null;
+            }
+
+            const slug = slugLookupTable.get(question!.text);
 
             return (
               <details key={`${entry!.question!.text}`} id={`${slug}`}>
