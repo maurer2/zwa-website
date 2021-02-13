@@ -18,25 +18,48 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
     description, entries, title, title_group_1,
   } = prismicFaqPage!.data!;
 
+  function scrollToAnchor() {
+    // scrollIntoView
+  }
+
   return (
     <Layout>
       <>
+        <nav>
+          <h2>Navigation</h2>
+          <ul>
+            {(entries as PrismicFaqPageEntriesGroupType[]).map((entry) => {
+              const slug = kebabCase(entry!.question!.text);
+
+              return (
+                <li key={`${entry!.question!.text}`}>
+                  <a href={`#${slug}`}>
+                    {entry!.question!.text}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+
         {!!title && (
           <h1>{title.text}</h1>
         )}
         {!!description && (
-        <RichText
-          render={description.raw}
-        />
+          <RichText
+            render={description.raw}
+          />
         )}
         {!!title_group_1 && (
           <h2>{title_group_1.text}</h2>
         )}
         {!!entries && (
         <dl>
-          {(entries as PrismicFaqPageEntriesGroupType[]).map((entry: PrismicFaqPageEntriesGroupType) => (
-            <Fragment key={`${entry!.question!.text}`}>
-              <details>
+          {(entries as PrismicFaqPageEntriesGroupType[]).map((entry) => {
+            const slug = kebabCase(entry!.question!.text);
+
+            return (
+              <details key={`${entry!.question!.text}`} id={`${slug}`}>
                 <summary>{entry!.question!.text}</summary>
                 <div>
                   <RichText
@@ -44,8 +67,8 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
                   />
                 </div>
               </details>
-            </Fragment>
-          ))}
+            );
+          })}
         </dl>
         )}
       </>
