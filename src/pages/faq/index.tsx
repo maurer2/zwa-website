@@ -21,18 +21,25 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
     description, entries, title, title_group_1,
   } = prismicFaqPage!.data!;
 
-  const [slugLookupTable, setSlugLookupTable] = useState(new Map() as Map <string, string>);
+  const [slugLookupTable, setSlugLookupTable] = useState<Map<string, string>>(new Map());
 
   useEffect(() => {
-    for (const entry of entries as PrismicFaqPageEntriesGroupType[]) {
+    const mappedSlugs = (entries as PrismicFaqPageEntriesGroupType[]).map((entry) => {
       const { text } = entry!.question!;
 
       if (text) {
         const slug = kebabCase(text);
 
-        setSlugLookupTable((prevSlugLookupTable) => new Map([...prevSlugLookupTable, [text, slug]]));
+        return [
+          text,
+          slug,
+        ];
       }
-    }
+
+      return null;
+    }).filter((entry): entry is string[] => entry !== null);
+
+    setSlugLookupTable((prevSlugLookupTable) => new Map([...prevSlugLookupTable, ...mappedSlugs]));
   }, [entries]);
 
   function scrollToAnchor() {
