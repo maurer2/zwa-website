@@ -1,7 +1,9 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable camelcase */
-import React, { FC, Fragment } from 'react';
+import React, {
+  FC, Fragment, useEffect, useState,
+} from 'react';
 import { graphql, PageProps } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
 import { kebabCase } from 'lodash-es';
@@ -15,21 +17,23 @@ import * as Types from './faq.types';
 
 const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Element => {
   const { prismicFaqPage } = data;
-
   const {
     description, entries, title, title_group_1,
   } = prismicFaqPage!.data!;
 
-  const slugLookupTable: Map<string, string> = new Map();
-  for (const entry of entries as PrismicFaqPageEntriesGroupType[]) {
-    const { text } = entry!.question!;
+  const [slugLookupTable, setSlugLookupTable] = useState(new Map() as Map <string, string>);
 
-    if (text) {
-      const slug = kebabCase(text);
+  useEffect(() => {
+    for (const entry of entries as PrismicFaqPageEntriesGroupType[]) {
+      const { text } = entry!.question!;
 
-      slugLookupTable.set(text, slug);
+      if (text) {
+        const slug = kebabCase(text);
+
+        setSlugLookupTable((prevSlugLookupTable) => new Map([...prevSlugLookupTable, [text, slug]]));
+      }
     }
-  }
+  }, [entries]);
 
   function scrollToAnchor() {
     // scrollIntoView
@@ -84,7 +88,7 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
             const slug = slugLookupTable.get(question!.text);
 
             return (
-              <details key={`${entry!.question!.text}`} id={`${slug}`}>
+              <details key={slug} id={`${slug}`}>
                 <summary>{entry!.question!.text}</summary>
                 <div>
                   <RichText
