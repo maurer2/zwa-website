@@ -39,6 +39,10 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
     // scrollIntoView
   }
 
+  if (!slugLookupTable.size) {
+    return <></>;
+  }
+
   return (
     <Layout>
       <>
