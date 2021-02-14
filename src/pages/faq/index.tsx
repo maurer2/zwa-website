@@ -24,20 +24,21 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
   const [slugLookupTable, setSlugLookupTable] = useState<Map<string, string>>(new Map());
 
   useEffect(() => {
-    const mappedSlugs = (entries as PrismicFaqPageEntriesGroupType[]).map((entry) => {
-      const { text } = entry!.question!;
+    const mappedSlugs = (entries as PrismicFaqPageEntriesGroupType[])
+      .flatMap((entry) => {
+        const { text } = entry!.question!;
 
-      if (text) {
-        const slug = kebabCase(text);
+        if (text) {
+          const slug = kebabCase(text);
 
-        return [
-          text,
-          slug,
-        ];
-      }
+          return [[
+            text,
+            slug,
+          ]] as [string, string][];
+        }
 
-      return null;
-    }).filter((entry): entry is string[] => entry !== null);
+        return [];
+      });
 
     setSlugLookupTable((prevSlugLookupTable) => new Map([...prevSlugLookupTable, ...mappedSlugs]));
   }, [entries]);
