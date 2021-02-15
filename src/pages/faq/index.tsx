@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable camelcase */
 import React, {
-  FC, Fragment, useEffect, useState,
+  FC, useEffect, useState, useRef, createRef,
 } from 'react';
 import { graphql, PageProps } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
@@ -22,29 +22,38 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
   } = prismicFaqPage!.data!;
 
   const [slugLookupTable, setSlugLookupTable] = useState<Map<string, string>>(new Map());
+  const questionDomElementRefs = useRef(entries!.map(() => createRef<HTMLElement>()));
 
   useEffect(() => {
     const mappedSlugs = (entries as PrismicFaqPageEntriesGroupType[])
       .flatMap((entry) => {
         const { text } = entry!.question!;
 
-        if (text) {
-          const slug = kebabCase(text);
-
-          return [[
-            text,
-            slug,
-          ]] as [string, string][];
+        if (!text) {
+          return [];
         }
 
-        return [];
+        const slug = kebabCase(text);
+
+        return [[
+          text,
+          slug,
+        ]] as [string, string][];
       });
 
     setSlugLookupTable((prevSlugLookupTable) => new Map([...prevSlugLookupTable, ...mappedSlugs]));
   }, [entries]);
 
-  function scrollToAnchor() {
-    // scrollIntoView
+  function scrollToAnchor(event: React.MouseEvent, anchorNumber: number): void {
+    event.preventDefault();
+
+    const targetElement = questionDomElementRefs.current[anchorNumber];
+
+    if (!targetElement.current) {
+      return;
+    }
+
+    targetElement.current.scrollIntoView({ behavior: 'smooth' });
   }
 
   if (!slugLookupTable.size) {
@@ -57,7 +66,7 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
         <nav>
           <h2>Navigation</h2>
           <ul>
-            {(entries as PrismicFaqPageEntriesGroupType[]).map((entry) => {
+            {(entries as PrismicFaqPageEntriesGroupType[]).map((entry, index) => {
               const { question } = entry;
 
               if (!question || !question.text) {
@@ -68,7 +77,7 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
 
               return (
                 <li key={slug}>
-                  <a href={`#${slug}`}>
+                  <a href={`#${slug}`} onClick={(event) => scrollToAnchor(event, index)}>
                     {question.text}
                   </a>
                 </li>
@@ -90,7 +99,7 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
         )}
         {!!entries && (
         <dl>
-          {(entries as PrismicFaqPageEntriesGroupType[]).map((entry) => {
+          {(entries as PrismicFaqPageEntriesGroupType[]).map((entry, index) => {
             const { question } = entry;
 
             if (!question || !question.text) {
@@ -101,7 +110,7 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
 
             return (
               <details key={slug} id={`${slug}`}>
-                <summary>{entry!.question!.text}</summary>
+                <summary ref={questionDomElementRefs.current[index]}>{entry!.question!.text}</summary>
                 <div>
                   <RichText
                     render={entry!.answer!.raw}
