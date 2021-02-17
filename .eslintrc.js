@@ -101,7 +101,10 @@ module.exports = {
     // 'lodash/import-scope': [2, 'member'],
     // 'lodash/prefer-lodash-method': 'off',
     // a11y
-    'jsx-a11y/media-has-caption': 'off'
+    'jsx-a11y/media-has-caption': 'off',
+    // grapqhl/prismic
+    'camelcase': 'off',
+    '@typescript-eslint/no-non-null-assertion': off
   },
   parserOptions: {
     ecmaVersion: 2016,

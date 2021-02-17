@@ -1,6 +1,3 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-/* eslint-disable camelcase */
 import React, {
   FC, useEffect, useState, useRef, createRef,
 } from 'react';
