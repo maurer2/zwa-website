@@ -104,7 +104,7 @@ module.exports = {
     'jsx-a11y/media-has-caption': 'off',
     // grapqhl/prismic
     'camelcase': 'off',
-    '@typescript-eslint/no-non-null-assertion': off
+    '@typescript-eslint/no-non-null-assertion': 'off'
   },
   parserOptions: {
     ecmaVersion: 2016,

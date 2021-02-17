@@ -87,7 +87,9 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
 
                 return (
                   <Styles.AccordionEntry key={slug} id={`${slug}`}>
-                    <Styles.Question ref={questionDomElementRefs.current[index]}>{entry!.question!.text}</Styles.Question>
+                    <Styles.Question ref={questionDomElementRefs.current[index]}>
+                      {entry!.question!.text}
+                    </Styles.Question>
                     <Styles.Answer>
                       <RichText
                         render={entry!.answer!.raw}
