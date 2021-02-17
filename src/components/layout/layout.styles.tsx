@@ -1,37 +1,10 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
+import { GlobalStyles } from 'twin.macro';
 
-export const GlobalStyles = createGlobalStyle`
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-
-  html {
-    height: 100%;
-    box-sizing: border-box;
-    font-size: 16px;
-    font-family:
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      "Roboto",
-      "Oxygen",
-      "Ubuntu",
-      "Cantarell",
-      "Fira Sans",
-      "Droid Sans",
-      "Helvetica Neue",
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #fff;
-  }
-
-  body {
-    min-height: 100%;
-  }
-`;
+export function GlobalStylesComponent() {
+  return <GlobalStyles />;
+}
 
 export const Wrapper = styled.div`
   display: grid;

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Normalize } from 'styled-normalize';
+// import { Normalize } from 'styled-normalize';
 
 import Theme from '../theme/theme';
 import Masthead from '../masthead/masthead';
@@ -11,8 +11,7 @@ import * as Styles from './layout.styles';
 
 const Layout: FC = ({ children }) => (
   <Theme>
-    <Normalize />
-    <Styles.GlobalStyles />
+    <Styles.GlobalStylesComponent />
     <Styles.Wrapper>
       <Masthead />
       <Content>

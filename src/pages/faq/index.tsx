@@ -44,7 +44,7 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
     setSlugLookupTable((prevSlugLookupTable) => new Map([...prevSlugLookupTable, ...mappedSlugs]));
   }, [entries]);
 
-  function scrollToAnchor(event: React.MouseEvent, anchorNumber: number): void {
+  function scrollToElement(event: React.MouseEvent, anchorNumber: number): void {
     event.preventDefault();
 
     const targetElement = questionDomElementRefs.current[anchorNumber];
@@ -77,7 +77,7 @@ const FaqPage: FC<PageProps<Types.FaqPageProps>> = ({ data, location }): JSX.Ele
 
               return (
                 <li key={slug}>
-                  <a href={`#${slug}`} onClick={(event) => scrollToAnchor(event, index)}>
+                  <a href={`#${slug}`} onClick={(event) => scrollToElement(event, index)}>
                     {question.text}
                   </a>
                 </li>
